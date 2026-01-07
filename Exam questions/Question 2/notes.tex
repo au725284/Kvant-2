@@ -1,0 +1,137 @@
+\textbf{Time evolution operator:}
+
+We want to know how a state ket changes under a time displacement $t_0 \rightarrow t$. We define the time evolution operator $\hat{\mathcal{U}}(t,t_0)$ such that
+\begin{align*}
+    \ket{\alpha,t_0; t} = \hat{\mathcal{U}}(t,t_0) \ket{\alpha, t_0}.
+\end{align*}
+Properties of the time evolution operator:
+
+The predictions in QM comes from the inner products of state kets, so we require that the time evolution operator preserves inner products, which means that 
+the state should be normalized at all times and that the statement "the system exists somewhere" must be true; the probability must not change $\braket{\alpha(t)|\alpha(t)} = \braket{\alpha(t_0)|\alpha(t_0)} = 1$. 
+This means that $\hat{\mathcal{U}}(t,t_0)$ must be unitary, i.e.
+\begin{align*}
+   \hat{\mathcal{U}}^\dagger(t,t_0)\hat{\mathcal{U}}(t,t_0) = \hat{\mathcal{U}}(t,t_0) \hat{\mathcal{U}}^\dagger(t,t_0) = \hat{I}.    
+\end{align*}
+You can thus say that unitarity is a consequence/synonymous of the conservation of probability.
+Furthermore, we also have the the property of the composition of $\hat{\mathcal{U}}$. 
+This means that if we want to evolve a state from time $t_0$ to time $t_1$ and then from time $t_1$ to time $t_2$, we can do this in one step by evolving the state directly from time $t_0$ to time $t_2$. Mathematically, 
+this is expressed as $\hat{\mathcal{U}}(t_2 , t_0 )= \hat{\mathcal{U}}(t_2, t_1) \hat{\mathcal{U}}(t_1, t_0)\quad \text{ for } t_2 >t_1 >t_0$ (This eqn. should be read from the right). 
+Finally, we have the property that at equal times, the time evolution operator is the identity operator, i.e. $\hat{\mathcal{U}}(t_0,t_0) = \hat{I}$.
+This means that for an infinitesimal time evolution, we can write to first order in $dt$, (becauase for $dt \rightarrow 0$, $\hat{\mathcal{U}}(t_0 + dt, t_0) \rightarrow \hat{\mathcal{U}}(t_0, t_0) = \hat{I}$):
+\begin{align*}
+    \hat{\mathcal{U}}(t_0 + dt, t_0) = \hat{I} - i \hat{\Omega} dt,
+\end{align*}
+where $\hat{\Omega}$ is an Hermitian operator ($\Omega^{\dagger} = \Omega$). If $\Omega$ depends on time explicitly, it must be evaluated at time $t_0$.
+We know that $\Omega$ has the dimension of $\text{time}^{-1}$ (frequency), and in QM, the only quantity with this dimension is energy divided by Planck's constant $\hbar$ ($E=\hbar \omega$). Thus, we can write
+\begin{align*}
+    \hat{\Omega} = \frac{\hat{H}}{\hbar},  
+\end{align*}
+where $\hat{H}$ is the Hamiltonian operator of the system (also hermitian). Therefore, we have
+\begin{align*}
+    \hat{\mathcal{U}}(t_0 + dt, t_0) = \hat{I} - \frac{i}{\hbar} \hat{H} dt.
+\end{align*}
+From this, we can derive the time-dependent Schrödinger equation.
+Starting from the definition of the time evolution operator, we have
+\begin{align*}
+    \hat{\mathcal{U}}(t_0 + dt, t_0) = \hat{\mathcal{U}}(t+ dt, t_0) \hat{\mathcal{U}}(t, t_0) = \left(1- \frac{i\hat{H}dt}{\hbar}\right)\hat{\mathcal{U}}(t, t_0).
+\end{align*}
+where $t-t_0$ is not need to be infinitesimal. Rearranging this equation, we end up with the Schödinger equation for the time evolution operator:
+\begin{align*}
+    i \hbar \frac{\partial}{\partial t} \hat{\mathcal{U}}(t, t_0) = \hat{H} \hat{\mathcal{U}}(t, t_0).
+\end{align*}
+If we now apply this equation to a state ket $\ket{\alpha, t_0}$, we get the time-dependent Schrödinger equation for the state ket:
+\begin{align*}
+    i \hbar \frac{\partial}{\partial t} \ket{\alpha, t_0; t} = \hat{H} \ket{\alpha, t_0; t}  
+\end{align*}
+Which is the same as $i \hbar \frac{\partial}{\partial t} \hat{\mathcal{U}}(t,t_0)\ket{\alpha, t_0} = \hat{H} \hat{\mathcal{U}}(t,t_0)\ket{\alpha, t_0} $. This is true because $\ket{\alpha, t_0}$ does not depend on t. 
+
+\textbf{Solution of the time-dependent Schrödinger equation:}
+
+\textcolor{red}{three cases described at page 66}
+
+We now want to look at the solution to the Schrödinger eqn. for the time evolution operator $\hat{\mathcal{U}}(t,t_0)$.
+\begin{align*}
+    i \hbar \frac{\partial}{\partial t} \hat{\mathcal{U}}(t, t_0) = \hat{H} \hat{\mathcal{U}}(t, t_0).
+\end{align*}
+
+1. If the Hamiltonian is independent of time, i.e. $\hat{H}(t) = \hat{H}$, then the solution to this equation is given by
+\begin{align*}
+    \hat{\mathcal{U}}(t, t_0) = e^{-\frac{i}{\hbar} \hat{H} (t-t_0)}.
+\end{align*}
+An example of this is the Hamiltonian of a free particle in 1D, given by $\hat{H} = \frac{\hat{p}^2}{2m}$, where $\hat{p}$ is the momentum operator and $m$ is the mass of the particle. Or the Hamiltonian for a spin-magnetic moment 
+interacting with a time-independent magnetic field $\vec{B}$, given by $\hat{H} = -\hat{\vec{\mu}} \cdot \vec{B}$, where $\hat{\vec{\mu}}$ is the magnetic moment operator for a particle with span operator $\hat{S}$ and $\gamma$ is the gyromagnetic ratio, $\hat{\vec{\mu}} = \gamma \hat{S}$.
+
+2. If we instead have a Hamiltonian that depends on time explicitly, i.e. $\hat{H}(t)$, but commutes with itself at different times, i.e. $[\hat{H}(t_1), \hat{H}(t_2)] = 0$ for all $t_1$ and $t_2$, then the solution to the Schrödinger equation is given by
+\begin{align*}
+    \hat{\mathcal{U}}(t, t_0) = e^{-\frac{i}{\hbar} \int_{t_0}^{t} \hat{H}(t') dt'}.
+\end{align*}
+An example of this is a particle in a time-dependent potential $V(x,t)$, where the Hamiltonian is given by $\hat{H}(t) = \frac{\hat{p}^2}{2m} + V(\hat{x},t)$.
+Another example is a spin-magnetic moment interacting with a time-dependent magnetic field $\vec{B}(t)$ that varies its strength over time but whose direction is always unchanged. 
+
+
+3. The last case is when we have a Hamiltonian that depends on time explicitly and does not commute with itself at different times, i.e. $[\hat{H}(t_1), \hat{H}(t_2)] \neq 0$ for some $t_1$ and $t_2$.
+In this case, the solution to the Schrödinger equation is given by the Dyson series:
+\begin{align*}
+    \hat{\mathcal{U}}(t, t_0) = \hat{I} + \sum_{n=1}^{\infty} \left( \frac{-i}{\hbar} \right)^n \int_{t_0}^{t} dt_1 \int_{t_0}^{t_1} dt_2 \cdots \int_{t_0}^{t_{n-1}} dt_n \hat{H}(t_1) \hat{H}(t_2) \cdots \hat{H}(t_n).
+\end{align*}
+Examples of this case include a spin-magnetic moment interacting with a magnetic field $\vec{B}(t)$ that changes both its strength and direction over time (e.g. at time $t_1$ it is in the x-direction and at time $t_2$ in the y-direction).
+A particle in a time dependent potential $V(x,t)$ that changes its shape over time, e.g. a harmonic oscillator with a time-dependent frequency $\omega(t)$, where the Hamiltonian is given by $\hat{H}(t) = \frac{\hat{p}^2}{2m} + \frac{1}{2} m \omega(t)^2 \hat{x}^2$.
+
+
+
+
+\textbf{Heisenberg vs. Schrödinger picture:}
+
+In the Schrödinger picture we look at observables that can be both time independent (such as position, momentum, kinetic energy) and time dependent (such as potential energy in a time-dependent field).
+In 1D the momentum operator $\hat{p}_S$ is in the position representation given by $\hat{p}_S = -i \hbar \frac{\partial}{\partial x}$ and does not depend explicitly on time. For kinetic energy we have 
+$\hat{T}_S = \frac{\hat{p}_S^2}{2m} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}$, which also does not depend explicitly on time. 
+As an example of a time-dependent observable could be a particle moving in a 1D potential and thereby oscilalting in time, $\hat{H}_S(t)=\frac{\hat{p}_S^2 }{2m} + V(\hat{x}_S) \sin(\omega t)$. 
+
+
+
+
+\underline{Quick recap on unitary operators:
+}\begin{itemize}
+    \item An operator $\hat{U}$ is unitary if $\hat{U}^\dagger \hat{U} = \hat{U} \hat{U}^\dagger = \hat{I}$.
+    \item The inverse of a unitary operator is given by its Hermitian conjugate, i.e. $\hat{U}^{-1} = \hat{U}^\dagger$.
+    \item The product of two unitary operators is also a unitary operator.
+    \item Unitary transformations coserves scaler products of states. This means if we have two states $\ket{\alpha}$ and $\ket{\beta}$, and we apply a unitary operator $\hat{U}$ to both states (unitary transformations), the inner product remains unchanged:
+    For $\ket{\alpha} \Rightarrow \ket{\alpha'} = \hat{U} \ket{\alpha}$ and $\ket{\beta} \Rightarrow \ket{\beta'} = \hat{U} \ket{\beta}$, then $\braket{\alpha'|\beta'} = \braket{\alpha|\beta}$. So unitary transformations preserve probabilities and normalization of states (the norm).
+    \item A unitary transformation of an operator $\hat{A}$ is given by $\hat{A} \Rightarrow \hat{A}' = \hat{U}^\dagger \hat{A} \hat{U}$. So we get $\braket{\beta' | \hat{A}' |\alpha'}= \braket{\beta | \hat{A} |\alpha}$
+\end{itemize}
+By using these properties of unitary operators, one can show that if an operator $\hat{A}$ is Hermitian (observable) then the transformed operator $\hat{A}'$ is also Hermitian. 
+overall unitary transformations are the extenction of orthogonal transformations from real to complex vector spaces.
+
+\underline{Why we can have different pictures of time evolution in QM:}
+
+We know that all predictions in QM comes from scaler products: 
+For a state $\ket{\alpha_S}$, the probability of measuring an observable $\hat{A}$ with eigenvalue $a_i$ is given by $P(a_n) = |\braket{(u_n)_S|\alpha_S}|^2$, where $\ket{(u_n)_S}$ is the eigenstate of $\hat{A}$ corresponding to eigenvalue $a_n$.
+For the expectation value of the observable $\hat{A}$ in state $\ket{\alpha_S}$, we have $\braket{\alpha_S|\hat{A}|\alpha_S}$. These predictions are all scaler products and therefore remain unchanged under unitary transformations.
+We know that the time evolution operator $\hat{\mathcal{U}}(t,t_0)$ is unitary, so we can use it to define different pictures of time evolution in QM without changing the physical predictions.
+This way the Heisenberg picture arriving from one of these unitary transformations is specifically the transformation which makes the state kets time independent, while the operators become time dependent.
+
+
+\underline{The Heisenberg pic. vs. Schrödinger pic.:}
+
+Above is time development described by the unitary time-evolution operator that affects the kets. This 
+approach to QD is called the Schrödinger picture. In the Schrödinger picture, the operators are constant (if they do not depend explicitly on time) and the state kets evolve in time.
+However, in the Heisenberg approach to QD, the operators evolve in time and the state kets are constant (if they do not depend explicitly on time).
+These two approaches are conceptually different but mathematically equivalent as described above.
+
+To find the transformation that makes this change of picture, we start from the expectation value of an observable $\hat{A}$ in the Schrödinger picture:
+\begin{align*}
+    \braket{\alpha, t_0; t | \hat{A}_S | \alpha, t_0; t} = \braket{\alpha, t_0 | \hat{\mathcal{U}}^{\dagger}(t,t_0)\hat{A}_S \hat{\mathcal{U}}(t,t_0)| \alpha, t_0}
+    = \braket{\alpha, t_0 | \hat{A}_H(t) | \alpha, t_0}.
+\end{align*}
+From this equation, we can identify the Heisenberg operator $\hat{A}_H(t)$ as
+\begin{align*}
+    \hat{A}_H(t) = \hat{\mathcal{U}}^{\dagger}(t,t_0)\hat{A}_S \hat{\mathcal{U}}(t,t_0).
+\end{align*}
+This is the unitary transformation of the operator $\hat{A}_S$ from the Schrödinger picture to the Heisenberg picture.
+Similarly, the state ket in the Schrödinger picture is given as $\ket{\psi_S(t)}=\hat{\mathcal{U}}(t,t_0) \ket{\psi_S(t)} $. If 
+we then multiply this equation from the left by $\hat{\mathcal{U}}^{\dagger}(t,t_0)=\hat{\mathcal{U}}^{-1}(t,t_0)$, we get
+\begin{align*}
+    \ket{\psi_H(t)} = \hat{\mathcal{U}}^{\dagger}(t,t_0) \ket{\psi_S(t)} = \ket{\psi_S(t_0)}
+\end{align*}
+which is time independent. Thus, in the Heisenberg picture, the state kets are constant in time (if they do not depend explicitly on time).
+So in conclusion the unitary transformation that takes us from the Schrödinger picture to the Heisenberg picture is given by the inverse (adjoint) time evolution operator $\hat{\mathcal{U}}^{-1}(t,t_0)$.

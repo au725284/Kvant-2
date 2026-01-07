@@ -1,0 +1,188 @@
+\textbf{Hilbert space ($\mathcal{H}$) and vector space:}
+
+A Hilbert space is a complex or real vector space in infinite dimensions, provided with the ability to define an inner product. 
+The mathematical definition of a Vector space includes the following properties:
+\begin{itemize}
+    \item A set of vectors in the Vector space can be added together
+    and still remain in the vector space, $\Psi, \Phi \in V \text{ then } \Psi+\Phi \in V$.
+    \item Vectors can be multiplied by scalars and still remain in the vector space
+\end{itemize}
+So a vector space can include functions, matricies, vectors, etc.
+
+The definition of a Hilbert space adds the following properties to the vector space:
+\begin{itemize}
+    \item An inner product is defined, $\langle \Psi | \Phi \rangle$ which maps two vectors to a scalar (the inner product is just a number). 
+    The inner product satisfies the following properties:
+    \begin{itemize}
+        \item Conjugate symmetry: $\langle \Psi | \Phi \rangle = \langle \Phi | \Psi \rangle^* = \overline{\langle \Phi | \Psi \rangle}$
+        \item Linearity in the second argument: $\langle \Psi | a\Phi_1 + b\Phi_2 \rangle = a\langle \Psi | \Phi_1 \rangle + b\langle \Psi | \Phi_2 \rangle$
+        \item Positive-definiteness: $\langle \Psi | \Psi \rangle \geq 0$ with equality if and only if $\Psi = 0$
+    \end{itemize}
+    \item The space is complete, meaning that all Cauchy sequences converge to a limit within the space. 
+    \begin{itemize}
+        \item A Cauchy sequence is a sequence of elements who become arbitrarily close to each 
+        other as the sequence progresses. 
+        Formally, a sequence $\{x_n\}$ is Cauchy if for every $\epsilon > 0$, 
+        there exists an integer $N$ such that for all $m, n > N$, 
+        the distance between $x_m$ and $x_n$ is less than $\epsilon$:
+    \end{itemize} 
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/vector_space.png}
+    \caption{Vector space axoims.}
+    \label{fig:vector space}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.25\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/cauchy_sequence.png}
+    \caption{Cauchy sequence converging to a limit within the space.}\label{cauchy sequence}
+  \end{subfigure}
+\end{figure}
+
+
+So in summary, a Hilbert space is a inner product space that is complete. 
+In QM a Hilbert space is used to describe the state space of a quantum system, 
+where each point in the Hilbert space corresponds to a possible quantum state of the system.
+A quantum state is represented by a state vector (all vectors in the space, called ket) where we have the properties described above 
+as $| \Psi \rangle = | \psi_1 \rangle + | \psi_2 \rangle$, $| \psi \rangle \cdot c = c\cdot | \psi \rangle  $ 
+and for $c=0$ the ket is called a null ket. An important postulate in QM is that for $c \neq 0$ then $| \alpha \rangle \text{ and } c | \alpha \rangle$ are the same physical state.
+This means that only the direction of the ket matters, not the magnitude.
+A quantum state can be expressed as a linear combination of basis states 
+(the set of kets where for every state vector they can be written as a linear combination of them (bases states)) in the Hilbert space,
+which allows for the superposition principle in quantum mechanics (any let in the space
+can be written as $|\alpha \rangle = \sum_{a'} c_{a'} |a'\rangle$ with $c_{a'}$ as a complex coefficient). \textcolor{red}{maybe talk about orthogonal and orthonormal}
+In addition the inner product must be normalized to 1,
+$\langle \Psi | \Psi \rangle = 1$, to ensure that the total probability of all possible outcomes of a measurement is 1.
+
+Example: 
+Basis states: $\{ | 0 \rangle, |1\rangle \}$, with $| \Psi \rangle = c_1 |0\rangle + c_2 |1\rangle \in \mathcal{H}$. Here $c_1, c_2$ are just factors.
+
+
+
+
+
+\textbf{Dual space: }
+The dual space of a Hilbert space $\mathcal{H}$, denoted as $\mathcal{H}^*$,
+ is the set of all linear functionals that map vectors from the 
+Hilbert space to the corresponding complex Conjugated space of the Hilbert space (usually the complex numbers $\mathbb{C}$ or real numbers $\mathbb{R}$).
+
+
+The dual space is the space containing the bra vectors $\langle \Psi |$ corresponding to the ket vectors $| \Psi \rangle$ in the Hilbert space.
+ So we have $ |\alpha \rangle \stackrel{DC}{\longleftrightarrow} \langle \alpha |$ $\Rightarrow$
+$c_{\alpha} | \alpha \rangle + c_{\beta} |\beta \rangle \stackrel{DC}{\longleftrightarrow} c_{\alpha}^{\star} \langle \alpha |+ c_{\beta}^{\star} \langle\beta|$. Here DC 
+means dual correspondence. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.2\textwidth]{Figures/dual_hilbert_space.png}
+  \caption{}\label{dual hilbert space}
+\end{figure}
+The dual space is important in quantum mechanics because it allows us to define inner products ($\langle \alpha |\beta \rangle$), which is just a 
+reciepe to integrate.
+For the inner product the properties are described above in the Hilbert space section. If the inner product is zero, the kets are orthogonal.
+In addition if they are orthogonal and normalized they are orthonormal 
+($| \tilde{\alpha} \rangle= \frac{1}{\sqrt{\alpha \cdot \alpha }} | \alpha \rangle$ where $\langle  \tilde{\alpha}| \tilde{\alpha}\rangle = 1$) ($\sqrt{\alpha \cdot \alpha }$ is the norm of the ket).
+Since magnitude has no physical meaning in QM, we often work with orthonormal basis states.
+
+
+\textbf{Operators acting on states:}
+
+In quantum mechanics, operators are mathematical objects that act on the state vectors (kets) in a Hilbert 
+space to produce new state vectors or to extract information about physical observables.
+
+In QM an observable (like position, momentum, energy) is represented by an operator $\hat{A}$.
+When an operator acts on a state vector, it transforms the state into another state vector. The 
+operator acts on the ket from the left side, $\hat{A} | \alpha \rangle $ and on a bra from the right, $\langle \alpha | \hat{A}$. Thereby, is $\hat{A}$
+not a constant, but a function that takes a ket as input and produces another ket as output. But if the ket
+is an eigenket of the operator (e.g. $| a' \rangle , | a'' \rangle, ... $), then the output is just a scaled version of the input ket:
+\begin{equation}
+    \hat{A} | a' \rangle = a' | a' \rangle, \quad \hat{A} | a'' \rangle = a'' | a'' \rangle, \quad ...
+\end{equation}
+where $a', a'', ...$ are the eigenvalues (just numbers) corresponding to the eigenkets.The physical state of the eigenket 
+is called an eigenstate. 
+\textcolor{red}{maybe example with spin operators, eqn. 1.20}
+We define: $ \hat{A}|\alpha \rangle \stackrel{DC}{\longleftrightarrow} \langle \alpha | \hat{A}^{\dagger}$. 
+Here $\hat{A}^{\dagger}$ is the Hermitian adjoint operator of $\hat{A}$, which is defined such that $\langle \alpha | \hat{A} | \beta \rangle = \langle \beta | \hat{A}^{\dagger} | \alpha \rangle^{\star}$.
+Some rules applies: $\hat{A}\hat{B}\neq \hat{B}\hat{A}$, $\left( \hat{A}\hat{B} \right)^{\dagger} = \hat{B}^{\dagger}\hat{A}^{\dagger}$.
+
+We can define the outer product of a ket and a bra as $\hat{A} = | \alpha \rangle \langle \beta |$ which is an operator.
+
+Operators can be classified into different types based on their properties. Some common types of operators in quantum mechanics include:
+\begin{itemize}
+    \item Hermitian operators: These operators are equal to their own Hermitian adjoint ($\hat{A} = \hat{A}^{\dagger}$) and represent physical observables. 
+    Their eigenvalues are real numbers, which correspond to the possible measurement outcomes of the observable. Their 
+    eigenkets form an orthonormal basis for the Hilbert space.
+    \item Unitary operators: These operators preserve the inner product between state vectors and represent time evolution and symmetry transformations in quantum mechanics,
+     $\hat{U}\hat{U}^{\dagger} = \hat{U}^{\dagger}\hat{U}= \hat{I}$.
+    \item Projection operators: These operators project state vectors onto specific subspaces of the Hilbert space, often used to describe measurements.
+    \item Ladder operators: These operators are used to raise or lower the quantum numbers of certain states, such as in the case of the quantum harmonic oscillator or angular momentum.
+\end{itemize}
+\textcolor{red}{Projection operator, i do not think we have worked with that!!!! so maybe delete if i do not find anything with it when reviewing the qurriculum}. 
+Illegal products: $ |\alpha \rangle \hat{A}$ and $\hat{A} \langle \alpha |$.
+
+I now want to show the associative axiom for operators acting on kets:
+\begin{align*}
+    &1. \text{ Associative/incompatible: }\hat{A}(\hat{B} | \alpha \rangle) = (\hat{A}\hat{B}) | \alpha \rangle\\
+    &2. \text{ Distributive: } \hat{A} (c_1 | \alpha_1 \rangle + c_2 | \alpha_2 \rangle) = c_1 \hat{A} | \alpha_1 \rangle + c_2 \hat{A} | \alpha_2 \rangle\\
+    &3. \text{ Scalar multiplication: } \hat{A} (c | \alpha \rangle) = c (\hat{A} | \alpha \rangle)\\
+    &4. \text{ Non-cummutive}: \hat{A}\hat{B}\neq \hat{B}\hat{A}.
+\end{align*}
+These properties ensure that operators behave consistently when applied to state vectors in a Hilbert space.
+These also lead to $(|\beta \rangle \langle \alpha |) \cdot|\gamma \rangle = |\beta \rangle \cdot (\langle \alpha | \gamma \rangle$. 
+So here the prove that an outer product acting on a ket gives a ket again $\Rightarrow$ operator. On the other hand if 
+$(\langle \alpha | \gamma \rangle) \cdot | \beta \rangle$ this would not apply, because then we would have an illegal product bra acting on ket.
+The second property applies for operators that are linear operators which ensures superposition. These are the operators we work with un QM with the exeption of time evolution operators. 
+The expectation value of an operator $\hat{A}$ in a state $| \alpha \rangle$ is given by $\langle \hat{A} \rangle = \langle \alpha | \hat{A} | \alpha \rangle$.
+
+\textbf{Operators with a continuous spectrum:}
+
+In quantum mechanics, operators with a continuous spectrum are those whose eigenvalues 
+form a continuous infitnite range of possible outcomes rather than discrete values (e.g. spin $\hat{S}_z$: $\frac{1}{2}$ or $-\frac{1}{2}$).
+An example of such an operator is the momentum operator $\hat{p}$ in one dimension, which has eigenvalues that can take any real value from $-\infty$ to $\infty$.
+Operators with a continuous spectrum has the same properties as operators with a discrete spectrum, but the treatment of their eigenvalues and eigenstates requires the use of integrals instead of sums.
+In addition the eigenstates are, instead of a Kronecker delta,  represented by a Dirac delta function ($\langle a' | a'' \rangle = \delta_{a',a''} \rightarrow \langle \xi' | \xi'' \rangle = \delta(\xi' - \xi'')$).
+
+\underline{Momentum operator and its relation to translations:}
+
+As said, the momentum operator is an example of an operator with a continuous spectrum.
+In one dimension, the momentum operator is defined as: $\hat{p} = -i\hbar \frac{\partial}{\partial x}$. 
+However now I want to discuss where it comes from, by looking at translations in space.
+The momentum operator is closely related to the concept of translations in space.
+
+The translation operator $\hat{T}(a)$ is defined as a desplacement operator. E.g. it takes a state $| \psi(x) \rangle$ and translates it by a distance $a$ without changing anything about it. 
+The translation operator has to be unitary to preserve the inner product and probabilities in QM.
+It is a infiniteimal translation defined as: 
+\begin{equation}
+    \hat{T}(dx') | x' \rangle = | x'+dx' \rangle. 
+\end{equation}
+So we end up with a position eigenket with eigenvalue $x' + dx'$. \textcolor{red}{Should i prove the properties for T????}
+The following properties applies to the translation operator:
+\begin{itemize} 
+    \item It is unitary: $\hat{T}^{\dagger}(a) \hat{T}(a) = \hat{T}(a) \hat{T}^{\dagger}(a) = \hat{I}$
+    \item It has the composition property: $\hat{T}(a) \hat{T}(b) = \hat{T}(a+b)$
+    \item The inverse translation is given by: $\hat{T}^{-1}(a) = \hat{T}(-a)$
+    \item The translation operator is non Hermitian: $\hat{T}^{\dagger}(a) \neq \hat{T}(a)$.
+\end{itemize}
+We now try to express the translation operator in terms of a Hermitian operator $\hat{K}$ as:
+\begin{equation}
+    \hat{T}(dx') = \hat{I} - i\hat{K}\cdot  dx'    
+\end{equation}
+where $\hat{I}$ is the identity operator. By accepting this form we can derive the fundamental commutation relation $[x_i , K_j]=i\delta_{ij}$. 
+By using this we can identify $\hat{K}$ with the momentum operator divided by $\hbar$, $\hat{K} = \frac{\hat{p}}{\hbar}$ \textcolor{red}{How is this right???? In addition I do not understand the first eqn. on page 235 in Griffths}.
+From this I get
+\begin{equation}
+    \hat{T}(dx') = \hat{I} - i\frac{p}{\hbar}\cdot  dx'.
+\end{equation} 
+This also makes sense because the momentum operator is basically just an operator that describes what happens to the state as it is shifted by a small displacement. 
+\textit{Therefore the momentum operator is the generator of translations in space.}
+So the K operator can be expressed in other terms by using the de Broglie relation $p = \hbar k$ where $k$ is the wave number. 
+This gives that k (wave number) is the eigenvalue of the operator $\hat{K}$, $\hat{K} | k \rangle = k | k \rangle$. The K operator can be called the wave-number operator. 
+
+By looking at a finitite translation $\Delta x'$ and let the translation happen N times, we then obtain (as $N\rightarrow \infty$): 
+\begin{align*}
+    \hat{T}(dx)=e^{-\frac{i}{\hbar} \hat{p} dx'}.
+\end{align*}
