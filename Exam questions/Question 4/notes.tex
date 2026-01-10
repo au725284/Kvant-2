@@ -1,0 +1,238 @@
+\textbf{The rotation group:}
+
+The rotation group in three dimensions is denoted as SO(3), 
+which stands for the Special Orthogonal group in three dimensions.
+It consists of all rotations about the origin of a three-dimensional Euclidean space 
+that preserve the orientation (angle) and distances. Rotations in SO(3) works under 
+the operation of composition, meaning that performing one rotation followed by another
+is equivalent to a single rotation. In addition the rotation group is nonabelian (non commutive), meaning 
+that the order in which rotations are performed matters (see figure \ref{non commutive rotations}). 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Figures/non.png}
+  \caption{}\label{non commutive rotations}
+\end{figure}
+In S0(3), every rotation can be represented by a $3\times 3$ orthogonal matrix with a determinant of +1 and a unitary matrix.
+\begin{align*}
+    R_x(\phi) = \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & \cos(\phi) & -\sin(\phi) \\
+        0 & \sin(\phi) & \cos(\phi)
+    \end{bmatrix},
+    \quad R_y(\phi) = \begin{bmatrix}
+        \cos(\phi) & 0 & \sin(\phi) \\
+        0 & 1 & 0 \\
+        -\sin(\phi) & 0 & \cos(\phi)
+    \end{bmatrix},
+    \quad R_z(\phi) = \begin{bmatrix}
+        \cos(\phi) & -\sin(\phi) & 0 \\
+        \sin(\phi) & \cos(\phi) & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}.
+\end{align*}
+These represents finite rotations about the x, y, and z axes by an angle $\phi$. 
+
+\underline{Infinitesimal rotations:}
+
+If we instead 
+consider infinitesimal rotations, we can expand over small angles ($\epsilon$) and express them as 
+\begin{align*}
+    R_x(\epsilon) &\approx \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1-\frac{\epsilon^2}{2} & -\epsilon \\
+        0 & \epsilon & 1-\frac{\epsilon^2}{2}
+    \end{bmatrix},\quad
+    R_y(\epsilon) &\approx \begin{bmatrix}
+        1-\frac{\epsilon^2}{2} & 0 & \epsilon \\
+        0 & 1 & 0 \\
+        -\epsilon& 0 & 1-\frac{\epsilon^2}{2}
+    \end{bmatrix},\quad
+    R_z(\epsilon)&\approx \begin{bmatrix}
+        1-\frac{\epsilon^2}{2} & -\epsilon & 0 \\
+        \epsilon & 1-\frac{\epsilon^2}{2} & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+\end{align*}
+For very small angles, we can neglect the second-order terms, 
+which will change the property og non commutativity. This is seen if we look at 
+\begin{align*}
+    R_x(\epsilon)R_y(\epsilon) - R_y(\epsilon)R_x(\epsilon) = 
+    \begin{bmatrix}
+         0 & -\epsilon^2 & 0 \\ 
+         \epsilon^2 & 0 & 0 \\ 
+         0 & 0 & 0 
+    \end{bmatrix}
+\end{align*}
+This can also be written as $R_x(\epsilon)R_y(\epsilon) - R_y(\epsilon)R_x(\epsilon) = R_z(\epsilon^2)- R_{any}(0)=R_z(\epsilon^2)-1$.
+ 
+
+\underline{Rotations in QM:}
+
+In quantum mechanics, rotations are represented by unitary operators that act on the state vectors in a Hilbert space.
+As seen for both translations and time evolution, we can express an infinitesimal operator as 
+\begin{align*}
+    U(R(\epsilon)) = 1 - i G\epsilon,
+\end{align*}
+where $G$ is the generator of the rotation. We know from classical mechanics that angular momentum is the generator of rotations,
+the same as the momentum is the generator of translations and the Hamiltonian is the generator of time evolution.
+So therefore we define the angular momentum operator $\hat{J}$ as the generator of rotations, and let $\epsilon \rightarrow d\phi$ giving us
+\begin{align*}
+    \mathcal{D}(\vec{n}, d\phi)= 1 - i\frac{\vec{J}\cdot \vec{n}}{\hbar}  d\phi,
+\end{align*}
+Where $\vec{n}$ is the axis of rotation and the operator $\vec{J}$ ($\hat{J}$) is taken to be hermitian and therefore lets the rotation operator be unitary. 
+
+If we now consider finite rotations by combining many infinitesimal rotations, we get
+\begin{align*}
+    \mathcal{D}(\vec{n}, \phi) = \lim_{N\to \infty} \left( 1 - i\frac{\vec{J}\cdot \vec{n}}{\hbar}  \frac{\phi}{N} \right)^N 
+    = \exp\left(-i\frac{\vec{J}\cdot \vec{n}}{\hbar} \phi\right),
+\end{align*}
+where we have used the definition of the exponential function.
+In addition we postulate that $\mathcal{D}(R)$ has the same group properties as the rotation group $R$ (see figure below)
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/properties1.png}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Figures/properties2.png}
+  \end{subfigure}
+\end{figure}
+
+\underline{Example with spin-1/2:}
+
+If we now try to investigate how the rotation operator works on a ket and thereby how it affects the physical system. 
+We check this by finding out how the expectation values change under rotation, and thereby how it effects the state of the system.
+We use the spin-1/2 system as an example, where we look at a rotation around the z-axis.  
+
+We start be defining the base kets for a spin-1/2 system as $\{  \ket{+}, \ket{-}\}$. 
+For the z-spin operator the eigenvalues are $\pm \hbar/2$ and the corresponding eigenkets are $\ket{+}$ and $\ket{-}$.
+
+
+
+
+The angular momentum operator for spin-1/2 particles can be expressed in terms of the Pauli matrices ($\vec{J} = \frac{\hbar}{2}\vec{\sigma}$), or in terms of the spin operators ($\vec{J} = \hat{S}_K$).
+The three spin operators are given by:
+\begin{align*}
+    \hat{S}_x = \frac{\hbar}{2} \left(\ket{+}\bra{-}+ \ket{-}\bra{+}\right), \quad
+    \hat{S}_y = \frac{i\hbar}{2} \left(\ket{-}\bra{+}- \ket{+}\bra{-}\right), \quad
+    \hat{S}_z = \frac{\hbar}{2} \left(\ket{+}\bra{+}- \ket{-}\bra{-}\right).
+\end{align*}
+
+We start by looking at how the rotation operator effects the expectation value: 
+$\braket{S_x} \rightarrow\braket{S_x}_R = \braket{\phi | \hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z | \phi}$. 
+This is the operator we are interested in, so we calculate it step by step.
+We start by calculating $\hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z$:
+\begin{align*}
+    \hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z = e^{i\frac{\hat{S}_z}{\hbar}\phi} \hat{S}_x e^{-i\frac{\hat{S}_z}{\hbar}\phi}.
+\end{align*}
+We now insert the Taylor expansion of the exponentials and the spin operator, and get
+\begin{align*}
+    \hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z &= e^{i\frac{\hat{S}_z}{\hbar}\phi} \frac{\hbar}{2} \left(\ket{+}\bra{-}+ \ket{-}\bra{+}\right) e^{-i\frac{\hat{S}_z}{\hbar}\phi}\\
+    &= \frac{\hbar}{2} \left( e^{i\frac{\phi}{2}} \ket{+}\bra{-} e^{i\frac{\phi}{2}} + e^{-i\frac{\phi}{2}} \ket{-}\bra{+} e^{-i\frac{\phi}{2}} \right)\\
+    &= \frac{\hbar}{2} \left( e^{i(\phi/2+\phi/2)} \ket{+}\bra{-} + e^{-i(\phi/2 + \phi/2)} \ket{-}\bra{+} \right).
+\end{align*}
+Where the last equal sign holds because the exponentials are phase factors or just complex numbers. 
+I know that $e^{i\phi}=\cos(\phi) + i \sin(\phi)$ and $e^{-i\phi}=\cos(\phi) - i \sin(\phi)$, so I can rewrite the expression as
+\begin{align*}
+    \hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z &= \frac{\hbar}{2} \left( \cos(\phi) + i \sin(\phi) \right) \ket{+}\bra{-} + \frac{\hbar}{2} \left( \cos(\phi) - i \sin(\phi) \right) \ket{-}\bra{+} \\
+    &= \cos(\phi) \frac{\hbar}{2} \left( \ket{+}\bra{-} + \ket{-}\bra{+} \right) - i\sin(\phi) \frac{\hbar}{2} \left( \ket{+}\bra{-} - \ket{-}\bra{+} \right)\\
+    &= \cos(\phi) \hat{S}_x - \sin(\phi) \hat{S}_y.
+\end{align*}
+So we see that if we rotate the state of the system around the z-axis a finite amount of $\phi$ the expectation
+values of the observables changes as 
+\begin{align*}
+    \braket{S_x}_R = \braket{\phi | \hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z | \phi} = \cos(\phi) \braket{S_x} - \sin(\phi) \braket{S_y}.
+    \braket{S_y}_R = \braket{\phi | \hat{R}_z^{\dagger} \hat{S}_y \hat{R}_z | \phi} = \sin(\phi) \braket{S_x} + \cos(\phi) \braket{S_y}.
+    \braket{S_z}_R = \braket{\phi | \hat{R}_z^{\dagger} \hat{S}_z \hat{R}_z | \phi} = \braket{S_z}.
+\end{align*}
+
+We now look at how the state ket itself changes under the rotation.
+We start by looking at the inital state ket: $\ket{\psi} = \hat{I}\ket{\psi} = \ket{+}\bra{+} \ket{\psi} + \ket{-}\bra{-} \ket{\psi}$. When 
+we apply the rotation operator, we get
+\begin{align*}
+    \ket{\phi}_R = e^{-i\frac{\phi}{2}} \ket{+}\bra{+} \ket{\psi} + e^{i\frac{\phi}{2}} \ket{-}\bra{-} \ket{\psi}.
+\end{align*}
+If we take the special case of $\phi = 2\phi$ we get:
+\begin{align*}
+    \ket{\phi}_{R_{z}(2\phi)} = e^{-i\frac{2\pi}{2}} \ket{+}\bra{+} \ket{\psi} + e^{i\frac{2\pi}{2}} \ket{-}\bra{-} \ket{\psi} = - \ket{\psi}.
+\end{align*}
+So we see that a rotation of $2\pi$ changes the state ket by a global phase factor of -1, and it therefore do not behave like a classical vector.
+
+\textcolor{red}{Maybe include how the rotation operator looks for pauli matrices and maybe talk about SU2}
+% https://www.youtube.com/watch?v=J5RNZ1kT1bg
+
+
+
+\textbf{Angular momentum:}
+
+If we go back and look at the commutation relations for the rotation operators, we see that they are given by
+$R_x(\epsilon)R_y(\epsilon) - R_y(\epsilon)R_x(\epsilon) = R_z(\epsilon^2)- R_{any}(0)=R_z(\epsilon^2)-1$.
+If this is now rewritten in terms of the generators of the rotations, by using the expansion of $\vec{R}= \exp\left(-i\frac{\vec{J}\cdot \vec{n}}{\hbar} \phi\right)$, we get
+\begin{align*}
+    [J_x, J_y] &= i \hbar J_z, \quad [J_y, J_z] = i \hbar J_x, \quad [J_z, J_x] = i \hbar J_y\\
+    [J_i, J_j] &= i \hbar \epsilon_{ijk} J_k. 
+\end{align*}
+This is the fundamental commutation relations for angular momentum operators in quantum mechanics.
+We now define the new opetator $\vec{J}^2 = J_xJ_x + J_yJ_y + J_z J_z$, which commutes with all the components of $\vec{J}$:
+\begin{align*}
+    [\vec{J}^2, J_i] = 0 \quad \text{for } i = x, y, z. 
+\end{align*}
+We now want to find the eigenvalues and eigenkets of both $\vec{J}^2$ and one of its components, usually chosen to be $J_z$.
+We start by defining the eigenvalue $a$ and $b$ such that
+\begin{align*}
+    \vec{J}^2 \ket{a,b} = a \ket{a,b}, \quad J_z \ket{a,b} = b \ket{a,b}.
+\end{align*}
+To find the possible values of $a$ and $b$, we introduce the ladder operators $J_+$ and $J_-$ defined as
+\begin{align*}
+    J_+ = J_x + i J_y, \quad J_- = J_x - i J_y.
+\end{align*}
+The ladder operators have the following commutation relations with $J_z$ and $\vec{J}^2$:
+\begin{align*}
+    [J_z, J_{\pm}] = \pm \hbar J_{\pm}, \quad [\vec{J}^2, J_{\pm}] = 0, \quad [J_+, J_-] = 2 \hbar J_z.
+\end{align*}
+Using these relations, we can show that the ladder operators raise and lower the eigenvalue $b$ by $\hbar$ by looking at the action of $J_z$ on the states $J_{\pm} \ket{a,b}$:
+\begin{align*}
+    J_z (J_{\pm} \ket{a,b}) = (b \pm \hbar) (J_{\pm} \ket{a,b}).
+\end{align*}
+So the resulting ket is still an eigenket of $J_z$ with eigenvalue $b \pm \hbar$.
+We now want to find the possible values of $a$ and $b$.
+
+From the fundamental commutation relations, we can derive that the eigenvalues of $\vec{J}^2$ and $J_z$ which are given by
+\begin{align*}
+    a = \hbar^2 j(j+1),
+    b = \hbar m,
+\end{align*}
+where $j$ is a non-negative integer or half-integer and $m$ takes values from $-j$ to $j$ in integer steps.
+The quantum number $j$ is called the total angular momentum quantum number, and $m$ is called the magnetic quantum number.
+So we get the final expressions for the eigenvalues as
+\begin{align*}
+    \vec{J}^2 \ket{j,m} = \hbar^2 j(j+1) \ket{j,m}, \quad J_z \ket{j,m} = \hbar m \ket{j,m}.
+\end{align*}    
+Since the angular momentum commutation relations are derived from the rotation properties and the generator of rotation ($J_k$) 
+it all follows from the rotation group SO(3).
+
+If we now consider the matrix element of the angular momentum operators in the basis of the eigenkets $\ket{j,m}$, we can find the matrix representation of the angular momentum operators.
+The matrix elements are given by
+\begin{align*}
+    \bra{j,m'} J^2 \ket{j,m} = \hbar^2 j(j+1) \delta_{m',m} \delta_{j',j} \\
+    \bra{j,m'} J_z \ket{j,m} = \hbar m \delta_{m',m} \delta_{j',j} \\
+\end{align*}
+From this we want to find the matrix elements of the ladder operators $J_+$ and $J_-$.
+
+We start by considering $J^2 - J_z = \frac{1}{2}(J_+ J_- + J_- J_+)= \frac{1}{2}(J_+ J_+^{\dagger}+ J_+^{\dagger} J_+)$. 
+So we start by looking at the matrix element $\bra{j',m'} J_+^{\dagger}J_+ \ket{j,m} =\bra{j',m'} (J^2 -J^2_z -\hbar J_z) \ket{j,m}$. 
+By working this out we get the expressions
+\begin{align*}
+    J_+ \ket{j,m} = \hbar \sqrt{(j-m)(j+m+1)} \ket{j,m+1},\\
+    J_- \ket{j,m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j,m-1}\\
+    \bra{j',m'} J_{\pm} \ket{j,m} = \hbar \sqrt{(j\mp m)(j \pm m+1)} \delta_{j',j} \delta_{m',m\pm 1}. 
+\end{align*}
+
+
+\textcolor{red}{maybe talk about representation of the rotation operator  (3.5.4)}
+
+
+
