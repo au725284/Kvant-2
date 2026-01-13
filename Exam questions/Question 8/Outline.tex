@@ -1,0 +1,46 @@
+\textbf{Outline how time-dependent perturbation theory works and dis-
+cuss Fermi’s golden rule.}
+
+\underline{Time-dependent perturbation theory}
+
+\begin{itemize}
+    \item $H(t)=H_0 + V(t)$ with $H_0$: $H_0 |n\rangle = E_n |n\rangle$
+    \item Evolment of system over time: $\ket{\alpha, t_0; t}= \sum c_n(t) e^{-iE_n t/\hbar}\ket{n}$
+    \item Coefficients $c_n(t)$ found by using Interaction picture:
+    \begin{itemize}
+        \item $|\alpha, t_0; t\rangle_I = e^{iH_0 t/\hbar} |\alpha, t_0; t\rangle_S$
+        \item $V_I(t) = e^{iH_0 t/\hbar} V(t) e^{-iH_0 t/\hbar}$
+        \item $i\hbar \frac{d}{dt} |\alpha, t_0; t\rangle_I = V_I(t) |\alpha, t_0; t\rangle_I$
+        \item $c_n(t) = \langle n | \alpha, t_0; t\rangle_I$ 
+        \item $i\hbar \frac{d}{dt} c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm} t} c_m(t)$ with $\omega_{nm} = (E_n - E_m)/\hbar$
+    \end{itemize}
+    \item Solve iteratively:
+    \begin{itemize}
+        \item Initial condition: $c_n(t_0) = \delta_{n\alpha}$
+        \item Zero order: $c_n^{(0)}(t) = \delta_{n\alpha}$
+        \item First order: $c_n^{(1)}(t) = \delta_{n\alpha} - \frac{i}{\hbar} \int_{t_0}^{t} V_{n\alpha}(t') e^{i\omega_{n\alpha} t'} dt'$
+        \item Dyson series for higher orders
+        \begin{align*}
+            c_n^{(k)}(t) &= -\frac{i}{\hbar} \sum_m \int_{0}^{t} dt_k \int_0^{t_k} dt_{k-1} \ldots \int_0^{t_2} dt_1 \\
+            &\quad V_{nm}(t_k) e^{i\omega_{nm}t_k} V_{m m_{k-1}}(t_{k-1}) e^{i\omega_{m m_{k-1}}t_{k-1}} \ldots V_{m_1 i}(t_1) e^{i\omega_{m_1 i}t_1}.
+    \end{align*}
+    \end{itemize}
+\end{itemize}
+
+
+\underline{Fermi’s Golden rule}
+
+\begin{itemize}
+    \item Constant perturbation: $V(t) = V$ for $t \geq 0$, $V(t) = 0$ for $t < 0$
+    \item First order coefficient:
+    \[c_n^{(1)}(t) = -\frac{i}{\hbar} V_{n\alpha} \int_0^t e^{i\omega_{n\alpha} t'} dt' = -\frac{V_{n\alpha}}{\hbar \omega_{n\alpha}} \left(e^{i\omega_{n\alpha} t} - 1\right)\]
+    \item Transition probability: \[P_{\alpha \to n}(t) = |c_n^{(1)}(t)|^2 = \frac{4 |V_{n\alpha}|^2}{\hbar^2 \omega_{n\alpha}^2} \sin^2\left(\frac{\omega_{n\alpha} t}{2}\right)\]
+    \item Energy-time uncertainty principle: $\Delta E \Delta t \sim \hbar$ 
+    \raisebox{-0.3\height}{\includegraphics[width=0.35\textwidth]{Figures/graph_prob.png}}
+    \item Approximates to delta function for large $t$:
+    \[\lim_{t \to \infty} \frac{\sin^2\left(\frac{\omega t}{2}\right)}{\left(\frac{\omega}{2}\right)^2} = 2\pi t \delta(\omega)\]
+    \item Transition rate: \[w_{\alpha \to n} = \frac{d}{dt} P_{\alpha \to n}(t) = \frac{2\pi}{\hbar} |V_{n\alpha}|^2 \delta(E_n - E_\alpha)\]
+    \item For a continuum of final states with density of states $\rho(E)$:
+    \[w_{\alpha \to \text{all}} = \frac{2\pi}{\hbar} |V_{n\alpha}|^2 \rho(E_\alpha)\]
+\end{itemize}
+

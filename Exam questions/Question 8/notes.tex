@@ -1,0 +1,242 @@
+\textbf{Time-dependent perturbation theory:}
+
+In time-dependent perturbation theory, we consider a quantum system described by a Hamiltonian that can be separated into two parts: a time-independent part \( H_0 \) and a time-dependent potential \( V(t) \). The total Hamiltonian is given by:
+\[ H(t) = H_0 + V(t). \]
+
+\underline{Interaction/Dirac picture:}
+
+This Interaction picture can be seen as a middle wat between the Schrödinger and Heisenberg pictures. 
+In this picture, both the state and the operators evolve in time. Here the state is given as 
+\begin{align*}
+    |\psi_I(t)\rangle = e^{iH_0t/\hbar} |\psi_S(t)\rangle,
+\end{align*}
+where $e^{iH_0t/\hbar} = \hat{\mathcal{U}}^{\dagger}_{H_0,t}$. So this is the time evolution operator for the unperturbed (free) Hamiltonian.The free Hamiltonian is in the I-pic invariant in time
+but the Hamiltonian in general is not. 
+By use of this we can define the operators in the interaction picture as
+\begin{align*}
+    &_I\braket{\psi(t)| \hat{\mathcal{U}}^{\dagger}_{H_0,t} O_S(t) \hat{\mathcal{U}}_{H_0,t} |\psi(t)}_I \\
+    &O_I(t) = e^{iH_0t/\hbar} O_S(t) e^{-iH_0t/\hbar}.
+\end{align*}
+Here we see that the basic difference between the Heisenberg and Interaction picture is that in the Heisenberg picture the operators evolve according to the full Hamiltonian,
+while in the Interaction picture they evolve according to the unperturbed Hamiltonian \( H_0 \). 
+We now want to look at the evolution of the states in the Interaction picture.
+The time evolution of the states in the Interaction picture is governed by the equation:
+\begin{align*}
+    &i\hbar \frac{\partial}{\partial t}\ket{\alpha, t_0; t}_I= i\hbar \frac{\partial}{\partial t} \left( e^{iH_0t/\hbar} \ket{\alpha, t_0; t}_S \right)\\
+    &= -H_0 e^{iH_0t/\hbar} \ket{\alpha, t_0; t}_S + e^{iH_0t/\hbar} \left( H_0 + V(t) \right) \ket{\alpha, t_0; t}_S \\
+    &= e^{iH_0t/\hbar} V(t) e^{-iH_0t/\hbar} \left( e^{iH_0t/\hbar} \ket{\alpha, t_0; t}_S \right) \\
+    &= V_I(t) \ket{\alpha, t_0; t}_I.
+\end{align*}
+Thus the difference between the Interaction picture and the Schrödinger picture is that in the Schrödinger picture, the states evolve according to the full Hamiltonian \( H(t) \),
+while in the Interaction picture, the states evolve according to the perturbation \( V(t) \) only.
+For an observable \( O \), that does not contain any explicit time dependence in the S-pic,
+ the time evolution in the Interaction picture is given by:
+\begin{align*}
+    \frac{dO_I(t)}{dt} &= \frac{i}{\hbar} \left[ H_0, O_I(t) \right].
+\end{align*}
+We now consider any general state in the Interaction picture, 
+which can be expanded in terms of the base kets denoted by \( |n\rangle \), which are eigenstates of the unperturbed Hamiltonian \( H_0 \):
+\begin{align*}
+    |\psi_I(t)\rangle = \sum_n c_n(t) |n\rangle,
+\end{align*}
+where the coefficients \( c_n(t) \) are time-dependent and represent the probability amplitudes for finding the system in the state \( |n\rangle \) at time \( t \).
+By substituting this expansion into the time-dependent Schrödinger equation in the Interaction picture, we obtain a set of coupled differential equations for the coefficients \( c_n(t) \):
+\begin{align*}
+    i\hbar \frac{d}{dt} c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm}t} c_m(t),
+\end{align*}
+where \( V_{nm}(t) = \langle n | V_I(t) | m \rangle \) are the matrix elements of the perturbation in the Interaction picture, and \( \omega_{nm} = (E_n - E_m)/\hbar \) is the angular frequency corresponding to the energy difference between states \( |n\rangle \) and \( |m\rangle \).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/pictures.png}
+\end{figure}
+
+
+\underline{Time-dependence two state problems?????? (sec. 5.5.3)}
+
+\textbf{Calculating the coefficients:}
+
+We want to solve the coupled differential equations for the coefficients \( c_n(t) \).
+\begin{align*}
+     \dot{c}_n(t) =-\frac{i}{\hbar} \sum_m V_{nm}(t) e^{i\omega_{nm}t} c_m(t),
+\end{align*}
+We have used the I-pic to derive this equation. So now we can use perturbation theory to solve this equation.
+
+
+
+Another way of calculating the coefficients is to use the time-evolution operator in the Interaction picture, which satisfies the equation:
+\begin{align*}
+    i\hbar \frac{d}{dt} U_I(t, t_0) = V_I(t) U_I(t, t_0),
+\end{align*}
+with the initial condition \( U_I(t_0, t_0) = I \), where \( I \) is the identity operator.
+Here we write $c_t(t)=\braket{n| \hat{\mathcal{U}}_I(t,t_0)|i}$. However here we need the 
+time-evolution operator in the I-pic, which can be formally solved as a time-ordered exponential:
+\begin{align*}
+    U_I(t, t_0) = 1- \frac{i}{\hbar}\int_{0}^{t} V_I(t') U_I(t', t_0) dt'.
+\end{align*}
+Where we can iterate and get a perturbation series expansion for the time-evolution operator:
+\begin{align*}
+    U_I(t, t_0) &= 1 - \frac{i}{\hbar} \int_{t_0}^{t} V_I(t') dt' + \left( -\frac{i}{\hbar} \right)^2 \int_{t_0}^{t} dt' \int_{t_0}^{t'} dt'' V_I(t') V_I(t'') + \ldots
+\end{align*}
+The Dyson series expansion allows us to calculate the time-evolution operator perturbatively, which can then be used to find the coefficients \( c_n(t) \) by projecting onto the basis states \( |n\rangle \).
+
+
+
+
+
+We assume that at time \( t = 0 \), the system is in the state \( |i\rangle \) with energy \( E_i \).
+We want to calculate the probability of finding the system in a different state \( |n\rangle \) with energy \( E_n \) at a later time \( t \).
+We do this by expanding $c_n(t)$ to first order in the perturbation $V_I(t)$:
+\begin{align*}
+    c_n(t)= c_n^{(0)}(t) + c_n^{(1)}(t) + \ldots
+\end{align*}
+Where each $c_n^{(k)}(t)$ is of order $k$ in the perturbation $V^k$. So if we now insert the expansion into the differential equation for $c_n(t)$ we get
+\begin{align*}
+    \sum{k=0}{\infty}\dot{c}_n^{(k)}(t) = -\frac{i}{\hbar}  \sum_m V_{nm}(t) e^{i\omega_{nm}t}\sum_{k=0}{\infty} c_m^{(k)}(t).
+\end{align*}
+By equating terms of the same order in the perturbation, we obtain a hierarchy of equations for the coefficients \( c_n^{(k)}(t) \).
+At zeroth order, we have:
+\begin{align*}
+    \dot{c}_n^{(0)}(t) = 0,
+\end{align*}
+since $V^{(0)}$ and $c_m^{(0)}(t)$ are constants and if we multiply the two orders we get 
+1. order which we do not want so these terms must be zero. This implies that the zeroth-order coefficients are constant in time:
+\begin{align*}
+    c_n^{(0)}(t) = c_n^{(0)}(0) = \delta_{ni}. 
+\end{align*}
+For the first-order coefficients, we have:
+\begin{align*}
+    \dot{c}_n^{(1)}(t) = -\frac{i}{\hbar} V_{ni}(t) e^{i\omega_{ni}t} c_i^{(0)}(t) = -\frac{i}{\hbar} V_{ni}(t) e^{i\omega_{ni}t},
+\end{align*}
+where we have used the fact that \( c_i^{(0)}(t) = 1 \) and \( c_m^{(0)}(t) = 0 \) for \( m \neq i \). And that 
+to keep only first order we only have to keep the term where $V^{(1)}c_m^{(0)}$ to stay inside fist order.
+Integrating this equation from \( 0 \) to \( t \), we obtain the first-order coefficients:
+\begin{align*}
+    c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{0}^{t} V_{ni}(t') e^{i\omega_{ni}t'} dt'.
+\end{align*}
+For second order and higher, the coefficients can be calculated similarly by iterating the process:
+\begin{align*}
+    c_n^{(2)}(t) &= -\frac{i}{\hbar} \sum_m \int_{0}^{t} V_{nm}(t') e^{i\omega_{nm}t'} c_m^{(1)}(t') dt',\\
+   &\Downarrow\\
+    c_n^{(k)}(t) &= -\frac{i}{\hbar} \sum_m \int_{0}^{t} dt_k \int_0^{t_k} dt_{k-1} \ldots \int_0^{t_2} dt_1 \\
+    &\quad V_{nm}(t_k) e^{i\omega_{nm}t_k} V_{m m_{k-1}}(t_{k-1}) e^{i\omega_{m m_{k-1}}t_{k-1}} \ldots V_{m_1 i}(t_1) e^{i\omega_{m_1 i}t_1}.
+\end{align*}
+
+
+\textbf{Specific cases of time-dependent perturbations:}
+
+\underline{Transition probability:}
+
+We look at a two level system with states \( |i\rangle \) and \( |n\rangle \).
+The transition probability from the initial state \( |i\rangle \) to the final state \( |n\rangle \) at time \( t \)
+ is given by the square of the modulus of the coefficient \( c_n(t) \):
+\begin{align*}
+    P_{i \to n}(t) = |c_n(t)|^2.
+\end{align*}
+To first order in the perturbation, the transition probability is given by:
+\begin{align*}
+    P_{i \to n}^{(1)}(t) = |c_n^{(1)}(t)|^2 = \frac{1}{\hbar^2} \left| \int_{0}^{t} V_{ni}(t') e^{i\omega_{ni}t'} dt' \right|^2.
+\end{align*}
+
+\underline{Constant perturbation:}
+
+Here we consider a perturbation that is constant in time, i.e., \( V(t) = V_0 \) for \( t \geq 0 \) and \( V(t) = 0 \) for \( t < 0 \).
+In this case, the matrix elements \( V_{ni}(t) \) are also constant, and we have:
+\begin{align*}
+    c_n^{(1)}(t) = -\frac{i}{\hbar} V_{ni} \int_{0}^{t} e^{i\omega_{ni}t'} dt' = -\frac{i}{\hbar} V_{ni} \left( \frac{e^{i\omega_{ni}t} - 1}{i\omega_{ni}} \right).
+\end{align*}
+This leads to the transition probability:
+\begin{align*}
+    P_{i \to n}^{(1)}(t) = \frac{4|V_{ni}|^2}{|E_n -E_i|^2} \sin^2\left( \frac{(E_n - E_i)t}{2\hbar} \right)\\
+    P_{i \to n}^{(1)}(t) = \frac{4|V_{ni}|^2}{\hbar^2 \omega_{ni}^2} \sin^2\left( \frac{\omega_{ni} t}{2} \right).
+\end{align*}
+
+We see that if we plot this probability as a function of $\omega=\frac{E_n-E_i}{\hbar}$ we get the following graph: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/graph_prob.png}
+\end{figure}
+We see that the height at middle peak is given by $\lim_{\omega\rightarrow 0}\frac{4\sin^2(\omega t/2)}{\omega^2}=t^2$.
+The first zeroes are at $\omega=\pm \frac{2\pi}{t}$ so the width of the main peak is given by $\Delta \omega=\frac{4\pi}{t}$.
+So as time goes the peak gets narrower and higher meaning that the energy is more and more defined. For a given time $t$ the 
+only states that can be reached has to have an energy within the width of the peak $|E_n-E_i |\leq \frac{2\pi \hbar}{t} $. 
+So for short times its possible to make transitions to states with quite different energies, but for long times the only possible transitions are to states with energies very close to the initial energy.
+These two things reflects the energy-time uncertainty relation $\Delta E \Delta t \geq \hbar/2$, and tells us that 
+energy conservation is only strictly valid for long times as for $t\rightarrow \infty$ then $E_n \approx E_i$.
+
+If we now look at many final states $|n\rangle$ that lies around $E=E_n$ and with a density of states $\rho(E)$ then the total transition probability is given by
+\begin{align*}
+    P_{i \to \text{all } n}^{(1)}(t) = \int dE_n \rho(E_n) P_{i \to n}^{(1)}(t)\\
+    = \int dE_n \rho(E_n) \frac{4|V_{ni}|^2}{|E_n -E_i|^2} \sin^2\left( \frac{(E_n - E_i)t}{2\hbar} \right).
+\end{align*}
+If we here assume that $\rho(E_n)$ and $|V_{ni}|^2$ are approximately constant around $E_n \approx E_i$ then we can take them out of the integral and get
+\begin{align*}
+    \frac{2\pi t}{\hbar} \overline{|V_{ni}|^2} \rho(E_i).
+\end{align*}
+This approximation is valid for long times as then the only states that contributes to the integral are those with energies very close to $E_i$. However
+the transfer must still be small so that perturbation theory is valid. So for long times the error in this approximation becomes small, and therefore 
+is it a reasonable approximation to make.
+So the transition probability increases linearly with time, which means that the transition rate is constant in
+time and given by
+\begin{align*}
+    w_{i\rightarrow[n]} = \frac{d}{dt} P_{i \to \text{all } n}^{(1)}(t) = \frac{2\pi}{\hbar} \overline{|V_{ni}|^2} \rho(E_i).
+\end{align*}
+$[n]$ means group od final states around energy $E_n \approx E_i$.
+If we want the expression for a specific final state $|n\rangle$ we just remove the density of states $\rho(E_i)$ and get
+\begin{align*}
+    w_{i\rightarrow n} = \frac{2\pi}{\hbar} |V_{ni}|^2 \delta(E_n - E_i).
+\end{align*}
+This is obtained by looking at the graph and noting that as $t\rightarrow \infty$ then $\int \frac{\sin^2(\omega t/2)}{(\omega/2)^2} \rightarrow 2\pi t \delta(\omega)$.
+This is because for large times the graph becomes very narrow and high so it approaches a delta function.
+These two expressions for the transition rate are known as \textit{Fermi’s Golden rule}. 
+
+\textcolor{red}{something about what $\overline{|V_{ni}|^2}$ means?}
+
+
+
+\underline{Harmonic perturbation:}
+
+Here we consider a perturbation that oscillates harmonically in time, i.e., \( V(t) = V_0 \cos(\omega t) \) for \( t \geq 0 \) and \( V(t) = 0 \) for \( t < 0 \).
+So we write the perturbation as:
+\begin{align*}
+    V(t) = \mathcal{V} e^{i\omega t} + \mathcal{V}^{\dagger} e^{-i\omega t},
+\end{align*}
+where $\mathcal{V}$ is the time-independent part of the perturbation, which can depend on dynamical variables like position and momentum.
+The matrix elements of the perturbation in the Interaction picture are given by:
+\begin{align*}
+    V_{ni}(t) = \langle n | V_I(t) | i \rangle = \langle n | \mathcal{V} | i \rangle e^{i\omega t} + \langle n | \mathcal{V}^{\dagger} | i \rangle e^{-i\omega t}.
+\end{align*}
+The first-order coefficients are then given by:
+\begin{align*}
+    c_n^{(1)}(t) = -\frac{i}{\hbar} \int_{0}^{t} \left( \mathcal{V} e^{i\omega t} + \mathcal{V}^{\dagger} e^{-i\omega t} \right) e^{i\omega_{ni}t'} dt'.
+\end{align*}
+Evaluating this integral, we obtain:
+\begin{align*}
+    c_n^{(1)}(t) = \frac{1}{\hbar} \left[ \frac{1- e^{i(\omega_{ni} + \omega)t}}{\omega_{ni} + \omega}  \mathcal{V}_{ni}+ \frac{1- e^{i(\omega_{ni} - \omega)t} }{\omega_{ni} - \omega} \mathcal{V}^{\dagger}_{ni}\right].
+\end{align*}
+The only change from the constant perturbation case is that we have two terms corresponding to absorption and emission of energy quanta \( \hbar \omega \).
+\begin{align*}
+    \omega_{ni} \rightarrow \omega_{ni} + \omega \quad &\text{(absorption)}\\
+    \omega_{ni} \rightarrow \omega_{ni} - \omega \quad &\text{(emission)}
+\end{align*}
+Where the transition probability is only significant when the denominators are small, i.e., when \( \omega_{ni} \approx \pm \omega \) meaning $$E_n \approx E_i \pm \hbar \omega$$.
+We can therefore interpret these two processes as the system absorbing or emitting a quantum of energy \( \hbar \omega \) from or to the perturbation.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/harmonic_perturbation.png}
+\end{figure}
+The transition rates for absorption and emission can be calculated similarly to the constant perturbation case, leading to:
+\begin{align*}
+    w_{i \to n}^{\text{abs}} = \frac{2\pi}{\hbar} |\mathcal{V}_{ni}|^2 \delta(E_n - E_i - \hbar \omega),\\
+    w_{i \to n}^{\text{em}} = \frac{2\pi}{\hbar} |\mathcal{V}^{\dagger}_{ni}|^2 \delta(E_n - E_i + \hbar \omega).
+    w_{i to [n]}^{\text{abs}} = \frac{2\pi}{\hbar} \overline{|\mathcal{V}_{ni}|^2} \rho(E_i + \hbar \omega),\\
+    w_{i to [n]}^{\text{em}} = \frac{2\pi}{\hbar} \overline{|\mathcal{V}^{\dagger}_{ni}|^2} \rho(E_i - \hbar \omega).
+\end{align*}
+This leads to 
+\begin{align*}
+    \frac{\text{emission rate for } i \rightarrow [n]}{\text{density of final states for } i \rightarrow [n]} =  \frac{\text{absorption rate for } n \rightarrow [i]}{\text{density of final states for }[i]}.
+\end{align*}
+This is called \textit{detailed balance} and is a consequence of the time-reversal symmetry of the symmetry between the two processes.
+
+So to summarize for constant perturbation we obtain appreciable transition probabilities when the final state has the same energy as the initial state,
+while for harmonic perturbation we obtain appreciable transition probabilities when the final state has an energy $E_n \approx E_i +\hbar \omega$ (absorption) and $E_n \approx E_i -\hbar \omega$ (stimulated emmision).

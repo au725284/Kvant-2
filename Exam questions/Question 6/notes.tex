@@ -1,0 +1,303 @@
+\textbf{Relativistic QM:}
+
+The Schrödinger equation only works for non -relativistic particles. 
+This is due to the fact that it is derived under the assumption that the kinetic energy of the particle is much less than its rest mass 
+energy (i.e., \( E \ll mc^2 \)). This arises from the fact that the SE are based on a classical expression for the Hamiltonian ($T=p^2/2m$), where 
+in Relativity, the total energy of a particle is given by \( E^2 = p^2c^2 + m^2c^4 \).
+So in order to accurately describe particles moving at speeds close to the speed of light (e.g. electrons), we need to use relativistic quantum mechanics.
+So we need a new kind of relaticistic wave equation.
+
+Two of the most important relativistic wave equations are the Klein-Gordon equation and the Dirac equation.
+
+\underline{Klein-Gordon (KG) eqn.:}
+
+The Klein-Gordon eqn. was derived by the same approach as for the SE, but starting from the relativistic energy-momentum relation $E^2 = p^2c^2 + m^2c^4 $ instead.
+This equation is given by:
+\begin{align*}
+    \left( \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \nabla^2 + \frac{m^2c^2}{\hbar^2} \right) \psi(\mathbf{r},t) = 0
+\end{align*}
+However the KG eqn. has some problems. It includes second-order time derivatives, which leads to issueas when 
+determing the initial conditions for the wave function. Specifically, both the initial wave function and its first time derivative must be specified,
+which is different from the SE where only the initial wave function is needed. Therefore, the WF itsetf does not provide a complete description of the systems quantum states.
+Therefore the KG eqn. is inconsitent with one of the central principles of quantum mechanics, which states that the wave function should fully describe the physical system.
+In addition to this, the KG eqn. has other issues when it comes to its solutions and interpretation:
+\begin{itemize}
+    \item The probability density associated with the KG eqn. is not positive definite, 
+    which means that it can take on negative values. 
+    This is problematic because probabilities must always be non-negative.
+    \item The KG eqn. allows for solutions with negative energy, 
+    which leads to issues with the interpretation of the wave function and the 
+    stability of the vacuum.
+\end{itemize}
+The negative energy solutions arises from the solution given by $\psi(\mathbf{r}, t) = N e^{\frac{i}{\hbar}(p\cdot x -Et)}$. 
+If this is substituted into the KG eqn., we get the relativistic energy-momentum relation, which has both positive and negative energy solutions:
+\begin{align*}
+    E^2 \psi = (p^2c^2 + m^2c^4) \psi \implies
+    E = \pm \sqrt{p^2c^2 + m^2c^4}
+\end{align*}
+This means that for every positive energy solution, there is a corresponding negative energy solution.
+If negative energy states were allowed in a single particle interpretation, a particle could 
+decay into lower and lower energy states without bound, and thereby emmitting an infinite amount of energy - which is in odd with physical observations.
+It therefore also challenges the stability of the vacuum, as particles could spontaneously transition to these negative energy states with no lower limit, and thereby no ground state. 
+The probability density issue arises from the fact that the probability density for the KG eqn. is given by:
+\begin{align*}
+    \rho(\mathbf{x}, t) &= \frac{i\hbar}{2mc^2} \left( \psi^* \frac{\partial \psi}{\partial t} - \psi \frac{\partial \psi^*}{\partial t} \right)\\
+    &= \frac{E}{mc^2} |\psi|^2 \quad \text{for plane wave solutions: } \psi(\mathbf{r}, t) = N e^{\frac{i}{\hbar}(p\cdot x -Et)}
+\end{align*}
+This expression can take on negative values, which is problematic for a probability density. This is 
+due to the possibility of negative energy solutions, which can lead to negative values for \( \rho \).
+This undermines the interpretation of the wave function as a probability amplitude.
+Due to these issues, the KG eqn. is not suitable for describing single particles in a relativistic context. 
+It overlooks key features such as spin and fine structure. And it fails to predict the correct energy levels of the hydrogen atom.
+
+
+\underline{Dirac eqn.:}
+
+Dirac sought to develop a relativistic wave equation that would overcome the limitations of the KG eqn. and that would 
+be first-order in both space and time derivatives. This would allow for a more consistent interpretation of the wave function.
+He wanted the eqn. to be fully consistent with special relativity, so it had to be 
+both linear in the space and time derivatives, and it had to respect the principles of Lorentz invariance, of momentum and energy, 
+$E^2 =p^2c^2 + m^2 c^4$. If we start from the relativistic energy-momentum relation, we can write:
+$E= \sqrt{p^2c^2 + m^2 c^4}$ and then get $\sqrt{p^2c^2 + m^2 c^4}\psi$, If we then apply $E\rightarrow i\hbar \frac{\partial}{\partial t}$
+we get $i \hbar  \frac{\partial}{\partial t} \psi= \sqrt{p_x^2c^2 + p_y^2 c^2 + p_z^2 c^2 m^2 c^4 }\psi$. However, the square root operator is non-local and difficult to work with.
+So he wanted to reqwrite the equation in a linear form involving $p_x, p_y, p_z$. 
+To achieve this, Dirac proposed an equation of the form:
+\begin{align*}
+    &i \hbar \frac{\partial}{\partial t} \psi = \left( c \alpha_x p_x + c \alpha_y p_y + c \alpha_z p_z + \beta mc^2 \right) \psi \quad 
+    \text{where } \alpha_x, \alpha_y, \alpha_z, \beta \text{ are matrices that need to be determined.}
+    &\vec{p}^2c^2 + m^2 c^4 = (c \alpha_x p_x + c \alpha_y p_y + c \alpha_z p_z + \beta mc^2)^2.    
+\end{align*}
+For this to be true we must have $\alpha_x^2 = \alpha_y^2 = \alpha_z^2 = \beta^2 = 1$ and for the cross terms to vanish, we must have
+$\{\alpha_i, \alpha_j\} = 0$ for $i \neq j$ and $\{\alpha_i, \beta\} = 0$. In order for these 
+relations to holds the $\alpha_i$ and $\beta$ must be represented by matrices, specifically $4 \times 4$ matrices.
+If we choose to look at the pauli $2\times 2$ matricies we get that $\alpha_i=\sigma_i$ and $\beta=0$ but we know that $\beta^2=1$ so this cannot be true.
+Therefore we need to use $4\times 4$ matrices. If we choose to again look at the pauli matrices, we can construct the following representation:
+\begin{align*}
+    \alpha_i = \begin{pmatrix}
+        0 & \sigma_i \\
+        \sigma_i & 0
+    \end{pmatrix}, \quad
+    \beta = \begin{pmatrix}
+        I & 0 \\
+        0 & -I
+    \end{pmatrix}
+\end{align*}
+Where \( I \) is the \( 2 \times 2 \) identity matrix. These matricies satisfy the required anticommutation relations. 
+We now have the Dirac equation in the form:
+\begin{align*}
+    i \hbar \frac{\partial}{\partial t} \psi = \left( -i \hbar c \vec{\alpha} \cdot \nabla + \beta mc^2 \right) \psi
+\end{align*}
+Here $\alpha = \begin{bmatrix}
+    \alpha_x \\
+    \alpha_y \\ 
+    \alpha_z
+\end{bmatrix}$.
+This can be rewritten as:
+\begin{align*}
+    (i\hbar \gamma^{\mu} \partial_{\mu} - mc) \psi = 0.
+\end{align*}
+This is the covariant form of the Dirac eqn. because it is Lorentz invariant and its structure is preserved under Lorentz transformations.
+Here $\gamma^0= \beta, \gamma^1 = \beta \alpha_x, \gamma^2 = \beta \alpha_y, \gamma^3 = \beta \alpha_z$ and 
+$\psi(x,t) = \begin{bmatrix}
+    \psi_1(x,t) \\
+    \psi_2(x,t) \\
+    \psi_3(x,t) \\
+    \psi_4(x,t)
+\end{bmatrix}$ which is a four-component spinor wave function (Dirac spinor). 
+Here each components are complex functions that describe the quantum state of the particle. In this 
+case when calculating the probability density we get $\rho = \mathbf{\psi}^{\dagger} \mathbf{\psi}$, which is always positive definite sinced the 
+modulus squared of a complex number is always equal to or greater than zero, and the 
+probability current is given by $\mathbf{j} = c \mathbf{\psi}^{\dagger} \alpha \mathbf{\psi}$.
+
+
+\textbf{A free particle:}
+
+We here look at a free particle solution to the Dirac eqn. of the form:
+\begin{align*}
+    \psi(\mathbf{r}, t) = u(\mathbf{p}) e^{\frac{i}{\hbar}(\mathbf{p} \cdot \mathbf{r} - Et)}
+\end{align*}
+where \( u(\mathbf{p}) \) is a four-component spinor that depends on the momentum \( \mathbf{p} \) but not on time or space.
+Substituting this into the Dirac equation gives:
+\begin{align*}
+    E u(\mathbf{p}) = (c \alpha \cdot \mathbf{p} - \beta mc^2)
+\end{align*}
+which is known as the time independent Dirac equation in momentum space. 
+We now look at a stationary particle with \( \mathbf{p} = 0 \). In this case the equation reduces to:
+\begin{align*}
+    E u(0) = \beta mc^2 u(0)
+\end{align*}
+The eigenvalues of \( \beta \) are \( +1 \) and \( -1 \), leading to two possible energy solutions:
+\begin{align*}
+    E = +mc^2 \quad \text{and} \quad E = -mc^2.
+\end{align*}
+If we look at the positive energy solution \( E = +mc^2 \), the corresponding spinor \( u_+ \) can be written as:
+\begin{align*}
+    u_+ = \begin{pmatrix}
+        u_A \\
+        0
+    \end{pmatrix}=\begin{pmatrix}
+        \chi_1 \\
+        \chi_2 \\
+        0 \\
+        0
+    \end{pmatrix}=\phi_1 e_1 + \phi_2 e_2
+\end{align*}
+where for the negative energy solution \( E = -mc^2 \), the spinor \( u_- \) is given by:
+\begin{align*}
+    u_- = \begin{pmatrix}
+        0 \\
+        u_B
+    \end{pmatrix}=\begin{pmatrix}
+        0 \\
+        0 \\
+        \chi_3 \\
+        \chi_4
+    \end{pmatrix}=\phi_3 e_3 + \phi_4 e_4.
+\end{align*}
+If we insert these spinors back into the plane wave solution, we get the full wave functions for the positive and negative energy solutions:
+\begin{align*}
+    \psi_+(\mathbf{r}, t) &= u_+ e^{\frac{i}{\hbar}(-mc^2 t)} = \begin{pmatrix}
+        \chi_1 \\
+        \chi_2 \\
+        0 \\
+        0
+    \end{pmatrix} e^{\frac{i}{\hbar}(-mc^2 t)} \\
+    \psi_-(\mathbf{r}, t) &= u_- e^{\frac{i}{\hbar}(+mc^2 t)} = \begin{pmatrix}
+        0 \\
+        0 \\
+        \chi_3 \\
+        \chi_4
+    \end{pmatrix} e^{\frac{i}{\hbar}(+mc^2 t)}.
+\end{align*}
+Where $\psi_+$ and $\psi_-$ span our four-dimensional spinor space, respectively. The components $\chi_1, \chi_2$ correspond to the two spin states of the particle with positive energy,
+while $\chi_3, \chi_4$ correspond to the two spin states of the particle with negative energy. So we now have 4 independent solutions to the Dirac eqn. for a free particle at rest. 
+We need the negative solutions to have a complete set of solutions for the Dirac eqn., even though they pose interpretational challenges. This is because Dirac eqn. needs four solutions. 
+If we then consider the probabitliy density for these solutions, we find that both positive and negative energy solutions yield positive definite probability densities:
+\begin{align*}
+    \rho_+ &= \psi_+^{\dagger} \psi_+ = |\chi_1|^2 + |\chi_2|^2 \geq 0 \\
+    \rho_- &= \psi_-^{\dagger} \psi_- = |\chi_3|^2 + |\chi_4|^2 \geq 0.
+\end{align*}
+This shows that the Dirac equation provides a consistent framework. It yieldt three properties: 
+\begin{itemize}
+    \item A positive definite probability density for both positive and negative energy solutions.
+    \item A complete set of four independent solutions for a free particle at rest, accounting for both spin states and energy signs.
+    \item The probability density is constant in time 
+\end{itemize}
+
+We now go back to non-zero momentum solutions. The general solution for a free particle with momentum \( \mathbf{p} \) can be written as:
+Is our plane wave still a valid solution for non-zero momentum? Yes it is. 
+We start by looking at the time independent Dirac eqn. in momentum space:
+\begin{align*}
+    E u(\mathbf{p}) = (c \alpha \cdot \mathbf{p} + \beta mc^2) u(\mathbf{p})
+\end{align*}
+We want to find the explicit form of the spinor \( u(\mathbf{p}) \) for a particle with momentum \( \mathbf{p} \). So 
+we start by choosing $\alpha$ and $\beta$ to be the representations given earlier. This gives us:
+\begin{align*}
+    E \begin{pmatrix}
+        u_A(\mathbf{p}) \\
+        u_B(\mathbf{p})
+    \end{pmatrix} = \begin{pmatrix}
+        mc^2 I & c \vec{\sigma} \cdot \mathbf{p} \\
+        c \vec{\sigma} \cdot \mathbf{p} & -mc^2 I
+    \end{pmatrix} \begin{pmatrix}
+        u_A(\mathbf{p}) \\
+        u_B(\mathbf{p})
+    \end{pmatrix}.
+\end{align*}
+This leads to a set of coupled equations for the components \( u_A(\mathbf{p}) \) and \( u_B(\mathbf{p}) \):
+\begin{align*}
+    (E - mc^2) u_A(\mathbf{p}) &= c \vec{\sigma} \cdot \mathbf{p} \, u_B(\mathbf{p}) \\
+    (E + mc^2) u_B(\mathbf{p}) &= c \vec{\sigma} \cdot \mathbf{p} \, u_A(\mathbf{p}).
+\end{align*}
+From this we can express \( u_B(\mathbf{p}) \) in terms of \( u_A(\mathbf{p}) \):
+\begin{align*}
+    u_B(\mathbf{p}) = \frac{c \vec{\sigma} \cdot \mathbf{p}}{E + mc^2} u_A(\mathbf{p}).
+\end{align*}
+Now we can choose \( u_A(\mathbf{p}) \) to be an arbitrary two-component spinor, which we can denote as \( \chi_s \), where \( s \) labels the spin state (e.g., spin up or spin down).
+Thus, the full spinor \( u(\mathbf{p}) \) can be written as:
+\begin{align*}
+    u(\mathbf{p}) = \begin{pmatrix}
+        \chi_s \\
+        \frac{c \vec{\sigma} \cdot \mathbf{p}}{E + mc^2} \chi_s
+    \end{pmatrix}.
+\end{align*}
+These spinors \( u(\mathbf{p}) \) represent the positive energy solutions of the Dirac equation for a free particle with momentum \( \mathbf{p} \).
+where we end up with the two possible solutions for each momentum state, corresponding to the two spin states of the particle.
+\begin{align*}
+    u(\mathbf{p})_1 = \begin{pmatrix}
+    1\\ 0 \\ \frac{cp_z}{E+mc^2} \\ \frac{c(p_x + i p_y)}{E+mc^2}
+    \end{pmatrix}, \quad 
+    u(\mathbf{p})_2 = \begin{pmatrix}
+    0\\ 1  \\ \frac{c(p_x - i p_y)}{E+mc^2} \\ \frac{-cp_z}{E+mc^2} 
+    \end{pmatrix}.
+\end{align*}
+If we then instead look at the negative energy solutions, we can follow a similar procedure. 
+Defining $u_B$ in terms of $u_A$ we get:
+\begin{align*}
+    u_A(\mathbf{p}) = \frac{c \vec{\sigma} \cdot \mathbf{p}}{E - mc^2} u_B(\mathbf{p}).
+\end{align*}
+Choosing \( u_B(\mathbf{p}) \) to be an arbitrary two-component spinor \( \chi_s \), we can write the full spinor \( u(\mathbf{p}) \) for negative energy solutions as:
+\begin{align*}
+    u(\mathbf{p})_3 = \begin{pmatrix}
+    \frac{cp_z}{E-mc^2}\\ \frac{c(p_x + i p_y)}{E-mc^2} \\ 1 \\ 0
+    \end{pmatrix}, \quad 
+    u(\mathbf{p})_4 = \begin{pmatrix}
+    \frac{c(p_x - i p_y)}{E-mc^2} \\ \frac{-cp_z}{E-mc^2} \\0\\ 1 
+    \end{pmatrix}.
+\end{align*}
+So we get that the plane wave solutions for a free particle Dirac eqn. have the form 
+\begin{align*}
+    \psi(\mathbf{r}, t) = u_i(E,\mathbf{p}) e^{\frac{i}{\hbar}(\mathbf{p} \cdot \mathbf{x} - Et)}, \quad i=1,2,3,4
+\end{align*}
+These satisfy the Dirac equation for a free particle with momentum \( \mathbf{p} \) and energy \( E \), provided that the 
+energy and momentum satisfy the relativistic energy-momentum relation $E^2 = p^2 c^2 + m^2 c^4$. 
+If we use this solution for $\mathbf{p}=0$ we see that the eigenvalues are $E = \pm mc^2 $ which is the rest 
+frame solution we found earlier.
+
+\textcolor{red}{Read sec. 8.2.2 in Sakurai for another approach. Helicity, chirality, L and R handeness spinors.}
+
+\underline{Physical interpretation:}
+
+As described under the KG eqn., the negative energy solutions pose interpretational challenges.
+It was first suggested that these negative energy states were protons and electrons where the negative energy states. 
+But this violates charge conservation, as electrons and protons have opposite charges.
+Dirac then proposed the hole theory, which suggested that all negative energy states are filled in the vacuum, forming a "sea" of negative energy electrons.
+This solution made the vacuum stable, as all negative energy states were filled, preventing electrons from decaying into them and thereby letting 
+the lowest energy state be the vacuum itself as all negative energy states are filled and all positive energy states empty.
+
+
+If an electron were removed from the sea of neagtive energy states, it would leave behind a "hole" that would 
+behave like a particle with opposite charge and momentum but positive energy. This hole was interpreted as a positron (same idea as a proton but same mass as an electron), the antiparticle of the electron.
+This led to the definition of antimatter, where every particle has a corresponding antiparticle with the same mass but opposite charge and quantum numbers.
+
+
+So if a electron in the negative energy sea gains enough energy (e.g., from a photon), it can be excited to a positive energy state, leaving behind a hole in the negative energy sea, called a positron. 
+This reaction is known as pair production, where a photon can create an electron-positron pair.'
+If the electron then falls back into the hole, the electron and positron annihilate each other (pair annihilation), releasing energy in the form of photons.
+
+The interpretation was later reformulated in the context of quantum field theory (QFT), where particles and antiparticles are
+ treated as excitations of underlying fields. Here the negative energy solutions were interpreted as negative energy particles that travels 
+ backwards in time, which is equivalent to positive energy antiparticles traveling forward in time. This interpretation avoids the need for the Dirac sea and provides a more consistent framework for understanding particle-antiparticle creation and annihilation processes.
+
+This also makes it more convinient to write $E\rightarrow -E, \mathbf{p} \rightarrow - \mathbf{p}$ and then 
+write $v_2(E, \mathbf{p
+}) = u_3(-E, -\mathbf{p
+})$ and $v_1(E, \mathbf{p
+}) = u_4(-E, -\mathbf{p
+})$
+
+
+Dirac's eqn. also successfully predicted the intrinsic spin-1/2 of the electron and its magnetic moment, which were later confirmed experimentally.
+This can be seen if we find the expectation value of the hamiltonian and the orbital angular momentum operator. In non-relativistic QM the two operators commute,
+but in relativistic QM they do not commute. This means that the total angular momentum must include an additional term, which is identified as the spin angular momentum.
+The spin is an intrinsic form of angular momentum that is not associated with any spatial motion, but rather is a fundamental property of the particle itself, given as 
+$\mathbf{S} = \frac{\hbar}{2} \Sigma$ where $\Sigma = \begin{pmatrix}
+    \sigma & 0 \\
+    0 & \sigma
+\end{pmatrix}$.
+This therefore explains why there are two solutions for each energy state, corresponding to the two possible spin states of the electron (spin up and spin down).
+
+% https://www.youtube.com/watch?v=KdEZ-GOgZ3s&list=PLb8Y66BCLlbwXNh26fP_dIZ5DiDXUbROt&index=15
+
+
+

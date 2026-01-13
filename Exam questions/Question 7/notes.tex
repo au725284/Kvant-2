@@ -1,0 +1,99 @@
+\textbf{Symmetries in QM:}
+
+Symmetries in QM is a transformation that does not change the physical properties of a system but may change the state of the system.
+Meaning the physical predictions are unchanged under the transformation: the probabilities and expectation values of observables remain the same.
+In QM this means that the Hamiltonian is invariant under the symmetry transformation. Symmetries in QM can be used to define selection rules, conservation laws, and degeneracies in the energy spectrum.
+ For any unitary operator \( U \) representing a symmetry, we have:
+\begin{align*}
+    U H U^\dagger = H\quad \Rightarrow \quad [U, H] = 0\quad \xrightarrow{\text{Heisenberg's eqn. of motion}} \quad \frac{dU}{dt} = 0
+\end{align*}
+This means that for a symmetry transformation to be a symmetry of the system, the operator 
+\( U \) must commute with the Hamiltonian \( H \) and be a unitary or antiunitary operator.
+\begin{itemize}
+    \item Unitary: $U^{\dagger} = U^{-1}$ and linear: $$U(c_1 \psi_1 + c_2 \psi_2) = c_1 U\psi_1 + c_2 U\psi_2$$
+    \item Antiunitary: \( AiA^{-1} = -i \) and nonlinear: $$A(c_1 \psi_1 + c_2 \psi_2) = c_1^* A\psi_1 + c_2^* A\psi_2$$
+\end{itemize}
+An antiunitary operator preserves probabilities but complex-conjugates amplitudes; it is antilinear and is required to represent symmetries like time reversal.
+Both unitary and antiunitary operators preserve inner products, ensuring that physical predictions remain unchanged and $AA^{\dagger}=UU^{\dagger}=1$ (hermitian conjugate). 
+This leads to Wigner's theorem, which states that any symmetry transformation in quantum mechanics can be represented by either a unitary or an antiunitary operator.
+
+
+\textit{Continous symmetry} is a symmetry transformation that can be made by an arbitrary small change. 
+Noether's theorem states that for every continuous symmetry of the action of a physical system, there is a corresponding conservation law.
+This means that the unitary transformation can be expanded as \( U = e^{iG\epsilon} \approx 1 + iG\epsilon + \mathcal{0}(\epsilon^2)\) for small \( \epsilon \), 
+where \( G \) is the generator of the symmetry transformation. This also leads to the generator being hermitian ($G=G^{\dagger}$)
+If we take a finite $\epsilon$ 
+which are infitnitesimal we can write the operator as $U= \left(1 + \frac{i\epsilon}{N} G\right)^N$ for $N\rightarrow \infty$ we have $U = e^{i\epsilon G}$.
+For example, translational symmetry leads to conservation of momentum, rotational symmetry leads to conservation of angular momentum, and time translation symmetry leads to conservation of energy.
+
+\textit{Discrete symmetry} is on the other hand a symmetry transformation that cannot be made by an arbitrary small change (you either do the transformation or not!). Here the 
+higher order terms in the expansion of \( U \) cannot be neglected. 
+Examples of discrete symmetries include parity (spatial inversion), time reversal, and lattice translation.
+These can then be divided into two classes: infinite and finite many transformations. The infinite class are the ones that can be repeated infinite times without returning to the original state, e.g., lattice translations.
+The finite class are the ones that return to the original state after a finite number of applications, e.g., parity and time reversal.
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Figures/disc_cont.png}
+\end{figure}
+So unitary operators are representations of synnetries in Hilbert space. Observables are their generators. 
+
+\textcolor{red}{more deep about discrete symmetries!!}
+
+\textbf{Time reversal discrete symmetry:}
+
+The time reversal operator \( T \) is an antiunitary operator that reverses the direction of time in a quantum system. 
+This means that if a system evolves forward in time according to the Schrödinger equation, applying the time reversal operator will make it evolve backward in time which is equivalent to the 
+system going in the opposite direction (opposite motion).
+The time reversal operator does not change the position of particles but reverses their momenta and angular momenta. So it reverse the evolution 
+instead of changing the state itself.
+In addition, since the time reversal operator is antiunitary, it also complex conjugates the wavefunction.
+Mathematically, the time reversal operator can be represented as:
+\begin{align*}
+    \Theta \psi(\mathbf{r}, t) = \psi^*(\mathbf{r}, -t)
+\end{align*}
+For time reversal we have $\Theta H = H \Theta $ if the system is time-reversal invariant, meaning that the Hamiltonian commutes with the time reversal operator.
+The time reversal operator has the following properties:
+\begin{itemize}
+    \item Antiunitary: \( \Theta i\Theta^{-1} =-i \Theta\Theta^{-1}= -i \)
+    \item Involution: \( \Theta^2 = \pm 1 \) (the sign depends on the system, e.g., for spin-1/2 particles, \( T^2 = -1 \))
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/time_rev.png}
+\end{figure}
+
+The behavier of observables under time reversal is given by:
+\begin{itemize}
+    \item Position: \( \Theta \hat{x} \Theta^{-1} = \hat{x} \) (even under time reversal)
+    \item Momentum: \( \Theta \hat{p}\Theta^{-1} = -\hat{p} \) (odd under time reversal)
+    \item Angular momentum: \( \Theta \hat{L} \Theta^{-1} = -\hat{L} \) (odd under time reversal)
+    \item Spin: \( \Theta \hat{S} \Theta^{-1} = -\hat{S} \) (odd under time reversal)
+    \item Hamiltonian: \( \Theta H \Theta^{-1} = H \) (if the system is time-reversal invariant)
+    \item Expectation values (observables):  $ \braket{\beta|\hat{X}|\alpha }= \braket{\tilde{\alpha} |\Theta \hat{X}^{\dagger} \Theta^{-1}| \tilde{\beta} }  $. 
+    \item Even vs. Odd operators: An operator \( \hat{X} \) is even under time reversal if \( \Theta \hat{X} \Theta^{-1} = \hat{X} \) and odd if \( \Theta \hat{X} \Theta^{-1} = -\hat{X} \).
+\end{itemize}
+
+
+\underline{Time-reversal for a spin-1/2 system:}
+
+\textcolor{red}{Help!!!!}
+
+
+
+
+
+\textbf{Parity:}
+
+Also called space inversion, is a discrete symmetry that involves the inversion of spatial coordinates.
+The parity operator \( \pi \) is a unitary operator that transforms the position vector \( \mathbf{r} \) to its negative:
+\begin{align*}
+    \pi \psi(\mathbf{r}) = \psi(-\mathbf{r})
+\end{align*}
+
+% https://www.youtube.com/watch?v=OsvXeTEQxyg
+
+even and odd: % https://www.youtube.com/watch?v=o8l6Yz9EHps

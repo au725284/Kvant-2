@@ -1,0 +1,66 @@
+\textbf{Describe the concept of Hilbert space and dual space, operators
+acting on states, and operators with a continuous spectrum, in-
+cluding the momentum operator and its relation to translations.}
+
+\underline{Hilbert space}
+
+\begin{itemize}
+    \item Vector space in $\infty $D
+    \begin{itemize}
+        \item Addition and scalar multiplication
+        \item Includes functions, matricies, vectors etc.
+    \end{itemize}
+    \item With inner product
+    \begin{itemize}
+        \item Conjugate symmetry: $\langle \Psi | \Phi \rangle = \langle \Phi | \Psi \rangle^* $
+        \item Linearity in the second argument: $\langle \Psi | a\Phi_1 + b\Phi_2 \rangle = a\langle \Psi | \Phi_1 \rangle + b\langle \Psi | \Phi_2 \rangle$
+        \item Positive: $\langle \Psi | \Psi \rangle \geq 0$ with equality if and only if $\Psi = 0$
+    \end{itemize}
+    \item Fullfill ompleteness
+    \begin{itemize}
+        \item Any Cauchy sequence converges to a limit in the space.
+    \end{itemize}
+\end{itemize}
+
+
+\underline{Quantum states}
+
+\begin{itemize}
+    \item Can be represented as a superposition of basis states: $|\Psi \rangle = \sum_n c_n | n \rangle$
+    \item Basis states are orthonormal and normalized: $\langle n | m \rangle = \delta_{nm}$
+    \item Normalized: $\langle \Psi | \Psi \rangle = 1$ $\Rightarrow$ magnitude is unimportant but not direction
+    \item Dual space
+    \begin{itemize}
+        \item For each ket $|\Psi \rangle$ there is a bra $\langle \Psi |$ in the dual space
+        \item $c_{\alpha} | \alpha \rangle + c_{\beta} |\beta \rangle \stackrel{DC}{\longleftrightarrow} c_{\alpha}^{\star} \langle \alpha |+ c_{\beta}^{\star} \langle\beta|$. 
+        \item Makes inner products possible
+    \end{itemize}
+\end{itemize}
+
+
+\underline{Operators}
+
+\begin{itemize}
+    \item Gives info on physical observables
+    \item Rules: associative axioms
+    \item Inner prod. a number and outer prod. an operator
+    \item Continuous spectrum
+    \begin{itemize}
+        \item E.g. position and momentum operators
+        \item Eigenvalues form a continuum
+        \item $\langle a' | a'' \rangle = \delta_{a',a''} \rightarrow \langle \xi' | \xi'' \rangle = \delta(\xi' - \xi'')$.
+    \end{itemize}
+    \item Momentum operator
+    \begin{itemize}
+        \item $\hat{p} = -i\hbar \frac{\partial}{\partial x}$
+        \item Derived from translation operator $\hat{T}(a)$ for infinitesimal translations
+        \item Properties of translation operator
+        \item $\hat{T}(dx) = \hat{I} - i \hat{K} dx$
+        \item Commutation relation: $[x_i , p_j]=i\delta_{ij}$
+        \item Finite translation: $\hat{T}(a) = e^{-\frac{i}{\hbar} \hat{p} a}$
+        \item Generates translations in space
+    \end{itemize}
+\end{itemize}
+
+
+

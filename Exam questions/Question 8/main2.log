@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  10 JAN 2026 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  13 JAN 2026 13:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 5/main2.tex"
-(c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 5/main2.tex
+**"c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 8/main2.tex"
+(c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 8/main2.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\tex/latex/memoir\memoir.cls
@@ -1189,10 +1189,41 @@ Package hyperref Info: Link coloring OFF on input line 6.
 \openout6 = `main2.out'.
 
 Package cleveref Info: loaded `english' language definitions on input line 8.
- (notes.tex) [1
+ (notes.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<Figures/pictures.png, id=6, 699.36281pt x 213.79875pt>
+File: Figures/pictures.png Graphic file (type png)
+<use Figures/pictures.png>
+Package pdftex.def Info: Figures/pictures.png  used on input line 51.
+(pdftex.def)             Requested size: 273.00278pt x 83.45946pt.
+ [1
 
-{C:/Users/laura/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (Outline.tex)
-runsystem(latexminted cleantemp  --timestamp 20260110134011 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
+{C:/Users/laura/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2 <./Figures/pictures.png>]
+<Figures/graph_prob.png, id=36, 888.31876pt x 419.31656pt>
+File: Figures/graph_prob.png Graphic file (type png)
+<use Figures/graph_prob.png>
+Package pdftex.def Info: Figures/graph_prob.png  used on input line 157.
+(pdftex.def)             Requested size: 273.00278pt x 128.86708pt.
+ [3] [4 <./Figures/graph_prob.png>]
+<Figures/harmonic_perturbation.png, id=50, 854.44218pt x 230.36063pt>
+File: Figures/harmonic_perturbation.png Graphic file (type png)
+<use Figures/harmonic_perturbation.png>
+Package pdftex.def Info: Figures/harmonic_perturbation.png  used on input line 226.
+(pdftex.def)             Requested size: 273.00278pt x 73.6009pt.
+) [5 <./Figures/harmonic_perturbation.png>] (Outline.tex
+File: Figures/graph_prob.png Graphic file (type png)
+<use Figures/graph_prob.png>
+Package pdftex.def Info: Figures/graph_prob.png  used on input line 39.
+(pdftex.def)             Requested size: 159.25278pt x 75.173pt.
+) [6]
+runsystem(latexminted cleantemp  --timestamp 20260113133645 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
 
  
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -1208,17 +1239,17 @@ Package rerunfilecheck Info: File `main2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39334 strings out of 467871
- 816017 string characters out of 5416900
- 1334720 words of memory out of 5000000
- 67653 multiletter control sequences out of 15000+600000
- 629720 words of font info for 47 fonts, out of 8000000 for 9000
+ 39419 strings out of 467871
+ 817860 string characters out of 5416900
+ 1354720 words of memory out of 5000000
+ 67714 multiletter control sequences out of 15000+600000
+ 632408 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,11n,122p,612b,1088s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on main2.pdf (1 page, 27848 bytes).
+ 110i,12n,122p,612b,1106s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main2.pdf (6 pages, 287319 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

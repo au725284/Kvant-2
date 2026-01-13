@@ -4,13 +4,140 @@ Coupling of angular momentum is the procesdure used to multiply to angular momen
 This is especially useful in atomic physics where we have to deal with multiple electrons, each having their own angular momentum.
 Or with the case of spin-orbit coupling (nuclear physics), where we have to deal with the coupling of the orbital angular momentum and the spin angular momentum of a single electron.
 
-\underline{Multiplying angular momenta:}
+\underline{Uncoupled basis:}
 
 I will start with the general case of two angular momenta $\vec{J_1}$ and $\vec{J_2}$, with quantum numbers $j_1, m_1$ and $j_2, m_2$ respectively. 
 $m$ being the magnetic quantum number ($m = -j, -j+1, ..., j$) and $j$ the total angular momentum quantum number ($j=0, 1/2, 1, 3/2, 2, ...$).
+It is imporant that these two angular momenta operators satisfy the useal andular momentum commutation relations:
+\begin{align*}
+    [J_{1i}, J_{ij}] &= i \hbar \epsilon_{ijk} J_{1k}\quad [J_{2i}, J_{2j}] &= i \hbar \epsilon_{ijk} J_{2k} \quad
+    [J_{1i}, J_{2j}] &= 0
+\end{align*}
+The last commutation relation holds because they come from different sources (e.i. acts on different particles) and therefore do not interfere with each other.
+\newline Proof:
+\begin{align*}
+  [J_{1i}, J_{2j}]
+  &= [J_{1i} \otimes I , I \otimes J_{2j}] \\
+  &= (J_{1i} \otimes I)(I \otimes J_{2j})
+     - (I \otimes J_{2j})(J_{1i} \otimes I) \\
+  &= J_{1i} \otimes J_{2j}
+     - J_{1i} \otimes J_{2j} \\
+  &= 0
+\end{align*}
+This holds because $(A\otimes I)(I\otimes B)=(AI)\otimes(iB)=A\otimes B$. 
+If we add these two angular momenta together, we get a new angular momentum operator $\vec{J} = \vec{J_1} + \vec{J_2}$, with quantum numbers $j, m$.
+Here it is imporant to note that the total angular momentum operator $\vec{J}$ also satisfies the angular momentum commutation relations:
+\begin{align*}
+    [J_{i}, J_{j}] &= i \hbar \epsilon_{ijk} J_{k}
+\end{align*}
+
+However, this is not just a simple matrix addition, since the two momenum operators lives in different sub spaces 
+with different dimensions (e.i. $d_1 = 2j_1+1$, $d_2 = 2j_2+1$).
+The total ket that desctribes these two angular momenta independently is called the uncoupled ket, and is given by:
+\begin{equation}
+    |j_1, m_1; j_2, m_2 \rangle = |j_1, m_1 \rangle \otimes |j_2, m_2 \rangle
+\end{equation}
+The dimension of this ket is $d = d_1 \times d_2 = (2j_1 + 1)(2j_2 + 1)$. In this case 
+each ket is an eigenket of the individual angular momentum operators $\vec{J_1}$ and $\vec{J_2}$:
+\begin{align*}
+    \vec{J_1}^2 |j_1, m_1; j_2, m_2 \rangle &= \hbar^2 j_1(j_1+1) |j_1, m_1; j_2, m_2 \rangle\\
+    J_{1z} |j_1, m_1; j_2, m_2 \rangle &= \hbar m_1 |j_1, m_1; j_2, m_2 \rangle\\
+    \vec{J_2}^2 |j_1, m_1; j_2, m_2 \rangle &= \hbar^2 j_2(j_2+1) |j_1, m_1; j_2, m_2 \rangle\\
+    J_{2z} |j_1, m_1; j_2, m_2 \rangle &= \hbar m_2 |j_1, m_1; j_2, m_2 \rangle
+\end{align*}
+In this basis we have these commutation relations $[J_1^2 , J_2^2] =0$, $[J_{1z} , J_{2z}] =0$, which can be seen from the fact that the individual angular momentum operators act on different subspaces.
+\newline
+\underline{Coupled basis:}
+The total angular momentum operator $\vec{J}$ has its own set of quantum numbers $j, m$. 
+The total ket that describes the coupled angular momenta is called the coupled ket, and is given by:
+\begin{equation}
+    |j_1, j_2; j, m \rangle
+\end{equation}
+So it can diagonilize the total angular momentum operator $\vec{J}$ but not necessarily the individual angular momentum operators $\vec{J_1}$ and $\vec{J_2}$. 
+Here we have a ket that is an eigenket of $\vec{J}^2$, $J_z$, $\vec{J_1}^2$ and $\vec{J_2}^2$.:
+\begin{align*}
+    \vec{J}^2 |j_1, j_2; j, m \rangle &= \hbar^2 j(j+1) |j_1, j_2; j, m \rangle\\
+    J_z |j_1, j_2; j, m \rangle &= \hbar m |j_1, j_2; j, m \rangle\\
+    \vec{J_1}^2 |j_1, j_2; j, m \rangle 
+    &= \hbar^2 j_1(j_1+1) |j_1, j_2; j, m \rangle\\
+    \vec{J_2}^2 |j_1, j_2; j, m \rangle &= \hbar^2 j_2(j_2+1) |j_1, j_2; j, m \rangle
+\end{align*}
+The reason behind keeping $j_1$ and $j_2$ in the coupled ket is that they are needed to specify the subspace we are working in.
+In this basis we have this commutation relation $[J^2 , J_1^2] =0$, which can be seen if we write $J^2$ as $J^2 = J_1^2 + J_2^2 + 2J_{1z}J_{2z} +J_{1+}J_{2-}+ J_{1-}J_{2+}$.
+The relation between these two basis is given by the Clebsch-Gordan coefficients:
+\begin{equation}
+    |j_1, j_2; j, m \rangle = \sum_{m_1, m_2} |j_1, m_1; j_2, m_2 \rangle \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle
+\end{equation}
+Where we have inserted the identity operator in the uncoupled basis $\sum_{m_1, m_2} |j_1, m_1; j_2, m_2 \rangle \langle j_1, m_1; j_2, m_2 | = I$, and 
+get the Clebsch-Gordan coefficients $\langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle$ as the expansion coefficients.
 
 
 
-\underline{Spin-Orbit coupling:}
 
 
+
+
+
+\textbf{Clebsch-Gordan coefficients (CGC):}
+
+We know that both the coupled and uncoupled basis form a complete orthonormal set of basis kets, and are normalized, which means that 
+transformation between these two basis is unitary.
+Under unitary transformations the probability/norm is conserved and the two basis are both before and after transformation orthonormal and complete (they both live in the same Hilbert space).
+In addition is the transformation reversiqle, which means that we can move freely between the two basis whithout loss of information of the two states.
+
+THe Clebsch-Gordan coefficients therefore have the following properties:
+\begin{itemize}
+    \item They are real numbers $\Rightarrow$ they are equal to their complex conjugate.
+    \item They satisfy the selection rules: 
+    \item They satisfy the orthogonality relations:
+\end{itemize}
+By using the orthonormality of the uncoupled states and the completion of the coupled states we can see that
+each row of the transformation matrix is normalized. 
+
+\underline{Selection rules for CGC:}
+
+So we start by finding the possivle values of $j$ and $m$ for given $j_1$ and $j_2$.
+We do this by looking at the eigenvalues of the operators $\vec{J}^2$ and $J_z$.
+By using the transformation made by the CGC, that $J_z = J_{1z} + J_{2z}$, and that 
+$J_z$ works on the coupled ket while $J_{1z}$ and $J_{2z}$ work on the uncoupled ket, we get:
+\begin{align*}
+    J_z \ket{j_1, j_2;j, m} &= \sum_{m_1, m_2} (J_{1z} + J_{2z}) \ket{j_1, m_1; j_2, m_2} \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle\\
+    m\hbar \ket{j_1, j_2;j, m} &= (m_1 + m_2)\hbar \ket{j_1, j_2 ;j,m}. 
+\end{align*}
+So we get that $m = m_1 + m_2 $ with $m_{max} = m_{1,max}+ m_{2,max} = j_1 + j_2 $, with $j = m_{max}$ which leaves us with $j_{max} = j_1 + j_2$. 
+We now wants to find the number of states. We know that for a given $j$ there are $2j+1$ possible values of $m$ and thereby $2j+1$ number of states $\ket{j_1, j_2; j,m}$.
+The total number of states in the coupled basis is therefore:
+\begin{align*}
+    N &= \sum_{j=j_{min}}^{j_{max}} (2j + 1) = (2j_1 + 1)(2j_2 + 1) \\
+    &= (j_{max} -j_{min}+ 1)(j_{max} + j_{min} + 1) = (j_1+j_2+1)^2 -j_{min}^2. 
+\end{align*}
+From this we can solve for $j_{min}$ and get that $j_{min} = |j_1 - j_2|$.
+So all possible values of $j$ are given by:
+\begin{equation*}
+    j = |j_1 - j_2|, |j_1 - j_2| + 1, ..., j_1 + j_2 - 1, j_1 + j_2.
+\end{equation*}
+If we go back to look at $J_z \Rightarrow J_z-J_{1z}-J_{2z} = 0$ we can see that this means that the only non-zero Clebsch-Gordan coefficients are those that satisfy $m = m_1 + m_2$: 
+\begin{align*}
+    \langle j_1, m_1; j_2, m_2 | J_z-J_{1z}-J_{2z}|j_1, j_2; j, m \rangle = 0\\
+    (m - m_1 - m_2) \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle = 0
+\end{align*}
+Therefore, if $m \neq m_1 + m_2$ then $\langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle = 0$.
+ So only the CGC with $m=m_1 +m_2$ are non-zero.
+So we end up with the following selection rules for the CGC (where the CGC is non-zero):
+\begin{itemize}
+    \item $|j_1 - j_2| \leq j \leq j_1 + j_2$
+    \item $m = m_1 + m_2$
+\end{itemize}
+
+
+\underline{Claculating CGC:}
+
+\textcolor{red}{I do not understand this part well enough to write it down... How the hell do i calculate this??????}
+% https://www.youtube.com/watch?v=zowSSN9hGHU
+
+\underline{Coupling of spin-1 and spin-1/2 particles:}
+% https://www.youtube.com/watch?v=7JmYPyWLsXQ
+
+
+
+\textcolor{red}{Maybe also spin orbit coupling}
