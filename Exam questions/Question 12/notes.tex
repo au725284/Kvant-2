@@ -1,0 +1,207 @@
+\textbf{Quantization of EM field:}
+
+We now want to quantize the electromagnetic field, i.e., describe it in terms of photons instead of waves. 
+First we look at Maxwell's equations in free space (no charges or currents):
+\begin{align}
+    \nabla \cdot \mathbf{E} &= 0, \\
+    \nabla \cdot \mathbf{B} &= 0, \\
+    \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B
+    }}{\partial t}, \\
+    \nabla \times \mathbf{B} &= \frac{1}{c^2} \
+    \frac{\partial \mathbf{E}}{\partial t}.
+\end{align}
+
+We start by thinking about our wave traveling inside a cubic box of side length $L$ with periodic boundary conditions
+such that the wave repeats itself after length L.
+We now look at the vector potential $\mathbf{A}$ and scalar potential $\phi$, defined by:
+\begin{align}
+    \mathbf{B} &= \nabla \times \mathbf{A}, \\
+    \mathbf{E} &= -\nabla \phi - \frac{\partial \mathbf{A}}{\partial t}.
+\end{align}
+We can choose the Coulomb gauge, where $\nabla \cdot \mathbf{A} = 0$ and $\phi = 0$. In the Coulomb gauge, 
+the propagation of the EM waves are perpendicular to the direction of the vector potential.
+In this gauge, Maxwell's equations reduce to the wave equation for the vector potential:
+\begin{equation}
+    \nabla^2 \mathbf{A} - \frac{1}{c^2} \frac{\partial^2 \mathbf{A}}{\partial t^2} = 0.
+\end{equation}
+We now want to find the solitions to this eqn. 
+This eqn. has plane wave solutions of the form:
+\begin{equation}
+    \mathbf{A}(\mathbf{x}, t) = \mathbf{A}_{k,\lambda} e^{\pm i(\mathbf{k}\cdot \mathbf{x} - \omega t)}. 
+\end{equation}
+Here we know that $\omega = c|\mathbf{k}|$ from the dispersion relation for EM waves. By using the 
+boundary conditions, we find that only certain wave vectors $\mathbf{k}$ are allowed: $k = \frac{2\pi}{L}(n_x, n_y ,n_z)$
+with $n_x, n_y, n_z$ integers. This means that we have a discrete set of allowed wave vectors inside the box, which 
+let us to the concept of modes or harmonic oscillators. Each allowed wave vector $\mathbf{k}$ corresponds to a mode of the EM field and behaves like an independent harmonic oscillator.
+Each mode can have two independent polarizations, labeled by $\lambda = 1,2$, corresponding to the two possible directions of the electric field perpendicular to the direction of propagation.
+We can now express the vector potential as a sum over all allowed modes:
+\begin{equation}
+    \mathbf{A}(\mathbf{x}, t) = \sum_{\mathbf{k}, \lambda} \hat{e}_{k,\lambda} \left( \mathbf{A}_{\mathbf{k}, \lambda} e^{i(\mathbf{k}\cdot \mathbf{x} - \omega t)} + \mathbf{A}_{\mathbf{k}, \lambda}^* e^{-i(\mathbf{k}\cdot \mathbf{x} - \omega t)} \right).
+\end{equation}
+Since $\mathbf{A}(\mathbf{x}, t)$ (direction: $\hat{e}_{k,\lambda}$) is perpendicular to $\mathbf{k}$, we have $\mathbf{k} \cdot \hat{e}_{k,\lambda} = 0$ and linear polarization of light.
+Here $\mathbf{A}_{\mathbf{k}, \lambda}$ are just quantity coefficients that determine the amplitude and phase of each mode.
+We now look at the Hamiltonian of the EM field, which can be expressed as a sum over all modes:
+\begin{equation}
+    \mathcal{E} = \frac{1}{2} \int \left( \epsilon_0 \mathbf{E}^2 + \frac{1}{\mu_0} \mathbf{B}^2 \right) d^3x.
+\end{equation}
+By substituting the expressions for $\mathbf{E}$ and $\mathbf{B}$ in terms of the vector potential $\mathbf{A}$, we can rewrite the Hamiltonian as:
+\begin{equation}
+    \mathcal{E} = \epsilon_0 V \sum_{\mathbf{k}, \lambda} \omega_k^2 \left( \mathbf{A}_{\mathbf{k}, \lambda} \mathbf{A}_{\mathbf{k}, \lambda}^* + \mathbf{A}_{\mathbf{k}, \lambda}^* \mathbf{A}_{\mathbf{k}, \lambda} \right),
+\end{equation}
+with $V=L^3$ being the volume of the box.
+Everything until now has been classical.
+
+\underline{QM:}
+
+Now we want to associate $\mathcal{E}$ with the eigenvalues of the Hamiltonian operator $\hat{H}$.
+This we can do by writing the Hamiltonian in terms of creation and annihilation operators: 
+\begin{equation}
+    \hat{H} = \sum_{\mathbf{k}, \lambda} \hbar \omega_k  a_{\mathbf{k}, \lambda}^\dagger a_{\mathbf{k}, \lambda} + E_0.
+\end{equation}
+Here we are working from the standpoint of a noninteracting EM field. 
+So we start by determing if we are working with fermions or bosons. 
+We check this by considering rotations of the system. In this case for rotation about e.g. the $\mathbf{z}$-axis we have the 
+operator $\hat{R}_z(\theta) = e^{-i \theta \hat{J}_z / \hbar}$, where $\hat{J}_z$ is the angular momentum operator along the z-axis.
+If we then rotate the system (let $\hat{R}_z(\theta)$ act on a state) we get the phase factor $e^{-i m \theta}$, where $m$ 
+is eigenvalue associated with the angular momentum along the z-axis. So we need to se if we get integer (bosons) or half-integer (fermions) values for $m$.
+So we now look at how the unitvector $\hat{e}_{k,\lambda}$ transforms under rotation:
+\begin{align}
+    \hat{R}_z(\theta) \hat{e}_{k,1} &= \cos(\theta) \hat{e}_{k,1} - \sin(\theta) \hat{e}_{k,2}, \\
+    \hat{R}_z(\theta) \hat{e}_{k,2} &= \sin(\theta) \hat{e}_{k,1} + \cos(\theta) \hat{e}_{k,2}.
+\end{align}
+We define the $m$ values by looking at $\hat{e}_{k,\lambda}$ as circularly polarized vectors:
+\begin{align}
+    \hat{e}_{k,+} &= -\frac{1}{\sqrt{2}} (\hat{e}_{k,1} + i \hat{e}_{k,2}), \\
+    \hat{e}_{k,-} &= \frac{1}{\sqrt{2}} (\hat{e}_{k,1} - i \hat{e}_{k,2}).
+\end{align}
+From this we see that under rotation we get:
+\textcolor{red}{(check sign convention!)}
+\begin{align}
+    \hat{R}_{z, \pm}(\theta) \hat{e}_{k,\pm} &= e^{\pm i \theta} \hat{e}_{k,\pm}.
+\end{align}
+This means that we have $m = \pm 1$, so the photons are bosons (integer spin).
+We use this to write the operator expressions for the vector potential:
+\begin{equation}
+    \hat{\mathbf{A}}(\mathbf{x}, t) = \sum_{\mathbf{k}, \lambda} \sqrt{\frac{\hbar}{2 \epsilon_0 V \omega_k}} \hat{e}_{k,\lambda} \left( a_{\mathbf{k}, \lambda} e^{i(\mathbf{k}\cdot \mathbf{x} - \omega t)} + a_{\mathbf{k}, \lambda}^\dagger e^{-i(\mathbf{k}\cdot \mathbf{x} - \omega t)} \right).
+\end{equation}
+with $\mathbf{A}_{k,\lambda}  = \sqrt{\frac{\hbar}{2\epsilon_0 V\omega_k}} \hat{a}_{\lambda}(\mathbf{k})$. 
+So we can use bosonic commutation relations for the creation and annihilation operators to write the Hamiltonian operator:
+\begin{align}
+    \hat{H} &= \sum_{\mathbf{k}, \lambda} \hbar \omega_k \left( a_{\mathbf{k}, \lambda}^\dagger a_{\mathbf{k}, \lambda} + \frac{1}{2} \right) \\
+    &= \sum_{\mathbf{k}, \lambda} \hbar \omega_k \left( N_{\mathbf{k}, \lambda} + \frac{1}{2} \right).
+\end{align}
+Which is just a sum over all harmonic oscillators with frequency $\omega_k$.
+
+\textbf{Quantum states of the EM field:}
+
+Quantum optics is the study of how light and matter interact at the quantum level.
+The simplest quantum state of the EM field is the vacuum state $\ket{0}$, which has no photons present.
+The next simplest states are the Fock states (number states) $\ket{n}$, which have a definite number of photons $n$ in a given mode.
+
+By using the number representation, we can write any quantum state of the EM field as a superposition of Fock states with different 
+number of photons. This superpostion allows us to describe states with an indeterminate number of photons, such as coherent states and squeezed states.
+It is the manipulation of these states that have led to the formulation of quantum optics. 
+
+\underline{Coherent state:}
+
+An example of a quantum state of the EM field is the coherent state $\ket{\alpha}$,
+ which is defined as an eigenstate of the annihilation operator. This means due to the following formula that they 
+ are also an eigenstate of the electric field operator, for positve and negative frequency parts:
+\begin{align*}
+    &\hat{a} \ket{\alpha} = \alpha \ket{\alpha} \quad \text{ For coherent state} \\
+    &\Rightarrow \hat{E}^{(+)}=  \frac{i}{c} \sum_{\mathbf{k},\lambda } \omega_k \left( \mathbf{A}_{\mathbf{k},\lambda}
+    e^{-i(\omega_k t - \mathbf{k} \cdot \mathbf{x})} - \mathbf{A}_{\mathbf{k},\lambda}^{\star}
+    e^{i(\omega_k t - \mathbf{k} \cdot \mathbf{x})}\right)\mathbf{e}_{\mathbf{k},\lambda} 
+\end{align*}
+We now look at one example of this manipulation, the single mode electric field operator:
+\begin{equation}
+    \hat{E}(\chi) = \hat{E}^{(+)}(\chi) + \hat{E}^{(-)}(\chi) =\frac{1}{2}  \left( a e^{-i\chi} + a^\dagger e^{i\chi} \right).
+\end{equation}
+with $\chi = \omega t - kz - \pi/2$ as the phase angle. 
+If we have two situations of $\chi$-values differing by $\pi/2$, we get two non-commuting operators. 
+\begin{align*}
+    &\hat{E}(0) = \frac{1}{2} (a + a^\dagger)  \quad \text{Position quadreture}\\
+    &\hat{E}(\pi/2) = -\frac{i}{2} (a - a^\dagger) \quad \text{Momentum quadreture}.
+\end{align*}
+For a generel $\chi$ in a Fock state $\ket{n}$ we have:
+\begin{align*}
+    &\langle n | \hat{E}(\chi) | n \rangle = 0, \\
+    &\langle \alpha | \hat{E}^2(\chi) | \alpha \rangle = \frac{1}{2} \left(\alpha e^{-i\chi}+ \alpha^{\star} e^{i\chi}\right).
+\end{align*}
+with $\ket{\alpha}$ being a coherent state.
+
+If we consider the \textit{the uncertainty relation for E-field} we start by looking at the commutator:
+\begin{equation}
+    [\hat{E}(\chi_1), \hat{E}(\chi_2)] = -\frac{i}{2} \sin(\chi_1 - \chi_2). 
+\end{equation}
+From this we can use the general uncertainty relation to get:
+\begin{equation}
+    \Delta E(\chi_1) \Delta E(\chi_2) \geq \frac{1}{4} |\sin(\chi_1 - \chi_2)|.
+\end{equation}
+If we look at the example of $\chi_1 = \chi_2$ and for $\chi_1 - \chi_2 = \pi/2$ we get:
+\begin{align*}
+    &(\Delta E(\chi))^2 \geq 0\\
+    &\Delta E(\chi_1) \Delta E(\chi_1 + \pi/2) \geq \frac{1}{4}.
+\end{align*}
+We now look at the example of the coherent state $\ket{\alpha}$:
+\begin{align*}
+    &(\Delta E(\chi))^2 = \frac{1}{4}, \\
+    &\Delta E(\chi_1) \Delta E(\chi_1 + \pi/2) = \frac{1}{4}.
+\end{align*}
+
+
+\underline{squeezed states:}
+
+If we apply a squeezing operator $\hat{S}(\zeta) = s e^{i\theta}$ to the vacuum state:
+\begin{align*}
+    \ket{\zeta} &= \hat{S}(\zeta) \ket{0}, \\
+    &= \exp\left( \frac{1}{2} (\zeta^{\star} a^2 - \zeta a^{\dagger^2}) \right) \ket{0}, \quad \zeta = r e^{i\theta}.
+\end{align*}
+Which leads us to the uncertainty in the electric field for a squeezed state:
+\begin{align*}
+    (\Delta E(\chi))^2 = \frac{1}{4} \left( e^{2s} \sin^2(\chi - \theta/2) + e^{-2s} \cos^2(\chi - \theta/2) \right).
+\end{align*}
+This leads us to the uncertainty boundaries:
+\begin{align*}
+    &\Delta E(\chi)_{min} = \frac{1}{2} e^{-2s}, \quad \text{ for} \chi= \frac{\theta}{2} + m\pi \\
+    &\Delta E(\chi)_{max} = \frac{1}{2} e^{2s} \quad \text{ for} \chi= \frac{\theta}{2} + m\pi + \frac{\pi}{2}\\
+    &\Delta E(\chi)_{min} \Delta E(\chi)_{max} = \frac{1}{4}.
+\end{align*}
+
+\underline{Cashimir effect:}
+
+We have a vacuumated conducting box with two uncharged conducting plates inside separated by a distance $d$. 
+In classical physics, we would expect no force between these plates since there are no charges or currents present but this is different in QM.
+We look at how waves would behave inside this box. We see that only waves with certain wavelengths are allowed inside the box due to the boundary conditions imposed by the conducting walls.
+The boundary conditions arives from waves traveling in the z-direction between the plates, such that the electric field must be zero at the surfaces of the plates.
+Therefore there would be few waves between the plates compared to outside, leading to a difference in energy density.
+This difference in energy density results in an attractive force between the plates, known as the Casimir force.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/Casimir_effect.png}
+    \caption{The Casimir effect setup with two conducting plates separated by a distance $d$.}
+\end{figure}
+
+The presence of the plates imposes boundary conditions on the electromagnetic field, leading to a discrete set of allowed modes.
+The energy associated with these modes can be expressed as:
+\begin{equation}
+    E_0 = \frac{1}{2} \sum_{\mathbf{k},\lambda} \hbar \omega_{\mathbf{k}},
+\end{equation}
+where $\omega_{\mathbf{k}}$ are the frequencies of the allowed modes.
+
+So we start by considering the difference in the energy on each side of the plates:
+\begin{equation}
+    \Delta E = E_{outside} - E_{inside}.
+\end{equation}
+Calculating this difference involves summing over the allowed modes on each side, which can be done using techniques from quantum field theory.
+The resulting force per unit area (pressure) between the plates can be derived from the energy difference:
+\begin{equation}
+    \mathcal{F}(d) = -\frac{\partial \Delta E}{\partial d}.
+\end{equation}
+The final result for the Casimir force per unit area between two perfectly conducting plates is given by:
+\begin{equation}
+    \mathcal{F}(d) = -\frac{\pi^2 \hbar c}{240 d^4}.
+\end{equation}
+
+
+

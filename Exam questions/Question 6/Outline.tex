@@ -1,0 +1,72 @@
+\textbf{Discuss the solutions of the Dirac equation for free particles and
+their physical interpretation.}
+
+\underline{Dirac equation}
+\begin{itemize}
+    \item SE derive for non-relativistic particles.
+    \item Relaticistic energy: $E = p^2 c^2 + m^2 c^4$
+    \item Klein-Gordon equation: 
+    \begin{itemize}
+        \item second order in time, negative probability densities.
+        \item Negative energy solutions $\Rightarrow$ emmitting radiation without limit.
+        \item Not stable in vacuum and overlooks spin.
+    \end{itemize}
+    \item Solution: Dirac equation 
+    \begin{itemize}
+        \item First order in time and space.
+        \item Write energy $\vec{p}^2c^2 + m^2 c^4 = (c \alpha_x p_x + c \alpha_y p_y + c \alpha_z p_z + \beta mc^2)^2$
+        \item Matrices $\alpha_i$ and $\beta$ satisfy anticommutation relations. Results in 
+        \begin{align*}
+        \alpha_i = \begin{pmatrix}
+            0 & \sigma_i \\
+            \sigma_i & 0
+        \end{pmatrix}, \quad
+            \beta = \begin{pmatrix}
+                I & 0 \\
+                0 & -I
+            \end{pmatrix}
+        \end{align*}
+        \item Covariant form of eqn.: \((i\hbar \gamma^{\mu} \partial_{\mu} - mc) \psi = 0\)
+        \item Introduces spinor 
+    \end{itemize}
+\end{itemize}
+
+
+\underline{Free particle solution}
+\begin{itemize}
+    \item Plane wave solution: \(\psi = u(p) e^{\frac{i}{\hbar}(p \cdot x -Et)}\)
+    \item Time-independent Dirac equation: \((c \vec{\alpha} \cdot \vec{p} + \beta mc^2) u(p) = E u(p)\)
+    \item Zero momentum case $\Rightarrow$ eigenvalues \(E = \pm mc^2\)
+    \item Four independent solutions:
+    \begin{itemize}
+        \item Two positive energy solutions (spin up and down)
+        \item Two negative energy solutions (spin up and down)
+    \end{itemize}
+    \item General solution for arbitrary momentum:
+    % \begin{align*}
+    %     u^{(s)}(p) = \sqrt{\frac{E + mc^2}{2mc^2}} \begin{pmatrix}
+    %         \chi^{(s)} \\
+    %         \frac{\vec{\sigma} \cdot \vec{p} c}{E + mc^2} \chi^{(s)}
+    %     \end{pmatrix}, \quad s = 1,2
+    % \end{align*}
+    % \item Negative energy solutions:
+    % \begin{align*}
+    %     v^{(s)}(p) = \sqrt{\frac{E + mc^2}{2mc^2}} \begin{pmatrix}
+    %         \frac{\vec{\sigma} \cdot \vec{p} c}{E + mc^2} \chi^{(s)} \\
+    %         \chi^{(s)}
+    %     \end{pmatrix}, \quad s = 1,2
+    % \end{align*}
+\end{itemize}
+
+\underline{Physical interpretation}
+
+\begin{itemize}
+    \item Vacuum instability problem: Dirac sea of negative energy states.
+    \item Hole theory: absence of electron in negative energy state interpreted as positron.
+    \item Predicts existence of antimatter
+    \item Feynman: Antiparticles moves backwards in time, negative energy solutions reinterpreted.
+    \item Dirac equation accounts for intrinsic spin of particles.
+    \item Need for extra term in total angular momentum, since orbital angular momentum alone does not commute with Dirac Hamiltonian.
+\end{itemize}
+
+

@@ -1,9 +1,9 @@
-\textbf{Outline the concept of unitary time evolution. Describe the dif-
-ferent pictures of quantum mechanics. (Heisenberg and Schr¨odinger)}
+\textbf{Outline the concept of unitary time evolution. Describe the different pictures of quantum mechanics. (Heisenberg and Schrödinger)}
 
 \underline{Unitary time evolution}
 
 \begin{itemize}
+    \item Unitary operator $\hat{U}\hat{U}^{\dagger}=1$ and $\hat{U}^{\dagger} = \hat{U}^{-1}$
     \item $\ket{\alpha,t_0; t} = \hat{\mathcal{U}}(t,t_0) \ket{\alpha, t_0}$
     \item Properties of $\hat{\mathcal{U}}(t,t_0)$:
     \begin{itemize}
@@ -13,11 +13,9 @@ ferent pictures of quantum mechanics. (Heisenberg and Schr¨odinger)}
     \end{itemize}
     \item Infinitesimal time evolution: $\hat{\mathcal{U}}(t_0 + dt, t_0) = \hat{1} - i\hat{\Omega} dt$ ($\Omega $ is Hermitian)
     \item Hamiltonian generates time evolution: $\hat{\mathcal{U}}(t_0 + dt, t_0) = \hat{1} - \frac{i}{\hbar} \hat{H}(t_0) dt$
-    \item Schr¨odinger equation: $i\hbar \frac{\partial}{\partial t} \ket{\alpha, t_0; t} = \hat{H}(t) \ket{\alpha, t_0; t}$
+    \item Schrödinger equation: $i \hbar \frac{\partial}{\partial t} \hat{\mathcal{U}}(t, t_0) = \hat{H} \hat{\mathcal{U}}(t, t_0)$
+    \item Solution for time-independent Hamiltonian: $\hat{\mathcal{U}}(t,t_0) = e^{-\frac{i}{\hbar} \hat{H}(t - t_0)}$
 \end{itemize}
-
-\underline{Solutions??????}
-
 
 \underline{Heisenberg vs. Schrödinger picture}
 
@@ -35,8 +33,16 @@ ferent pictures of quantum mechanics. (Heisenberg and Schr¨odinger)}
         \item Operators are time-dependent: $\hat{A}_H(t) = \hat{\mathcal{U}}^\dagger(t,t_0) \hat{A}_S \hat{\mathcal{U}}(t,t_0)$
         \item Expectation value: $\bra{\alpha}_H \hat{A}_H(t) \ket{\alpha}_H$
     \end{itemize}
-    \item unitary transformation: $\hat{A}_H(t) = \hat{\mathcal{U}}^\dagger(t,t_0) \hat{A}_S \hat{\mathcal{U}}(t,t_0)$
-    \item \textcolor{red}{Equation of motion for operators in Heisenberg picture}
+    \item Unitary transformation: $\hat{A}_H(t) = \hat{\mathcal{U}}^\dagger(t,t_0) \hat{A}_S \hat{\mathcal{U}}(t,t_0)$
+    \item Equation of motion in Heisenberg picture:
+    \begin{itemize}
+        \item Using the definition $\hat{A}_H(t) = \hat{\mathcal{U}}^{\dagger}(t,t_0)\hat{A}_S \hat{\mathcal{U}}(t,t_0)$
+        \item Taking time derivative
+        \item Using time SE for time evolution operator and that $\hat{\mathcal{U}}$ and $\hat{H}$ commute'
+        \begin{align*}
+            \frac{d}{dt} \hat{A}^{(H)} = \frac{i}{\hbar} [\hat{A}^{(H)}, \hat{H}].
+        \end{align*}
+    \end{itemize}
 \end{itemize}
 
 

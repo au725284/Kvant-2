@@ -1,0 +1,46 @@
+\textbf{Discuss the quantization of electromagnetic waves and the properties of simple quantum states of the electromagnetic field.}
+
+\underline{Classical EM waves:}
+\begin{itemize}
+    \item Maxwell's equations in free space lead to wave equation for E and B fields.
+    \item Vector potential \( \mathbf{A} \) and scalar potential \( \phi \) are introduced, with gauge freedom.
+    \item Coulomb gauge: \( \nabla \cdot \mathbf{A} = 0 \), \( \phi = 0 \) in free space.
+    \item Boundary conditions lead to discrete modes in a cavity $\Rightarrow$ harmonic oscillator analogy.
+    \item Solution as superposition (over two polarizations) of plane waves:
+    \[ \mathbf{A}(\mathbf{x}, t) = \sum_{\mathbf{k}, \lambda} \hat{e}_{k,\lambda} \left( \mathbf{A}_{\mathbf{k}, \lambda} e^{i(\mathbf{k}\cdot \mathbf{x} - \omega t)} + \mathbf{A}_{\mathbf{k}, \lambda}^* e^{-i(\mathbf{k}\cdot \mathbf{x} - \omega t)} \right)\]
+    \item Hamiltonian of the EM field expressed in terms of mode amplitudes:
+    \[ 
+    \mathcal{E} = \epsilon_0 V \sum_{\mathbf{k}, \lambda} \omega_k^2 \left( \mathbf{A}_{\mathbf{k}, \lambda} \mathbf{A}_{\mathbf{k}, \lambda}^* + \mathbf{A}_{\mathbf{k}, \lambda}^* \mathbf{A}_{\mathbf{k}, \lambda} \right) \]
+\end{itemize}
+
+\underline{Quantization:}
+\begin{itemize}
+    \item Describe wave as photons with energy \( E = \hbar \omega \) and momentum \( p = \hbar k \)
+    \item Promote \( \mathbf{A}_{\mathbf{k}, \lambda} \) and \( \mathbf{A}_{\mathbf{k}, \lambda}^* \) to annihilation and creation operators \( a_{\mathbf{k}, \lambda} \) and \( a_{\mathbf{k}, \lambda}^\dagger \)
+    \item Fermion or Bosons $\Rightarrow$ check for rotation eigenvalues 
+    \item Results in vector potential: \[     \hat{\mathbf{A}}(\mathbf{x}, t) = \sum_{\mathbf{k}, \lambda} \sqrt{\frac{\hbar}{2 \epsilon_0 V \omega_k}} \hat{e}_{k,\lambda} \left( a_{\mathbf{k}, \lambda} e^{i(\mathbf{k}\cdot \mathbf{x} - \omega t)} + a_{\mathbf{k}, \lambda}^\dagger e^{-i(\mathbf{k}\cdot \mathbf{x} - \omega t)} \right).
+\]
+    \item $\mathbf{A}_{k,\lambda}  = \sqrt{\frac{\hbar}{2\epsilon_0 V\omega_k}} \hat{a}_{\lambda}(\mathbf{k})$
+    \item Hamiltonian becomes:
+    \[
+    \hat{H} = \sum_{\mathbf{k}, \lambda} \hbar \omega_k \left( a_{\mathbf{k}, \lambda}^\dagger a_{\mathbf{k}, \lambda} + \frac{1}{2} \right)
+    \]
+\end{itemize}
+
+\underline{Quantum states of the EM field:}
+\begin{itemize}
+    \item Fock states \( |n_{\mathbf{k}, \lambda}\rangle \) can describe any state as superposition of number states.
+    \item manipulation of states $\Rightarrow$ quantum optics
+    \item Coherent states \( \hat{a}|\alpha\rangle = \alpha \ket{\alpha} \) 
+    \begin{itemize}
+        \item Eigenstates of annihilation operator $\Rightarrow$ eigenstates of the E-field
+        \item EM-field in coherent states $\hat{E}(\chi) = \hat{E}^{(+)}(\chi) + \hat{E}^{(-)}(\chi) =\frac{1}{2}  \left( a e^{-i\chi} + a^\dagger e^{i\chi} \right)$
+        \item Uncertainty relation: $\Delta E_1 \Delta E_2 \geq \frac{1}{4} |\sin(\chi_1 - \chi_2)|$
+        \item For coherent states: $(\Delta E)^2 = \frac{1}{4}=\Delta E(\chi) \Delta E(\chi + \pi/2)$
+    \end{itemize}
+    \item Quantization of EM field leads to photon concept, with discrete energy levels and quantum states.
+    \item Applications in quantum optics
+\end{itemize}
+    
+
+

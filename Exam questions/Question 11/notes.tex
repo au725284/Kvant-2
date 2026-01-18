@@ -1,0 +1,248 @@
+\textbf{Many particle system:}
+
+
+
+
+The many particle system leave us with some very important consequences.
+
+
+We cannot say where the particles are located at any time becuase at each measurement the system breaks. 
+For many particle systems we have two situations to consider: distinguishable and indistinguishable particles.
+For distinguishable particles we can label them and track them individually. Hence we can handle them as a product of 
+single particle states. And therefore is the many particle problem reduced to a set of single particle problems.
+This is because we can only have one particle in each state because they all have different physical properties and are thereby described by
+different wave functions.
+However, for indistinguishable particles we cannot label them and track them individually. This means that we have problems when we want to describe the system.
+
+\underline{Identical particles:}
+
+For indistinguishable particles we cannot label them and track them individually. This means that we 
+run into more complications when we want to describe the system. This is because there is no special physical label we can 
+attach to each particle - they have the same physical properties.
+This means that we cannot distinguish between the two paths in the figure: 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/identical_particles.png}
+    \caption{The two paths are indistinguishable. 
+    We cannot say if particle 1 went to position A and particle 2 to position B or vice versa.}
+    \label{fig:identical_particles}
+\end{figure}
+Meaning we can at time $t=0$ define particle 1 in state $\ket{\mathbf{k}'}$ and particle 2 in state $\ket{\mathbf{k}''}$, but at any later time 
+we cannot say if particle 1 is in state $\ket{\mathbf{k}'}$ or $\ket{\mathbf{k}''}$ and vice versa for particle 2. Hence we cannot say how they 
+move individually.
+
+To handle this we have to introduce symmetrization and antisymmetrization of the wave function.
+We start by defining the exchange/permutation operator $\hat{P}_{ij}$ which exchanges particles $i$ and $j$ in a multi-particle wave function.
+For a two-particle state $\ket{\mathbf{k}'}\ket{\mathbf{k}''}$, 
+the action of the permutation operator is given by:
+\begin{align*}
+    \hat{P}_{12} \ket{\mathbf{k}'}\ket{\mathbf{k}''} = \ket{\mathbf{k}''} \ket{\mathbf{k}'} \quad \hat{P}_{ij} \ket{\psi}_{pm} = \pm \ket{\psi}_{pm} \quad \text{for all i and j}.
+\end{align*}
+The permutation operator has eigenvalues $\pm 1$ corresponding to symmetric and antisymmetric states. It 
+tells us the property of the wave function under exchange of two particles  meaning it puts constraints on the wave function that can be 
+used to describe indistinguishable particle systems. It is clear from the definition of how $\hat{P}_{ij}$ acts on a state ket, that $\hat{P}_{ij} = \hat{P}_{ji}$ and $\hat{P}_{ij}^2 = \hat{I}$.
+We see that the exchange operator commutes with the Hamiltonian of the system $\left[\hat{H}, \hat{P}_{ij}\right] = 0$: 
+\begin{align*}
+    &\hat{P}_{ij} \hat{H} \hat{P}_{ij}^{-1} = \hat{P}_{ij} \hat{H} \hat{P}_{ij}^{-1} \hat{P}_{ij} = \hat{H}  \hat{P}_{ij}\\
+    &\Rightarrow \hat{P}_{ij} \hat{H} = \hat{H}  \hat{P}_{ij} \Rightarrow \left[\hat{H}, \hat{P}_{ij}\right] = 0.
+\end{align*}
+This is because the Hamiltonian only contains physical observables like kinetic and potential energy terms which are invariant under exchange of particles.
+
+
+Since for identical particles the physical observables must be invariant under exchange of particles, 
+the multi-particle wave function must be either symmetric or antisymmetric under the exchange of any two particles in order to 
+correctly describe the physical system (it removes the need to label the particles which would be needed to let us describe the 
+system mathematically and to let the math reflect the physical reality). So it helps us to construct the correct multi-particle wave functions.
+The (anti-)symmetrization operator $\hat{S}$ and operator are defined as:
+\begin{align*}
+    \hat{S}^{(\pm)} = \frac{1}{N!} \sum_{k}^{N!} (\pm 1)^{pk}\hat{P}_k
+\end{align*}
+Where $N$ is the number of particles, $\hat{P}_k$ are the permutation operators for all possible permutations of the $N$ particles, 
+and $pk$ is the parity of the permutation (even or odd). So for $\hat{P}_1$ $p=0$ because it is an even permutation and it only acts on one particle and does therefore not change the system
+ and for $\hat{P}_2$ $p=1$ because it is an odd permutation and acts on two particles.
+The symmetrization operator $\hat{S}^{(+)}$ projects the multi-particle wave function onto the symmetric subspace, while the antisymmetrization operator $\hat{S}^{(-)}$ projects it onto the antisymmetric subspace.
+These operators ensure that the resulting wave functions satisfy the required symmetry properties for identical particles.
+That the operator is a projector means that applying it twice is the same as applying it once:
+\begin{align*}
+    (\hat{S}^{(\pm)})^2 = \hat{S}^{(\pm)}, \quad \left(\hat{S}^{(\pm)}\right)^{\dagger} = \hat{S}^{(\pm)},\quad \hat{S}^{(\pm)} \hat{S}^{(\mp)} = 0.
+\end{align*}
+This means that the symmetrization and antisymmetrization operators project onto orthogonal subspaces of the multi-particle Hilbert space
+
+This leads us to the symmetrization postulate which arises from the Hamiltionian being symmetric under particle exchange.:
+\begin{itemize}
+    \item For bosons (particles with integer spin), the multi-particle wave function must be symmetric under the exchange of any two particles:
+    \begin{equation}
+        \hat{P}_{ij} \ket{\psi}_{pm} = + \ket{\psi}_{pm}\\
+        \hat{P}_{ij} \ket{N\text{ identical bosons}} =  \ket{N\text{ identical bosons}}.
+    \end{equation}
+    \item For fermions (particles with half-integer spin), the multi-particle wave function must be antisymmetric under the exchange of any two particles:
+    \begin{equation}
+        \hat{P}_{ij} \ket{\psi}_{pm} = \pm \ket{\psi}_{pm}\\  
+        \hat{P}_{ij} \ket{N\text{ identical fermions}} = - \ket{N\text{ identical fermions}}.
+    \end{equation}
+\end{itemize}
+The $\pm$ for fermions depends on the permutation being even (+) or odd (-).
+So the symmetrization postulate states that the total wave function of a system of identical particles must be either symmetric (for bosons) or antisymmetric (for fermions) under the exchange of any two particles.
+And thereby leading to the two cases being in different subspaces of the total Hilbert space.
+\textcolor{red}{maybe example with two electron system}
+
+
+
+\underline{Overlap in identical particle systems:}
+
+We can consider overlap in identical particle systems.
+Overlap describes how much one state projects onto another state.
+For a system with two identical particles, the overlap between two states $\ket{\psi_1}$ and $\ket{\psi_2}$ from the same basis 
+is given by:
+\begin{align*}
+    \braket{\psi_1 | \psi_2}_{\pm} = 0.
+\end{align*}
+This is independent on the number of particles in the system.
+
+The overlap between (anti-)symmetrized product state kets with itself is given by:
+\begin{align*}
+    _{\pm}\braket{\mathbf{k}_1, \ldots, \mathbf{k}_N | \mathbf{k}_1, \ldots, \mathbf{k}_N }_{\pm} = \braket{\mathbf{k}_1, \ldots, \mathbf{k}_N |\left(S_N^{(\pm)}\right)^{\dagger} S_N^{(\pm)}|\mathbf{k}_1, \ldots, \mathbf{k}_N }\\
+    = \braket{\mathbf{k}_1, \ldots, \mathbf{k}_N | S_N^{(\pm)} |\mathbf{k}_1, \ldots, \mathbf{k}_N } = = 
+    \frac{1}{N!} \sum_{k}^{N!} (\pm 1)^{pk} \braket{\mathbf{k}_1, \ldots, \mathbf{k}_N | \hat{P}_k |\mathbf{k}_1, \ldots, \mathbf{k}_N }.   
+\end{align*}
+For fermions, the only non-zero term is the trivial permutation $p=0$, since there can only be 
+one particle in each state. This gives us:
+\begin{align*}
+    _{+}\braket{\mathbf{k}_1, \ldots, \mathbf{k}_N | \mathbf{k}_1, \ldots, \mathbf{k}_N }_{+} = \frac{1}{N!}.
+\end{align*}
+For bosons however, we can have multiple particles in the same state. This means that we have to count the number of permutations that leave the state unchanged.
+This gives us:
+\begin{align*}
+    _{-}\braket{\mathbf{k}_1, \ldots, \mathbf{k}_N | \mathbf{k}_1, \ldots, \mathbf{k}_N }_{-} = \frac{1}{N!} \prod_k n_k!. 
+\end{align*}
+Overlap is non important when we have identical particles far away from each other 
+In this case their exchange density becomes zero and we do therefor not have to symmetrize or antisymmetrize the wave function.
+This is good because if we had to do this all the time it would be impossible to calculate anything, since we would have
+to symmetrize/antisymmetrize over all particles in the universe.
+
+
+\underline{Fock states:}
+
+
+To describe this many particle system we can use the occupation number representation, where we specify the number of particles in each single-particle state rather than tracking individual particles.
+These can also be described by Fock states in Fock space. The Fock space is the Hilbert space constructed from all possible occupation number states for a system of identical particles.
+A Fock state is just a state in Fock space that specifies (finite number) the number of particles in each single-particle state.
+A Fock state is denoted as $\ket{n_1, n_2, \ldots, n_k}$, where $n_i$ is the number of particles in the $i$-th single-particle state.
+For example, the Fock state $\ket{2, 0, 1}$ represents a system with 2 particles in the first single-particle state, 0 particles in the second state, and 1 particle in the third state.
+Fock states are orthogonal if they differ in the occupation numbers of any single-particle state. They are defined as 
+\begin{align*}
+    \ket{ n_{k_1}, n_{k_2}, \ldots }_{\pm} = C_{\pm} S^{\pm}_N \ket{ k_1,k_1, \ldots, k_{n_{k_1}}, k_2, k_2, \ldots, k_{n_{k_2}} \ldots}. 
+\end{align*}
+Where $C_{\pm}$ is a normalization constant given by:   
+\begin{align*}
+    C_+ = \sqrt{\frac{N!}{\prod_i n_{k_i}!}}\quad C_{-} = \sqrt{\frac{1}{N!}}.
+\end{align*}
+where $N = \sum_i n_{k_i}$ is the total number of particles in the system. So the Fock space is a 
+very useful tool for describing systems with a variable number of identical particles since the mathematical description becomes much simpler.
+The Fock space could for instance a system of a fluid. 
+
+The overlap between two Fock states $\ket{n_1, n_2, \ldots, n_k}$ and $\ket{m_1, m_2, \ldots, m_k}$ is given by:
+\begin{align*}
+    \braket{n_1, n_2, \ldots, n_k | m_1, m_2, \ldots, m_k} = \prod_{i=1}^{k} \delta_{n_i, m_i},
+\end{align*}
+where $\delta_{n_i, m_i}$ is the Kronecker delta, which is 1 if $n_i = m_i$ and 0 otherwise.
+
+
+\textbf{Creation and annihilation operators:}
+
+The structure of the Fock space it is essential to study operators that allow us to change the number of particles in a given state.
+These operators which allow us to navigate in the Fock space are called creation and annihilation operators.
+
+\underline{Bosons:}
+
+We define the bosonic creation operator $\hat{a}_k^{\dagger}$ and annihilation operator $\hat{a}_k$ for bosons and their actions on the Fock states as follows:
+\begin{align*}
+    \hat{a}_k^{\dagger} \ket{n_1, n_2, \ldots, n_k, \ldots} = \sqrt{n_k + 1} \ket{n_1, n_2, \ldots, n_k + 1, \ldots},\\
+    \hat{a}_k \ket{n_1, n_2, \ldots, n_k, \ldots} = \sqrt{n_k} \ket{n_1, n_2, \ldots, n_k - 1, \ldots}.
+\end{align*}
+We see if we apply two creation/two annihilation/annihilation and creation operators on the same state we get the commutaion relations:
+\begin{align*}
+    [\hat{a}_k, \hat{a}_{k'}^{\dagger}] = \delta_{kk'}, \quad [\hat{a}_k, \hat{a}_{k'}] = 0, \quad [\hat{a}_k^{\dagger}, \hat{a}_{k'}^{\dagger}] = 0.
+\end{align*}
+These commutation relations reflect the bosonic nature of the particles, allowing multiple bosons to occupy the same state.
+
+\underline{Fermions:}
+For fermions, we define the fermionic creation operator $\hat{c}_k^{\dagger}$ and annihilation operator $\hat{c}_k$ for fermions and their actions on the Fock states as follows:
+\begin{align*}
+    \hat{c}_k^{\dagger} \ket{n_1, n_2, \ldots, n_k, \ldots} = (-1)^{N_j} \delta_{n_{k_j}, 0}\ket{n_{k_1}, n_{k_2}, \ldots, n_{k_j} + 1, \ldots},\\
+    \hat{c}_k \ket{n_1, n_2, \ldots, n_k, \ldots} = (-1)^{N_j} \delta_{n_{k_j}, 1}\ket{n_{k_1}, n_{k_2}, \ldots, n_{k_j} - 1, \ldots},\end{align*}
+We see if we apply two creation/two annihilation/annihilation and creation operators on the same state we get the anticommutation relations:
+\begin{align*}
+    \{\hat{c}_k, \hat{c}_{k'}^{\dagger}\} = \delta_{kk'}, \quad \{\hat{c}_k, \hat{c}_{k'}\} = 0, \quad \{\hat{c}_k^{\dagger}, \hat{c}_{k'}^{\dagger}\} = 0.
+\end{align*}
+These anticommutation relations reflect the fermionic nature of the particles and antisymmetric states, enforcing the Pauli exclusion principle which states that no two fermions can occupy the same quantum state simultaneously.
+For fermions the occupation number $n_k$ can only be 0 or 1.
+
+
+
+
+
+
+\textbf{Second quantization:}
+
+Putting together the Fock space and the creation and annihilation operators forms the basis of the formalism of second quantization.
+Second qunatization is basically the formalism where we use creation and annihilation operators to describe observables and states 
+by how they act on Fock states.
+Second quantization is a formalism used in quantum mechanics to describe systems with identical particles.
+
+\underline{Fock states in terms of operators:}
+
+We start by expressing Fock states in terms of creation and annihilation operators.
+The annihilation and creation operators can be used to construct Fock states from the vacuum state $\ket{0}$ 
+(the state with no particles):
+\begin{align*}
+    \ket{n_1, n_2, \ldots, n_k}_{\pm} = \frac{(\hat{a}_1^{\dagger})^{n_1} (\hat{a}_2^{\dagger})^{n_2} \ldots (\hat{a}_k^{\dagger})^{n_k}}{\sqrt{n_1! n_2! \ldots n_k!}} \ket{0}_{\pm}.
+\end{align*}
+So we can write any Fock state as a product of creation operators acting on the vacuum state.
+We apply a creation opetrator for each particle we want to add to the state.
+
+
+
+\underline{Observables in second quantization:}
+
+In second quantization, observables are expressed in terms of creation and annihilation operators.
+We here take a standpoint in the important observation that operators must be symmetric under exchange of particles. This is because 
+we want to stay in the same Fock state. 
+
+We start by considering a \textit{single-particle operator} $\hat{A}$ that acts on a single-particle state $\ket{k}$ as:
+\begin{align*}
+    \hat{A}_1 \ket{k_1, k_2, \ldots, k_N} = \lambda_k \ket{k_1, k_2, \ldots, k_N},
+\end{align*}
+where $\lambda_k$ is the eigenvalue associated with the state $\ket{k}$. If we want to express this operator in second quantization, we can write it as:
+\begin{align*}
+    \hat{A} = \sum_{q, q'} \bra{q} \hat{A} \ket{q'} \hat{b}_k^{\dagger} \hat{b}_{k'}.
+\end{align*}
+where we have used the basis transformation $\ket{q}= \sum_k \braket{k|q}\ket{k}$ and then written $\ket{k}$ in terms of the 
+creation operator and the vacuum state. By doing this we get 
+$\hat{b}_k^{\dagger}$ and $\hat{b}_{k'}$ as the creation and annihilation operators for the transformed basis states $\ket{q}$ and $\ket{q'}$ respectively.
+
+\textcolor{red}{can they be written in terms of a sum over k instead of q? and use a instead of b?}
+
+
+For \textit{two particle operators} $\hat{B}$ that act on two-particle states $\ket{k_1, k_2, \ldots, k_N}$ as:
+\begin{align*}
+    \hat{B}_2 \ket{k_1, k_2, \ldots, k_N} = \sum_{i<j} \hat{B}(i,j) \ket{k_1, k_2, \ldots, k_N},
+\end{align*}
+we can express this operator in second quantization as:
+\begin{align*}
+    \hat{B} = \frac{1}{2} \sum_{k_1, k_2, k_1', k_2'} \bra{k_1, k_2} \hat{B} \ket{k_1', k_2'} \hat{b}_{k_1}^{\dagger} \hat{b}_{k_2}^{\dagger} \hat{b}_{k_2'} \hat{b}_{k_1'}.
+\end{align*}
+
+\textcolor{red}{maybe some derivations here}
+
+
+
+
+
+
+
+
+
+
+
+

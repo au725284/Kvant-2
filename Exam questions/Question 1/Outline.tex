@@ -1,21 +1,11 @@
 \textbf{Describe the concept of Hilbert space and dual space, operators
-acting on states, and operators with a continuous spectrum, in-
-cluding the momentum operator and its relation to translations.}
+acting on states, and operators with a continuous spectrum, including the momentum operator and its relation to translations.}
 
 \underline{Hilbert space}
 
 \begin{itemize}
     \item Vector space in $\infty $D
-    \begin{itemize}
-        \item Addition and scalar multiplication
-        \item Includes functions, matricies, vectors etc.
-    \end{itemize}
     \item With inner product
-    \begin{itemize}
-        \item Conjugate symmetry: $\langle \Psi | \Phi \rangle = \langle \Phi | \Psi \rangle^* $
-        \item Linearity in the second argument: $\langle \Psi | a\Phi_1 + b\Phi_2 \rangle = a\langle \Psi | \Phi_1 \rangle + b\langle \Psi | \Phi_2 \rangle$
-        \item Positive: $\langle \Psi | \Psi \rangle \geq 0$ with equality if and only if $\Psi = 0$
-    \end{itemize}
     \item Fullfill ompleteness
     \begin{itemize}
         \item Any Cauchy sequence converges to a limit in the space.
@@ -27,8 +17,9 @@ cluding the momentum operator and its relation to translations.}
 
 \begin{itemize}
     \item Can be represented as a superposition of basis states: $|\Psi \rangle = \sum_n c_n | n \rangle$
+    \item Only direction matters, not magnitude
     \item Basis states are orthonormal and normalized: $\langle n | m \rangle = \delta_{nm}$
-    \item Normalized: $\langle \Psi | \Psi \rangle = 1$ $\Rightarrow$ magnitude is unimportant but not direction
+    \item Normalized: $\langle \Psi | \Psi \rangle = 1$ $\Rightarrow$ Probability interpretation
     \item Dual space
     \begin{itemize}
         \item For each ket $|\Psi \rangle$ there is a bra $\langle \Psi |$ in the dual space
@@ -41,8 +32,8 @@ cluding the momentum operator and its relation to translations.}
 \underline{Operators}
 
 \begin{itemize}
-    \item Gives info on physical observables
-    \item Rules: associative axioms
+    \item Gives info on physical observables and transforms states
+    \item Eigenvalues and eigenstates $\hat{A} | a' \rangle = a' | a' \rangle, \quad \hat{A} | a'' \rangle = a'' | a'' \rangle, \quad ...$
     \item Inner prod. a number and outer prod. an operator
     \item Continuous spectrum
     \begin{itemize}
@@ -52,10 +43,11 @@ cluding the momentum operator and its relation to translations.}
     \end{itemize}
     \item Momentum operator
     \begin{itemize}
-        \item $\hat{p} = -i\hbar \frac{\partial}{\partial x}$
         \item Derived from translation operator $\hat{T}(a)$ for infinitesimal translations
-        \item Properties of translation operator
+        \item Unitary operator: $\hat{T}^{\dagger} \hat{T} = \hat{I}$ to conserve probability
         \item $\hat{T}(dx) = \hat{I} - i \hat{K} dx$
+        \item Important commutation relation: $[\hat{x}_i, \hat{K}_j] =i \delta_{ij}$
+        \item $\hat{K} = \frac{\hat{p}}{\hbar}$ 
         \item Commutation relation: $[x_i , p_j]=i\delta_{ij}$
         \item Finite translation: $\hat{T}(a) = e^{-\frac{i}{\hbar} \hat{p} a}$
         \item Generates translations in space

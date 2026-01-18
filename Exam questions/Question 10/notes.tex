@@ -1,0 +1,194 @@
+\textbf{Partial wave/phase shift/spherically symmetric pot}
+
+We want to describe the scattering of a particle by a spherically symmetric potential $V(r)$. This 
+means that we want to describe the WF of the incomming and outgoing scattered wave, and to find the scattering amplitude $f(\theta, \phi)$.
+To do this we use the method of partial waves and phase shifts.
+
+
+We consider a spherically symmetric potential $V(r)$, where $r$ is the distance from the scattering center.
+This means that the angular momentum is conserved, and we can decompose the wavefunction 
+into partial waves characterized by the angular momentum quantum number $l$. This is possible because the 
+potential does not depend on the angles $\theta$ and $\phi$ which leads the partial waves not to mix with each other.
+In spherical symmetric potentials, the wavefunction can be expressed as a sum over spherical harmonics $Y_{lm}(\theta, \phi)$ and
+radial functions $u_{l}(r)$:
+\begin{align*}
+    \psi_{E,l,m}(\mathbf{r}) = \frac{u_l(r)}{r} Y_{lm}(\theta, \phi).
+\end{align*}
+We now want to solve the time-independent Schrödinger equation in spherical coordinates:
+\begin{align*}
+    -\frac{\hbar^2}{2m} \nabla^2 \psi(\mathbf{r}) + V(r) \psi(\mathbf{r}) = E \psi(\mathbf{r}).
+\end{align*}
+There are many solutions to this eqn. depending on $E,l,m$ values. The $\ket{E,l,m}$ are eigenstates of $\mathbf{L}^2, L_z$ and $H_0$ which all commute with each other.
+We want the solution for plane wave with initial condition $u_l(r=0)=0$ and energy $E= \frac{\hbar^2 k^2}{2m_0 }$. 
+This is the simplest example since we get rid of the time dependence and we can focus on the spatial part of the wavefunction.
+This means that the energy is constant while comming in and out of the potential, since the potential does not change the energy.
+We choose to let the incomming plane wave propagate in the z-direction:
+\begin{align}\label{planewaveexpansion}
+   \braket{\mathbf{x}| \psi_{\text{in}}(\mathbf{r})} = e^{ikz} =\frac{1}{(2\pi)^{3/2}} \sum_{l=0}^{\infty} i^l (2l+1) A_l(r) P_l(\cos \theta),
+\end{align}
+where $A_l(r) = u_l{r}/r$ and reduces to spherical Bessel functions $j_l(kr)$ in the free case ($V=0$). This WF is outside the range of the potential. Here,
+$P_l(\cos \theta)$ are the Legendre polynomials. We choose $u_l(r)$ such that it satisfies the radial Schrödinger equation:
+\begin{align}\label{radialSchroedinger}
+    \frac{d^2 u_l(r)}{dr^2} + \left(k^2-\frac{2m}{\hbar^2} V - \frac{l(l+1)}{r^2} \right) u_l(r) =0.
+\end{align}
+In order to determine the scattering amplitude $f(\theta)$, and the radial wavefunction $A_l(r)$, we need to analyze the asymptotic behavior of the wavefunction as $r \to \infty$.
+We therefore rewrite the wavefunction for the scattering case:
+\begin{align*}
+    \braket{\mathbf{x}|\psi^{(\pm)}} \approx \frac{1}{L^{3/2}} \left(e^{i\mathbf{k}\cdot \mathbf{x}} + \frac{e^{\pm ikr}}{r}f(\mathbf{k}', \mathbf{k})\right)
+\end{align*}
+where the first term represents the incoming plane wave and the second term represents the scattered wave.
+This can then be expanded in partial waves:
+\begin{align}\label{partialwaveexpansion}
+    \braket{\mathbf{x}|\psi^{(\pm)}} = \frac{1}{(2\pi)^{3/2}} \sum_{l=0}^{\infty}  (2l+1) \frac{P_l(\cos(\theta))}{2ik} \left(\frac{e^{\pm ikr}}{r} (1+2ikf_l(k)) - \frac{e^{-i(kr-l\pm)}}{r}\right),
+\end{align}
+where $f_l(k)$ is the partial wave scattering amplitude for the $l$'th partial wave.
+By first solving  eqn. \eqref{radialSchroedinger} for $u_l(r)$  and thereby determine $A_l(r)$ and 
+compare eqn. \eqref{planewaveexpansion} and \eqref{partialwaveexpansion}, we can determine $f_l(k)$.
+
+We now define the phase shift $\delta_l$ as the difference in phase between the scattered wave and the free wave at large distances.
+\textcolor{red}{the outgoing wave and incomming wave have the same coefficients???} which lead us to the relation:
+\begin{align*}
+    1- 2ikf_l(k) = e^{2i\delta_l}, \quad \text{fase factor for outgoing wave}.
+\end{align*}
+This can be used to express the scattering amplitude in terms of the phase shifts $\delta_l$.
+\begin{align*}
+    f_l(k) &= \frac{e^{2i\delta_l}-1}{2ik} \\
+    & \Downarrow \\
+    f(\theta)&= \frac{1}{k}\sum_{l=0}(2l+1)e^{i\delta_l}\sin(\delta_l) P_l(\cos(\theta)).
+\end{align*}
+This expression rests on the principles probability conservation and rotational invariance.
+The phase shift $\delta_l$ contains all the information about the scattering process for each partial wave.
+
+We now look at the radial part of the WF:
+\begin{align*}\label{A}
+    A_l(r) = e^{i\delta_l} \left(\cos(\delta_l) j_l(kr) - \sin(\delta_l) n_l(kr)\right),
+\end{align*}
+with $j_l(kr)$ and $n_l(kr)$ being the spherical Bessel and Neumann functions, respectively.
+We can then define $\beta_l = \left(\frac{r}{A_l} \frac{dA_l}{dr}\right)|_{r=R^+}$ we can relate this to the phase shift:
+\begin{align*}
+    \tan(\delta_l) = \frac{kR j_l'(kR) - \beta_l j_l(kR)}{kR n_l'(kR) - \beta_l n_l(kR)}.
+\end{align*}
+So in step form to find the phase shifts:
+\begin{itemize}
+    \item Solve the radial Schrödinger eqn. \eqref{radialSchroedinger} for $u_l(r)$ inside the potential ($r<R$) with boundary condition $u_l(0)=0$.
+    \item From this determine $A_l(r)$ and $\beta_l$ at $r=R^+$.
+    \item Set $\beta_l^{(\text{outside})}=\beta_l^{(\text{inside})}$ (provided the potential is finite at $r=R$).
+    \item Put this into the expression for $\tan(\delta_l)$ to find the phase shifts.
+    \item From this find the scattering amplitude $f(\theta)$ by comparing from the phase shifts $\delta_l$.
+\end{itemize}
+
+
+
+\textcolor{red}{read about the circle example in sec. 4.4.4 and read hard sphere example in sec. 4.4.5}
+
+\textbf{Low energy scattering:}
+
+We assume spherically symmetric potential, low energy of the incomming wave and being in 3D. 
+In low energy scattering, the wavelength of the incident particle is much larger than the range of the potential which is finite, 
+allowing us to simplify the scattering problem. The scattering amplitude can be approximated using only the
+s-wave ($l=0$) contribution, as higher partial waves are suppressed at low energies (called s-scattering). This is because the centrifugal 
+barrier prevents higher angular momentum states from contributing significantly to the scattering process at low energies.
+You can from 
+\begin{align*}
+    V_{\text{eff}}(r) = V(r) + \frac{l(l+1)\hbar^2}{2mr^2},
+\end{align*}
+see that for $l>0$, there is a centrifugal barrier that dominates at small $r$ and $l>0$. We use this potential 
+since we only consider radial SE. This is because we use partial wave formalism where the angular part is separated out since 
+for a spherically symmetric potential, the angles do not affect the potential.
+This can also be seen from the relation between the wave number $k$ and the angular momentum quantum number $l$:
+\begin{align*}
+    l\sim kb,
+\end{align*}
+with $b$ being the impact parameter. For low energies, $k$ is small, leading to small $l$ values. Eitherway the impact must be 
+very large for $l>0$ which means that the particle does not come close to the scattering center.
+If we write the integral form of the partial wave as:
+\begin{align*}
+    \frac{e^{i\delta_l}\sin(\delta_l)}{k}= -\frac{2m}{\hbar^2} \int_0^{\infty} j_l(kr) V(r) A_l(r)r^2 dr,
+\end{align*}
+where if $1/k>> R$ (the range of the potential), we can approximate $j_l(kr)$ for small arguments (small $\delta_l$) to vary as $k^{2l}$
+and the left hand side varies as $\delta_l/k$ which leads us to the threshold behavior:
+\begin{align*}
+    \delta_l \sim k^{2l+1} \quad \text{for } k\to 0.
+\end{align*}
+This shows that for low energies ($k\to 0$) and $l>0$, the phase shift $\delta_l \to 0$ which means that waves with 
+higher angular momentum do not contribute to the scattering process, since it is not affected by the potential.
+
+\underline{barrier/well example:} 
+
+Consider a potential barrier/well of height/depth $V_0$ and range $R$:
+\begin{align*}
+    V(r) = \begin{cases}
+    V_0, & r<R \\
+    0, & r>R
+    \end{cases}
+\end{align*}
+for $V_0>0$ we have a barrier and for $V_0<0$ we have an attractive well.
+For this potential we get the radial equation inside the potential ($r>R$):
+\begin{align*}
+    rA_{l=0}(r)  \propto \sin(kr ), \quad \text{with } k = \frac{\sqrt{2m(E-V_0)}}{\hbar}. 
+\end{align*}
+This is for $E>V_0$ for $E<V_0$ we get
+\begin{align*}
+    rA_{l=0}(r) \propto \sinh(\kappa r ), \quad \text{with } \kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}. 
+\end{align*}
+Outside the potential ($r>R$) we have:
+\begin{align*}
+    A_{l=0}(r) \propto \frac{\sin(kr + \delta_0)}{kr} e^{i\delta_0}.
+\end{align*}
+The curvature therefore changes depending on the energy compared to the potential height/depth. 
+It can be pushed in ($\delta_0>0$) or out ($\delta_0<0$) depending on the sign of $V_0$ which changes the phase shift $\delta_0$.
+
+For $V_0<0$ we see that as we increase the depth of the well, the phase shift $\delta_0$ increases and can reach values of $\pi/2, \pi, 3\pi/2, ...$
+and will eventually lead to phase shift $180^{\circ}$ (with bottom of shifted wave at the position of the top of the free wave). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/phase_shift.png}
+\end{figure}
+In this case,  the cross section diverges to zero 
+$\sigma_{l=0}=0$ when $\delta_0 = n\pi$ with $n=0,1,2,...$ which is called the Ramsauer-Townsend effect.
+
+\textbf{Scattering length and bound states:}
+
+If we now consider extremely low energy scattering $k\approx 0$. For $l=0$ and $r>R$ we have the radial wavefunction by using 
+\eqref{A}:
+\begin{align*}
+    u_{l=0}(r) = \frac{e^{i\delta_0}}{k} \left(\cos(\delta_0) \sin(kr) - \sin(\delta_0) \cos(kr)\right).
+\end{align*}
+in the limit $k\to 0$ we can expand the trigonometric functions to first order:
+\begin{align*}
+    u_{l=0}(r) &\approx \lim_{k\to 0} e^{i\delta_0}\cos(\delta_0) \left(r+\frac{\tan(\delta_0)}{k}\right) 
+    &\propto \lim_{k\to 0} \left(r+\frac{1}{k \cot(\delta_0)}\right)  \equiv r-a.
+\end{align*}
+This means that the outside radial wavefunction behaves linearly with $r$ slightly larger than $R$, with an offset given by the scattering length $a$.
+To find the scattering length one should draw the tangent of the radial wavefunction at $r=R$ and see where it intersects the r-axis.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/a.png}
+    \caption{The scattering length $a$ is defined as the point where the tangent to the radial wavefunction at $r=R$ intersects the r-axis.}
+\end{figure}
+In the limet $k\to 0$ the total cross section is given by:
+\begin{align*}
+    \sigma_{l=0} = 4\pi a^2.
+\end{align*}
+For repulsive potentials ($V_0>0$), the scattering length is positive ($a>0$) since the radial wavefunction is pushed outwards and around the order of 
+the potential range (R). For attractive potentials ($V_0<0$), the scattering length can be either 
+positive or negative depending on the depth of the potential well (see image below).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/a_value.png}
+    \caption{The scattering length $a$ can be positive or negative for attractive potentials depending on the depth of the well.}
+\end{figure}
+
+
+\underline{Bound states:}
+
+As we increase the depth of the potential well ($V_0<0$), we can reach a critical depth where a bound state forms. This occurs when the scattering length diverges to positive infinity ($a \to +\infty$).
+At this point, the phase shift $\delta_0$ reaches $\pi/2$, indicating a resonance in the scattering process.
+For this critical depth we reach bound state with energy $E = - \frac{\hbar^2 \kappa^2}{2m}$, and the radial wavefunction outside the potential ($r>R$) behaves as:
+\begin{align*}
+    u_{l=0}(r) \propto e^{-\kappa r}, \quad \text{with } \kappa = \frac{\sqrt{2m|E_b|}}{\hbar}.
+\end{align*}
+As $\kappa \to 0$ the WF extends to very large distances. This means that just before the formation of a bound state, the scattering length becomes very large and positive ($a \to +\infty$).
+The physical meaning of the scattering length is that it characterizes the effective range of the interaction between the scattering particle and the potential.
+For $E= 0^-$ we have a bound state and for $E=0^+$ we have a scattering state. 
+The scattering length therefore provides insight into the nature of the interaction potential and the possibility of bound state formation.

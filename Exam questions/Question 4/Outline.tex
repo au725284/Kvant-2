@@ -1,0 +1,59 @@
+\textbf{Outline how the rotation group works as an operator on quantum
+mechanical states, and discuss the angular momentum algebra
+including the spectrum of angular momentum states.}
+
+\underline{Rotation group}
+
+\begin{itemize}
+    \item The rotation group SO(3) consists of all rotations about the origin in three-dimensional space.
+    \item Non ablian group: the order of rotations matters.
+    \item infinitesimal rotation: $R(\delta \theta) = I - i \hat{G}d\theta $ with $\hat{G} = \frac{\vec{J}\cdot \vec{n}}{\hbar}$
+    \item Finite rotation: $R(\theta) = e^{-i \frac{\vec{J}\cdot \vec{n}}{\hbar} \theta}$
+\end{itemize}
+
+\underline{Example with spin-1/2 system}
+
+\begin{itemize}
+    \item Interested in the expectation values of the spin operators $\hat{S}_x, \hat{S}_y, \hat{S}_z$.
+    \item Operators given by: 
+    \begin{align*}
+        \hat{S}_x = \frac{\hbar}{2} \left(\ket{+}\bra{-}+ \ket{-}\bra{+}\right), \quad
+        \hat{S}_y = \frac{i\hbar}{2} \left(\ket{-}\bra{+}- \ket{+}\bra{-}\right), \quad
+        \hat{S}_z = \frac{\hbar}{2} \left(\ket{+}\bra{+}- \ket{-}\bra{-}\right).
+    \end{align*}
+    \item Rotation about the z-axis: $\hat{R}_z(\phi) = e^{-i \frac{\hat{S}_z}{\hbar} \phi}$
+    \item Use Euler's formula to write and expand the rotation operator:
+    \[\hat{R}_z^{\dagger} \hat{S}_x \hat{R}_z = e^{i\frac{\hat{S}_z}{\hbar}\phi} \hat{S}_x e^{-i\frac{\hat{S}_z}{\hbar}\phi} = 
+    \cos(\phi) \hat{S}_x - \sin(\phi) \hat{S}_y\]
+    \item Following expectation values change as:
+    \begin{align*}
+        &\braket{S_x}_R  = \cos(\phi) \braket{S_x} - \sin(\phi) \braket{S_y}.\\
+        &\braket{S_y}_R  = \sin(\phi) \braket{S_x} + \cos(\phi) \braket{S_y}.\\
+        &\braket{S_z}_R = \braket{S_z}.
+    \end{align*}
+    \item Rotated state: $\ket{\phi}_R = e^{-i\frac{\phi}{2}} \ket{+}\bra{+} \ket{\psi} + e^{i\frac{\phi}{2}} \ket{-}\bra{-} \ket{\psi}$
+    \item $\phi = 2\pi$: $\hat{R}_z \ket{\psi}= - \ket{\psi}$ 
+\end{itemize}
+
+\underline{Angular momentum}
+
+\begin{itemize}
+    \item Commutation relations: 
+    \begin{itemize}
+        \item $[\hat{J}_i, \hat{J}_j] = i \hbar \epsilon_{ijk} \hat{J}_k$
+        \item $[\hat{J}^2, \hat{J}_i] = 0$
+        \item $\hat{J}_{\pm} = \hat{J}_x \pm i \hat{J}_y$
+        \[[J_z, J_{\pm}] = \pm \hbar J_{\pm}, \quad [\vec{J}^2, J_{\pm}] = 0, \quad [J_+, J_-] = 2 \hbar J_z\]
+    \end{itemize}
+    \item Eigenvalues and eigenstates:
+    \begin{itemize}  
+        \item $ \vec{J}^2 \ket{a,b} = a \ket{a,b}, \quad J_z \ket{a,b} = b \ket{a,b}$
+        \item Base kets: $\ket{j,m}$ 
+        \item Use commetation relations to obtain $a = \hbar^2 j(j+1), \quad b = \hbar m$
+    \item Spectrum of angular momentum states: Ladder operator
+    \begin{align*}
+        &J_+ \ket{j,m} = \hbar \sqrt{(j-m)(j+m+1)} \ket{j,m+1},\\
+        &J_- \ket{j,m} = \hbar \sqrt{(j+m)(j-m+1)} \ket{j,m-1}\\
+        &\bra{j',m'} J_{\pm} \ket{j,m} = \hbar \sqrt{(j\mp m)(j \pm m+1)} \delta_{j',j} \delta_{m',m\pm 1}. 
+    \end{align*}
+\end{itemize}

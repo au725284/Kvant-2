@@ -1,6 +1,6 @@
 \textbf{Coupling of angular momenta in quantum mechanics:}
 
-Coupling of angular momentum is the procesdure used to multiply to angular momentum operator. 
+Coupling of angular momentum is the procesdure used for adding two angular momentum operator. 
 This is especially useful in atomic physics where we have to deal with multiple electrons, each having their own angular momentum.
 Or with the case of spin-orbit coupling (nuclear physics), where we have to deal with the coupling of the orbital angular momentum and the spin angular momentum of a single electron.
 
@@ -10,8 +10,8 @@ I will start with the general case of two angular momenta $\vec{J_1}$ and $\vec{
 $m$ being the magnetic quantum number ($m = -j, -j+1, ..., j$) and $j$ the total angular momentum quantum number ($j=0, 1/2, 1, 3/2, 2, ...$).
 It is imporant that these two angular momenta operators satisfy the useal andular momentum commutation relations:
 \begin{align*}
-    [J_{1i}, J_{ij}] &= i \hbar \epsilon_{ijk} J_{1k}\quad [J_{2i}, J_{2j}] &= i \hbar \epsilon_{ijk} J_{2k} \quad
-    [J_{1i}, J_{2j}] &= 0
+    [J_{1i}, J_{ij}] &= i \hbar \epsilon_{ijk} J_{1k}\quad [J_{2i}, J_{2j}] \\&= i \hbar \epsilon_{ijk} J_{2k} \quad
+    [J_{1i}, J_{2j}] = 0
 \end{align*}
 The last commutation relation holds because they come from different sources (e.i. acts on different particles) and therefore do not interfere with each other.
 \newline Proof:
@@ -46,8 +46,10 @@ each ket is an eigenket of the individual angular momentum operators $\vec{J_1}$
     J_{2z} |j_1, m_1; j_2, m_2 \rangle &= \hbar m_2 |j_1, m_1; j_2, m_2 \rangle
 \end{align*}
 In this basis we have these commutation relations $[J_1^2 , J_2^2] =0$, $[J_{1z} , J_{2z}] =0$, which can be seen from the fact that the individual angular momentum operators act on different subspaces.
-\newline
+
+
 \underline{Coupled basis:}
+
 The total angular momentum operator $\vec{J}$ has its own set of quantum numbers $j, m$. 
 The total ket that describes the coupled angular momenta is called the coupled ket, and is given by:
 \begin{equation}
@@ -132,8 +134,35 @@ So we end up with the following selection rules for the CGC (where the CGC is no
 
 \underline{Claculating CGC:}
 
-\textcolor{red}{I do not understand this part well enough to write it down... How the hell do i calculate this??????}
 % https://www.youtube.com/watch?v=zowSSN9hGHU
+
+
+Here we use the recursion relations given by the ladder operators $J_{\pm} = J_{1\pm} + J_{2\pm}$.
+We start using the ladder operator on the coupled ket:
+\begin{align*}
+    J_{\pm} |j_1, j_2; j, m \rangle = (J_{1\pm} + J_{2\pm})\sum_{m_1, m_2} |j_1, m_1; j_2, m_2 \rangle \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle
+\end{align*}
+By appliying the eigencalue equations for the ladder operators on both sides we get:
+\begin{align*}
+    &\sqrt{(j\mp m) (j\pm m+1)} |j_1, j_2; j, m \pm 1\rangle = \\ &\sum_{m_1, m_2}\left(   \sqrt{(j\mp m_1) (j\pm m_1+1)} |j_1, m_1 \pm 1; j_2, m_2 \rangle + 
+    \sqrt{(j\mp m_2) (j\pm m_2+1)} |j_1, m_1; j_2, m_2 \pm 1 \rangle   \right) \\
+    &\langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle
+\end{align*}
+By applying $\bra{j_1, j_2, m_1, m_2}$ on both sides and we use orthogonality
+which means that we get non-vanishing terms only when $m_1 = m_1' \pm 1$ with $m_2' = m_2$ or $m_1' = m_1$ with $m_2' = m_2 \pm 1$. this 
+gives us the recursion relation:
+\begin{align*}
+    &\sqrt{(j\mp m) (j\pm m+1)} \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \pm 1 \rangle = \\
+    &\sqrt{(j\mp m_1 \pm 1) (j\pm m_1)} \langle j_1, m_1 \mp 1; j_2, m_2 | j_1, j_2; j, m \rangle +   
+    \sqrt{(j\mp m_2 \pm 1) (j\pm m_2)} \langle j_1, m_1; j_2, m_2 \mp 1 | j_1, j_2; j, m \rangle
+\end{align*}
+with non-vanishing CGC only when $m = m_1 + m_2$.
+
+This can be shown graphically as well by using the so-called CGC triangle. Each triangle represents the RHS and LHS of the local recursion relation,
+denpending on what ladder operator we are using ($J_+$ or $J_-$). The secon figure (3.9a ) show the 
+boundaries of the allowed values of $j$ and $m$ for given $m_1$ and $m_2$.
+Figure 3.9b shows the complete sets of recurtion relation triangle for which the sum of all the triangles gives all the non-zero CGC for given $m_1$ and $m_2$.'
+
 
 \underline{Coupling of spin-1 and spin-1/2 particles:}
 % https://www.youtube.com/watch?v=7JmYPyWLsXQ

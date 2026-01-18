@@ -117,7 +117,7 @@ Operators can be classified into different types based on their properties. Some
     Their eigenvalues are real numbers, which correspond to the possible measurement outcomes of the observable. Their 
     eigenkets form an orthonormal basis for the Hilbert space.
     \item Unitary operators: These operators preserve the inner product between state vectors and represent time evolution and symmetry transformations in quantum mechanics,
-     $\hat{U}\hat{U}^{\dagger} = \hat{U}^{\dagger}\hat{U}= \hat{I}$.
+     \[\hat{U}\hat{U}^{\dagger} = \hat{U}^{\dagger}\hat{U}= \hat{I}\].
     \item Projection operators: These operators project state vectors onto specific subspaces of the Hilbert space, often used to describe measurements.
     \item Ladder operators: These operators are used to raise or lower the quantum numbers of certain states, such as in the case of the quantum harmonic oscillator or angular momentum.
 \end{itemize}
@@ -172,6 +172,19 @@ We now try to express the translation operator in terms of a Hermitian operator 
     \hat{T}(dx') = \hat{I} - i\hat{K}\cdot  dx'    
 \end{equation}
 where $\hat{I}$ is the identity operator. By accepting this form we can derive the fundamental commutation relation $[x_i , K_j]=i\delta_{ij}$. 
+
+The commutation relation can be derived by comsidering the action of the translation operator on a position eigenket and a 
+position operator $\hat{x}$.
+We have that $\hat{T}(dx') \hat{x} | x' \rangle = x' | x' + dx' \rangle$ and $\hat{x} \hat{T}(dx') | x' \rangle = (x'+dx') | x' + dx' \rangle$.
+By subtracting these two equations we get
+\begin{equation}
+    [\hat{x}, \hat{T}(dx')] | x' \rangle = dx' | x' + dx' \rangle.
+\end{equation}
+By inserting the expression for $\hat{T}(dx')$ we get:  
+\begin{equation}
+    [\hat{x}_i, \hat{K}_j] =i \delta_{ij}  .
+\end{equation}
+
 By using this we can identify $\hat{K}$ with the momentum operator divided by $\hbar$, $\hat{K} = \frac{\hat{p}}{\hbar}$ \textcolor{red}{How is this right???? In addition I do not understand the first eqn. on page 235 in Griffths}.
 From this I get
 \begin{equation}

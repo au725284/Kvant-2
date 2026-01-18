@@ -1,0 +1,55 @@
+\textbf{Outline the theoretical description of low-energy scattering and
+describe the physical meaning of the scattering length.}
+
+
+\underline{Low energy scattering}
+
+\begin{itemize}
+    \item Want to describe WF and scattering amplitude 
+    \item Spherical symmetric potential $V(r)$ (independent of angles) and low energy scattering $k\to 0$
+    \item Partial wave expansion
+    \begin{itemize}
+        \item Wave has angular and radial part $\psi(\mathbf{r}) = R(r)Y(\theta,\phi)$
+        \item phase shift $\delta_l$ from $e^{2i\delta_l} = 1- 2ikf_l(k)$
+    \end{itemize}
+    \item At low energies only $l=0$ (s-wave scattering) contributes due to centrifugal barrier
+    \item Integral form of partial waves \[\frac{e^{i\delta_l}\sin(\delta_l)}{k}= -\frac{2m}{\hbar^2} \int_0^{\infty} j_l(kr) V(r) A_l(r)r^2 dr\]
+    \item Varies as $k^{2l}$ on the right and $\delta_l/k$ on the left for $1/k>>R$ 
+\end{itemize}
+
+\underline{Example: Barrier and well}
+
+\begin{itemize}
+    \item $V_0 >0$ repulsive barrier, $V_0<0$ attractive well
+    \[V(r) = \begin{cases}
+    V_0, & r<R \\
+    0, & r>R
+    \end{cases}\]
+    \item Inside solution 
+    \[r A_{l=0} \propto \begin{cases}
+    \sin(kr ), \quad \text{with } k = \frac{\sqrt{2m(E-V_0)}}{\hbar}& V_0 <E \\
+    \sinh(\kappa r ), \quad \text{with } \kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}, & V_0>E
+    \end{cases}\]
+    \item Phase changes for different cases of $V_0$ and $E$
+    \item Pushed in for attractive ($\delta_0 >0$), pulled out for repulsive ($\delta_0 <0$) \textcolor{blue}{(figure)}
+    \item Deep well $\Rightarrow$ $180^{\circ}$ phase shift
+    \item Ramsauer-Townsend effect: $\sigma_{0}=0$ for $\delta_{0} = n \pi$
+\end{itemize}
+
+\underline{Scattering length}
+\begin{itemize}
+    \item Extremely low energy limit $k\to 0$
+    \item Expand $u_{l=0}(r)\propto \lim_{k\to 0} \left(r+\frac{1}{k \cot(\delta_0)}\right)  \equiv r-a$ for $r>R$ and $k\to 0$ $\Rightarrow$ WF linear in $r$
+    \item Scattering length $a$ is tangent of WF to $r$ axis at $r=R$ \textcolor{blue}{(figure)}
+    \item Limit of $k \to 0$ we get $\sigma_{l=0} = 4\pi a^2$
+    \item For $V_0 > 0$ (repulsive) $a>0$, for $V_0 <0$ (attractive) $a<0$ depending on depth \textcolor{blue}{(figure)}
+    \item Bound states:
+    \begin{itemize}
+        \item When potential well is deep enough a bound state appears
+        \item $a\to \infty$ when bound state appears with $E_{BS} = - \frac{\hbar^2 \kappa}{2m}  $
+        \item $a$ characterizes effective range of potential 
+        \item $E= 0^+$  $\Rightarrow$ scattering, $E= 0^-$ $\Rightarrow$ bound state, same WF for $r<R$
+        \item Leads us to $\kappa \approx \frac{1}{a}$ for $R<<a$. 
+    \end{itemize}
+\end{itemize}
+

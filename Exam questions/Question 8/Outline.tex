@@ -5,25 +5,27 @@ cuss Fermi’s golden rule.}
 
 \begin{itemize}
     \item $H(t)=H_0 + V(t)$ with $H_0$: $H_0 |n\rangle = E_n |n\rangle$
-    \item Evolment of system over time: $\ket{\alpha, t_0; t}= \sum c_n(t) e^{-iE_n t/\hbar}\ket{n}$
+    \item Define evolved state: $\ket{\alpha, t_0; t}= \sum c_n(t) e^{-iE_n t/\hbar}\ket{n}$
+    \item We use Interaction picture 
+    \begin{itemize}
+        \item State in I-pic: $|\alpha, t_0; t\rangle_I = e^{iH_0 t/\hbar} |\alpha, t_0; t\rangle_S$
+        \item Operator in I-pic: $V_I(t) = e^{iH_0 t/\hbar} V(t) e^{-iH_0 t/\hbar}$
+        \item $i\hbar \frac{d}{dt} U_I(t, t_0) = V_I(t) U_I(t, t_0)$    
+    \end{itemize} 
     \item Coefficients $c_n(t)$ found by using Interaction picture:
     \begin{itemize}
-        \item $|\alpha, t_0; t\rangle_I = e^{iH_0 t/\hbar} |\alpha, t_0; t\rangle_S$
-        \item $V_I(t) = e^{iH_0 t/\hbar} V(t) e^{-iH_0 t/\hbar}$
-        \item $i\hbar \frac{d}{dt} |\alpha, t_0; t\rangle_I = V_I(t) |\alpha, t_0; t\rangle_I$
-        \item $c_n(t) = \langle n | \alpha, t_0; t\rangle_I$ 
-        \item $i\hbar \frac{d}{dt} c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm} t} c_m(t)$ with $\omega_{nm} = (E_n - E_m)/\hbar$
+        \item Coefficients: $c_n(t) = \langle n | \alpha, t_0; t\rangle_I$ 
+        \item Final diff. eqn.: $i\hbar \frac{d}{dt} c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm} t} c_m(t)$ with $\omega_{nm} = (E_n - E_m)/\hbar$
     \end{itemize}
     \item Solve iteratively:
     \begin{itemize}
-        \item Initial condition: $c_n(t_0) = \delta_{n\alpha}$
-        \item Zero order: $c_n^{(0)}(t) = \delta_{n\alpha}$
+        \item Initial condition $U_I(t_0, t_0) = 1$ with Zero order $\Rightarrow$ constant in time
         \item First order: $c_n^{(1)}(t) = \delta_{n\alpha} - \frac{i}{\hbar} \int_{t_0}^{t} V_{n\alpha}(t') e^{i\omega_{n\alpha} t'} dt'$
         \item Dyson series for higher orders
         \begin{align*}
             c_n^{(k)}(t) &= -\frac{i}{\hbar} \sum_m \int_{0}^{t} dt_k \int_0^{t_k} dt_{k-1} \ldots \int_0^{t_2} dt_1 \\
             &\quad V_{nm}(t_k) e^{i\omega_{nm}t_k} V_{m m_{k-1}}(t_{k-1}) e^{i\omega_{m m_{k-1}}t_{k-1}} \ldots V_{m_1 i}(t_1) e^{i\omega_{m_1 i}t_1}.
-    \end{align*}
+        \end{align*}
     \end{itemize}
 \end{itemize}
 
@@ -35,7 +37,7 @@ cuss Fermi’s golden rule.}
     \item First order coefficient:
     \[c_n^{(1)}(t) = -\frac{i}{\hbar} V_{n\alpha} \int_0^t e^{i\omega_{n\alpha} t'} dt' = -\frac{V_{n\alpha}}{\hbar \omega_{n\alpha}} \left(e^{i\omega_{n\alpha} t} - 1\right)\]
     \item Transition probability: \[P_{\alpha \to n}(t) = |c_n^{(1)}(t)|^2 = \frac{4 |V_{n\alpha}|^2}{\hbar^2 \omega_{n\alpha}^2} \sin^2\left(\frac{\omega_{n\alpha} t}{2}\right)\]
-    \item Energy-time uncertainty principle: $\Delta E \Delta t \sim \hbar$ 
+    \item Only appreciable probability for transition: $\Delta E \Delta t \geq \hbar$ 
     \raisebox{-0.3\height}{\includegraphics[width=0.35\textwidth]{Figures/graph_prob.png}}
     \item Approximates to delta function for large $t$:
     \[\lim_{t \to \infty} \frac{\sin^2\left(\frac{\omega t}{2}\right)}{\left(\frac{\omega}{2}\right)^2} = 2\pi t \delta(\omega)\]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  13 JAN 2026 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  18 JAN 2026 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1220,10 +1220,10 @@ Package pdftex.def Info: Figures/harmonic_perturbation.png  used on input line 2
 ) [5 <./Figures/harmonic_perturbation.png>] (Outline.tex
 File: Figures/graph_prob.png Graphic file (type png)
 <use Figures/graph_prob.png>
-Package pdftex.def Info: Figures/graph_prob.png  used on input line 39.
+Package pdftex.def Info: Figures/graph_prob.png  used on input line 41.
 (pdftex.def)             Requested size: 159.25278pt x 75.173pt.
 ) [6]
-runsystem(latexminted cleantemp  --timestamp 20260113133645 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
+runsystem(latexminted cleantemp  --timestamp 20260118114205 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
 
  
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -1247,7 +1247,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  110i,12n,122p,612b,1106s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main2.pdf (6 pages, 287319 bytes).
+Output written on main2.pdf (6 pages, 287580 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)

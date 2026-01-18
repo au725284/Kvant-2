@@ -14,7 +14,35 @@ This means that for a symmetry transformation to be a symmetry of the system, th
     \item Antiunitary: \( AiA^{-1} = -i \) and nonlinear: $$A(c_1 \psi_1 + c_2 \psi_2) = c_1^* A\psi_1 + c_2^* A\psi_2$$
 \end{itemize}
 An antiunitary operator preserves probabilities but complex-conjugates amplitudes; it is antilinear and is required to represent symmetries like time reversal.
-Both unitary and antiunitary operators preserve inner products, ensuring that physical predictions remain unchanged and $AA^{\dagger}=UU^{\dagger}=1$ (hermitian conjugate). 
+Both unitary and antiunitary operators preserve inner products, ensuring that physical predictions remain unchanged. 
+To prove these properties for the antiunitary operator we start with the condition that the probabilities are preserved:'
+\begin{align*}
+    |\braket{\tilde{\alpha}|\tilde{\beta}}|= |\braket{\alpha|\beta}|.
+\end{align*}
+This condition also hold for the complex conjugate of the state. By use of this we define the antiunitary operator as
+\begin{align*}
+    \braket{\tilde{\alpha}|\tilde{\beta}} = \braket{\alpha|\beta}^*.
+\end{align*}
+From this we can show that the operator is antilinear:
+\begin{align*}
+    \hat{A}(c_1 \ket{\beta_1} + c_2 \ket{\beta_2}) &= \hat{U} \hat{K} (c_1 \ket{\beta_1} + c_2 \ket{\beta_2}) \\
+    &= \hat{U} (c_1^* \hat{K} \ket{\beta_1} + c_2^* \hat{K}\ket{\beta_2}) \\
+    &= c_1^* \hat{U} \hat{K}\ket{\beta_1} + c_2^* \hat{U} \hat{K}\ket{\beta_2} \\
+    &= c_1^* \hat{A}\ket{\beta_1} + c_2^* \hat{A}\ket{\beta_2}
+\end{align*}
+From this  we can  show that the antiunitary operator can be written as $\hat{A} = \hat{U}\hat{K} $ where
+\( \hat{U} \) is a unitary operator and \( \hat{K} \) is the complex conjugation operator.
+We now check that the operator preserves inner products by defining \( \ket{\tilde{\alpha}} = \hat{A} \ket{\alpha} \) and \( \ket{\tilde{\beta}} = \hat{A} \ket{\beta} \):
+\begin{align*}
+    \braket{\tilde{\alpha}|\tilde{\beta}} &= \bra{\alpha} \hat{A}^\dagger \hat{A} \ket{\beta} \\   
+    &= \sum_{a'}\sum_{b'} \bra{\alpha} \ket{a'}\bra{a'} \hat{A}^\dagger \hat{A} \ket{b'}\bra{b'} \ket{\beta} \\
+    &= \sum_{a'}\sum_{b'} \braket{\alpha|a'} \braket{a'|\hat{K}^\dagger \hat{U}^\dagger \hat{U} \hat{K}|b'} \braket{b'|\beta} \\
+    &= \sum_{a'}\sum_{b'} \braket{\alpha|a'} \braket{a'|\hat{K}^\dagger \hat{K}|b'} \braket{b'|\beta} \\
+    &= \sum_{a'}\sum_{b'} \braket{\alpha|a'} \braket{a'|b'} \braket{b'|\beta} \\
+    &= \braket{\alpha|\beta} = \braket{\beta|\alpha}^*
+\end{align*}
+So the antiunitary operator preserves inner products as required by using the fact that the unitary operator satisfies
+$AA^{\dagger}=UU^{\dagger}=1$ (hermitian conjugate). 
 This leads to Wigner's theorem, which states that any symmetry transformation in quantum mechanics can be represented by either a unitary or an antiunitary operator.
 
 
@@ -31,6 +59,7 @@ higher order terms in the expansion of \( U \) cannot be neglected.
 Examples of discrete symmetries include parity (spatial inversion), time reversal, and lattice translation.
 These can then be divided into two classes: infinite and finite many transformations. The infinite class are the ones that can be repeated infinite times without returning to the original state, e.g., lattice translations.
 The finite class are the ones that return to the original state after a finite number of applications, e.g., parity and time reversal.
+So unitary operators are representations of synnetries in Hilbert space. Observables are their generators. 
 
 
 
@@ -38,15 +67,24 @@ The finite class are the ones that return to the original state after a finite n
   \centering
   \includegraphics[width=0.5\textwidth]{Figures/disc_cont.png}
 \end{figure}
-So unitary operators are representations of synnetries in Hilbert space. Observables are their generators. 
 
-\textcolor{red}{more deep about discrete symmetries!!}
 
 \textbf{Time reversal discrete symmetry:}
 
-The time reversal operator \( T \) is an antiunitary operator that reverses the direction of time in a quantum system. 
-This means that if a system evolves forward in time according to the Schrödinger equation, applying the time reversal operator will make it evolve backward in time which is equivalent to the 
+The time reversal operator \( \Theta \) is an antiunitary operator that reverses the direction of time in a quantum system. 
+This can be seen if we consider the operator as being unitary then we apply it to the time-dependent Schrödinger equation:
+\begin{align*}
+    \hat{H}\hat{\Theta} \ket{n} = - \hat{\Theta}\hat{H} \ket{n} = - E_n \hat{\Theta} \ket{n}
+\end{align*}
+This would lead to negative energies which is unphysical, and therefore the time reversal operator must be antiunitary.
+This leads to the property of $\hat{H} \hat{\Theta}= \hat{\Theta} \hat{H}$ meaning that the Hamiltonian commutes with the time reversal operator.
+
+To apply the time reversal operator means that if a system evolves forward in time according to the Schrödinger equation, applying the time reversal operator will make it evolve backward in time which is equivalent to the 
 system going in the opposite direction (opposite motion).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/time_rev.png}
+\end{figure}
 The time reversal operator does not change the position of particles but reverses their momenta and angular momenta. So it reverse the evolution 
 instead of changing the state itself.
 In addition, since the time reversal operator is antiunitary, it also complex conjugates the wavefunction.
@@ -54,18 +92,13 @@ Mathematically, the time reversal operator can be represented as:
 \begin{align*}
     \Theta \psi(\mathbf{r}, t) = \psi^*(\mathbf{r}, -t)
 \end{align*}
-For time reversal we have $\Theta H = H \Theta $ if the system is time-reversal invariant, meaning that the Hamiltonian commutes with the time reversal operator.
 The time reversal operator has the following properties:
 \begin{itemize}
     \item Antiunitary: \( \Theta i\Theta^{-1} =-i \Theta\Theta^{-1}= -i \)
-    \item Involution: \( \Theta^2 = \pm 1 \) (the sign depends on the system, e.g., for spin-1/2 particles, \( T^2 = -1 \))
+    \item Involution: \( \Theta^2 = \pm 1 \) (the sign depends on the system, e.g., for spin-1/2 particles, \( \Theta^2 = -1 \))
 \end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Figures/time_rev.png}
-\end{figure}
-
+We now want to look at how different observables behave under time reversal. We start by defining even vs. odd operators.
+An operator \( \hat{X} \) is even under time reversal if \( \Theta \hat{X} \Theta^{-1} = \hat{X} \) and odd if \( \Theta \hat{X} \Theta^{-1} = -\hat{X} \).
 The behavier of observables under time reversal is given by:
 \begin{itemize}
     \item Position: \( \Theta \hat{x} \Theta^{-1} = \hat{x} \) (even under time reversal)
@@ -73,17 +106,45 @@ The behavier of observables under time reversal is given by:
     \item Angular momentum: \( \Theta \hat{L} \Theta^{-1} = -\hat{L} \) (odd under time reversal)
     \item Spin: \( \Theta \hat{S} \Theta^{-1} = -\hat{S} \) (odd under time reversal)
     \item Hamiltonian: \( \Theta H \Theta^{-1} = H \) (if the system is time-reversal invariant)
-    \item Expectation values (observables):  $ \braket{\beta|\hat{X}|\alpha }= \braket{\tilde{\alpha} |\Theta \hat{X}^{\dagger} \Theta^{-1}| \tilde{\beta} }  $. 
-    \item Even vs. Odd operators: An operator \( \hat{X} \) is even under time reversal if \( \Theta \hat{X} \Theta^{-1} = \hat{X} \) and odd if \( \Theta \hat{X} \Theta^{-1} = -\hat{X} \).
 \end{itemize}
+Expectation values of even operators remain unchanged under time reversal, while expectation values of odd operators change sign.
+We can see this by considering two states \( \ket{\alpha} \) and \( \ket{\beta} \) and a linear operator \( \hat{X} \):
+\begin{align*}
+    \hat{X}^{\dagger}\ket{\beta } = \ket{\gamma} \quad &\Rightarrow \quad \bra{\beta} \hat{X} = \bra{\gamma} \\
+    \braket{\beta|\hat{X}|\alpha } = \braket{\gamma|\alpha} \quad &\Rightarrow \quad \braket{\tilde{\alpha} |\Theta \hat{X}^{\dagger} \Theta^{-1}| \tilde{\beta} } 
+\end{align*}
+where we have defined \( \ket{\tilde{\alpha}} = \Theta \ket{\alpha} \) and \( \ket{\tilde{\beta}} = \Theta \ket{\beta} \).
+This leads to the general relation for Expectation values (observables):  \[ \braket{\beta|\hat{X}|\alpha }= \braket{\tilde{\alpha} |\Theta \hat{X}^{\dagger} \Theta^{-1}| \tilde{\beta} }  \].
+
 
 
 \underline{Time-reversal for a spin-1/2 system:}
 
-\textcolor{red}{Help!!!!}
-
-
-
+We start with the state 
+\begin{align*}
+    \ket{\mathbf{n}, +} = e^{-i \hat{S}_z \alpha/\hbar} e^{-i \hat{S}_y \beta/\hbar} \ket{+}
+\end{align*}
+We know that when we apply time reversal on this state we get  
+\begin{align*}
+    \Theta \ket{\mathbf{n}, +} = e^{-i \hat{S}_z \alpha/\hbar} e^{-i \hat{S}_y \beta/\hbar} \Theta \ket{+}
+\end{align*}
+since the time reversal operator changes the sign of spin and $i$. This means that we can write
+\begin{align*}
+    \Theta \ket{\mathbf{n}, +} = e^{-i \hat{S}_z \alpha/\hbar} e^{-i \hat{S}_y \beta/\hbar} \ket{-} =\eta \ket{\mathbf{n}, -}.
+\end{align*}
+If we compare this to the situation for $\ket{\mathbf{n}, -}$ we get
+\begin{align*}
+    \Theta  = \eta e^{-i \pi \hat{S}_y /\hbar} K,
+\end{align*}
+where we have used the fact that $\Theta$ is antiunitary and $K$ is the complex conjugation operator.
+$\eta$ is an arbitrary phase factor with $|\eta|=1$.
+By applying $\Theta$ twice we get
+\begin{align*}
+    \Theta^2 = \begin{cases}
+    +1, & \text{for integer spin} \\
+    -1, & \text{for half-integer spin}
+    \end{cases}. 
+\end{align*}
 
 
 \textbf{Parity:}

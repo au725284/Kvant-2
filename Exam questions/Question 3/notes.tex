@@ -1,7 +1,7 @@
 \textbf{Propagator:}
 
 The propagator is a function that describes/specifies the probability/transition amplitude for a particle
-to travel from one point in space-time to another over a given time period, \textcolor{red}{or to travel with a given energy and momentum.}
+to travel from one point in space-time to another over a given time period.
 
 
 The propagator is the transition amplitude, e.i. the probability amplitude for a particle to go from position \(x'\) at time \(t'\) to position \(x\) at time \(t\). 
@@ -116,14 +116,21 @@ where you in CM calculate the trajectory of the particle and at which point it w
 That the QM particle takes all possible paths is a consequence of the wave-particle duality.
  Here the wave aspect of the particle allows it to interfere with itself, leading to the necessity of considering all possible paths (see two-slit experiment). 
 
+Here we can use the Heisenberg picture to express the propagator as the transition amplitude between position eigenstates:
+\begin{align*}
+    K(x'',t;x',t_0) &= \langle x'',t | x',t_0 \rangle.
+\end{align*}
+This leads us directly to the path integral formulation.
+
 The transition amplitude is then ficen by summing over all possible paths from the initial to the final point, each contributing with a phase factor given by the action (path integral formulation):
 \begin{align*}
-    K(x'',t;x',t_0)& = \sum_{paths} e^{\frac{i}{\hbar} S[path]}\\
+    \langle x'',t | x',t_0 \rangle& = \sum_{paths} e^{\frac{i}{\hbar} S[path]}\\
    & = \int \mathcal{D}[x(t)] e^{\frac{i}{\hbar} S[x(t)]}
 \end{align*}
-Where $S(x(t))=\int_{t_0}^{t_1} dt \mathcal{L}(x, \dot{x})$ is the action along a specific path, and \(\mathcal{D}[x(t)]\) denotes the integration over all possible paths \(x(t)\) connecting the initial and final points.
+Where $S(x(t))=\int_{t_0}^{t_1} dt \mathcal{L}(x, \dot{x})$ is the action along a specific path, and \(\mathcal{D}[x(t)]\) denotes the integration over all possible paths \(x(t)\)
+ connecting the initial and final points ($\mathcal{D}(x(t)) = \lim_{N\rightarrow\infty} \left(\frac{m}{2\pi i\hbar \Delta t}\right)^{N/2} \prod_{j=1}^{N-1} dx_j$).
 \begin{align*}
-    K(x'',t;x',t_0)& = \sum_{paths} e^{\frac{i}{\hbar} S[path]}\\
+    \langle x'',t | x',t_0 \rangle& = \sum_{paths} e^{\frac{i}{\hbar} S[path]}\\
    & = \int_{x'}^{x''} \mathcal{D}[x(t)] e^{\frac{i}{\hbar} \int_{t_0}^{t} dt \mathcal{L}(x, \dot{x})}
 \end{align*}
 In the limit where $S>>\hbar$ (classical limit) the paths will all cancel out due to destructive interference, 
@@ -142,27 +149,25 @@ For a free particle, the Lagrangian is given by:
 Now we want to find an expression for $\mathcal{D}[x(t)]$, and we want to redefine this so the computation is more intuitive. 
 A sum over all paths is not very practical, so we instead discretize the time interval \([t_0, t]\) into \(N\) small segments of duration \(\epsilon = \frac{t - t_0}{N}\).
 At each time step, we denote the position of the particle as \(x_j\) for \(j = 0, 1, 2, \ldots, N\), where \(x_0 = x'\) and \(x_N = x''\).
-By doing this we can express the path as a list of numbers instead of a continuous function ($x(t)$). These points are descrete and therefore it makes sense to sum over them. 
-So now we can use the definition of the path integral expression $\mathcal{D}(x(t)) = \lim_{N\rightarrow\infty} \left(\frac{m}{2\pi i\hbar \Delta t}\right)^{N/2} \prod_{j=1}^{N-1} dx_j$.
-The action can also be approximated as a sum over these discrete time steps:
+By doing this we can express the path as a list of numbers instead of a continuous function ($x(t)$). 
+We can approximate the transition amplitude for discrete time steps as:
 \begin{align*}
-    S[x(t)] &\approx \sum_{j=0}^{N-1} \epsilon \mathcal{L}\left(x_j, \frac{x_{j+1} - x_j}{\epsilon}\right) \\
-    &= \sum_{j=0}^{N-1} \epsilon \frac{1}{2} m \left(\frac{x_{j+1} - x_j}{\epsilon}\right)^2 \\
-    &= \sum_{j=0}^{N-1} \frac{m}{2\epsilon} (x_{j+1} - x_j)^2.
+    \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle = \frac{1}{w(\Delta t)}e^{\frac{i}{\hbar} S(n,n-1)}.
+\end{align*}
+These paths are descrete and therefore it makes sense to sum over them. 
+By looking at these very small time steps and thereby considerering the paths very close to the 
+classical path (only the ones close to survive) we can approximate the path as a integral over these discrete positions:
+\begin{align*}
+    S(n,n-1) &= \int_{t_0}^{t} dt \mathcal{L}(x, \dot{x}) \\
+    &= \Delta t \left( \frac{m}{2} \left( \frac{(x_n-x_{n-1})}{\Delta t}  \right)^2 - V \left( \frac{(x_n+x_{n-1})}{2}  \right)^2\right)
+\end{align*}
+For free particle we have no potential, so $V=0$, which simplifies the expression.
+By using orthonormality in the Heisenberg picture we can find the weight factor:
+\begin{align*}
+    \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle\big|_{t_n=t_{n-1}} &= \delta(x_n - x_{n-1}) \\
+    \Rightarrow
+    \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle &= \sqrt{\frac{m}{2\pi i \hbar \Delta t}} e^{\frac{im(x_n-x_{n-1})^2}{2\hbar \Delta t}}.
 \end{align*}
 
-
-\textcolor{red}{all of this below is very difficult to understand!!!!}
-Now putting this all together we get the path integral expression for the propagator:
-\begin{align*}
-    K(x'',t;x',t_0) &= \lim_{N \to \infty} \left(\frac{m}{2\pi i \hbar \epsilon}\right)^{N/2} \int dx_1 \int dx_2 \cdots \int dx_{N-1} \\
-    &\quad \times \exp\left\{\frac{i}{\hbar} \sum_{j=0}^{N-1} \frac{m}{2\epsilon} (x_{j+1} - x_j)^2\right\}.
-\end{align*}
-To evaluate this expression we make a change of variables to simplify the integrals. We define new variables \(y_j = x_{j+1} - x_j\) for \(j = 0, 1, \ldots, N-1\).
-This transforms the integrals over \(x_j\) into integrals over \(y_j\), with the boundary conditions \(y_0 = x_1 - x'\) and \(y_{N-1} = x'' - x_{N-1}\).
-The integrals over the \(y_j\) are Gaussian integrals, which can be evaluated using the standard result for Gaussian integrals.
-After performing these integrals and taking the limit \(N \to \infty\), we obtain the final expression for the propagator of a free particle:
-\begin{align*}
-    K(x'',t;x',t_0) &= \sqrt{\frac{m}{2\pi i \hbar (t-t_0)}} e^{\frac{i}{\hbar}\frac{m(x''-x')^2}{2(t-t_0)}}.
-\end{align*}
 which is the same result as we obtained earlier using the propagator formalism.
+

@@ -1,0 +1,53 @@
+\textbf{Describe the basic idea of scattering theory and the treatment of
+scattering problems within the Born approximation.}
+
+\underline{Basic idea of scattering}
+\begin{itemize}
+    \item Interaction between particle and potential $V(\mathbf{r})$.
+    \item Goal: inpact on incoming wave function $\psi_{in}$n and probability \textcolor{blue}{(figure)}
+    \item Assume $V_0 \to 0$ far away from scattering center.
+    \item Perturbation theory: 
+    \begin{itemize}
+        \item Plane wave (broader wave packet) and cubic box (discrete momentum states)
+        \item Elastic scattering: energy conserved.
+        \item Use Green's function to solve the SE equation
+        \item Lippmann-Schwinger equation (formal solution):
+        \[\ket{\psi^{(\pm)}} = \ket{k} + \frac{1}{E - H_0 + i\epsilon} V \ket{\psi^{(\pm)}}\]
+        \item Expand iteratively but for weak potentials only first order is needed
+    \end{itemize}
+    \item Time dependent potential:
+    \begin{itemize}
+        \item Use Interaction picuture and transition amplitude
+        \item Guess solution\[ \bra{m} \mathcal{\hat{U}}_I(t',-\infty) \ket{i}  = \delta_{mi} - \frac{i}{\hbar} T_{mi} \int_{-\infty}^{t} dt' e^{i\omega_{mi} t'}\]
+        \item Transition operator: \(T = V + V \frac{1}{E_i - H_0 + i\epsilon} T\) with $T\ket{k} = V\ket{\psi^{(+)}}$
+    \end{itemize}
+\end{itemize}
+
+\underline{Scattering amplitude and Born approximation}
+\begin{itemize}
+    \item Scattering amplitude:
+    \begin{itemize}
+        \item WF in position space 
+            \(\psi^{(\pm)}(\mathbf{x}) = \braket{\mathbf{x}|\psi^{(\pm)}} \)
+        \item Use Green's function, large r limit and assume potential is localized around origin
+        \[\braket{\mathbf{x}|\psi^{(\pm)}} \approx \frac{1}{L^{3/2}} \left(e^{i\mathbf{k}\cdot \mathbf{x}} + \frac{e^{\pm ikr}}{r}f(\mathbf{k}', \mathbf{k})\right) \]
+        \item Scattering amplitude: \(f(\mathbf{k}', \mathbf{k}) = - \frac{mL^3}{2\pi \hbar^2} \braket{\pm\mathbf{k}'|V|\psi^{(\pm)}}\)
+    \end{itemize}
+    \item Born approximation:
+    \begin{itemize}
+        \item Assume weak potential, use first order perturbation theory $T\approx V$
+        \[f(\mathbf{k}', \mathbf{k}) \approx - \frac{m}{2\pi \hbar^2} \int d^3 x' e^{-i\mathbf{k}' \cdot \mathbf{x}'} V(\mathbf{x}') e^{i\mathbf{k} \cdot \mathbf{x}'}\]
+    \end{itemize}
+    \item Validation of Born approximation:
+    \begin{itemize}
+        \item Weak potential/scattering $\Rightarrow$ higher-order terms neglected
+        \item Consider wave close to the scattering center 
+        \item Use plane wave representation and angular integration to get the condition
+        \[ 1 \gg
+        \left|
+        \frac{m}{i\hbar^2 k}
+        \int_0^{\infty} (e^{2ikr'} - 1) V(r') \, dr' \right| \]
+        \item Low-energy limit $k \to 0$: \(1 \gg \frac{m|V_0|a^2}{\hbar^2}\), High-energy limit $k \to \infty$: \(1 \gg \frac{m|V_0|a}{\hbar^2 k}\)
+    \end{itemize}
+\end{itemize}
+

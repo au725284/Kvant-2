@@ -1,0 +1,51 @@
+\textbf{Describe the concept of identical particles in quantum mechanics,
+its implication for multi-particle quantum states, and its relation
+to the formalism of second quantization.}
+
+\underline{Many particle system}
+\begin{itemize}
+    \item Distinguishable vs indistinguishable particles
+    \begin{itemize}
+        \item Distinguishable particles: can label and track each particle individually $\Rightarrow$ total wavefunction is product of single-particle wavefunctions
+        \item Indistinguishable particles: cannot label or track individual particles $\Rightarrow$ problem arise
+        \newline
+        \raisebox{-0.3\height}{\includegraphics[width=0.35\textwidth]{Figures/identical_particles.png}} 
+    \end{itemize}
+    \item Introduce (anti-)symmetrization and permutation operator $\hat{P}_{ij}$
+    \item Eigenvalues of Hamiltonian: \(\hat{P}_{ij} \ket{\psi}_{pm} = \pm \ket{\psi}_{pm}\) with \(\left[\hat{H}, \hat{P}_{ij}\right] = 0\)
+    \item Symmetry operator: \(    \hat{S}^{(\pm)} = \frac{1}{N!} \sum_{k}^{N!} (\pm 1)^{pk}\hat{P}_k\)
+    \item Only two possible subspaces of Hilbert space:
+    \begin{itemize}
+        \item Bosons: symmetric wavefunction $\Rightarrow$ integer spin
+        \item Fermions: antisymmetric wavefunction $\Rightarrow$ half-integer spin
+    \end{itemize}
+    \item Fock space: Hilbert space for variable number of identical particles
+    \begin{itemize}
+        \item Fock state: \(|n_1, n_2, n_3, ...\rangle\) where \(n_i\) is number of particles in single-particle state \(i\)
+        \newline \(    \ket{ n_{k_1}, n_{k_2}, \ldots }_{\pm} = C_{\pm} S^{\pm}_N \ket{ k_1,k_1, \ldots, k_{n_{k_1}}, k_2, k_2, \ldots, k_{n_{k_2}} \ldots}\)
+        \item Normalization constants: \(    C_+ = \sqrt{\frac{N!}{\prod_i n_{k_i}!}}\quad C_{-} = \sqrt{\frac{1}{N!}}\)
+    \end{itemize}
+\end{itemize}
+
+\underline{Creation and annihilation operators}
+\begin{itemize}
+    \item Bosons: \( \hat{a}_k^{\dagger} \ket{n_k} = \sqrt{n_k + 1} \ket{n_k + 1}, \quad \hat{a}_k \ket{n_k} = \sqrt{n_k} \ket{n_k - 1}
+\)
+    \item Fermions: \( \hat{a}_k^{\dagger} \ket{n_k} = (1 - n_k) \ket{n_k + 1}, \quad \hat{a}_k \ket{n_k} = n_k \ket{n_k - 1}
+\) 
+    \item (Anti-)commutation relations: \(    [\hat{a}_k, \hat{a}_{k'}^{\dagger}] = \delta_{kk'}, \quad [\hat{a}_k, \hat{a}_{k'}] = 0, \quad [\hat{a}_k^{\dagger}, \hat{a}_{k'}^{\dagger}] = 0\)
+\end{itemize}
+\underline{Second quantization}
+\begin{itemize}
+    \item Describe operators and states in terms of creation and annihilation operators
+    \item Fock states: \[    \ket{n_1, n_2, \ldots, n_k}_{\pm} = \frac{(\hat{a}_1^{\dagger})^{n_1} (\hat{a}_2^{\dagger})^{n_2} \ldots (\hat{a}_k^{\dagger})^{n_k}}{\sqrt{n_1! n_2! \ldots n_k!}} \ket{0}_{\pm}\]
+    \item Single-particle operators $\hat{A}$ that act on single-particle states $\ket{k}$ as with eigenvalue $\lambda_k$:
+    \begin{align*}
+        \hat{A} = \sum_{k, k'} \bra{k} \hat{A} \ket{k'} \hat{a}_k^{\dagger} \hat{a}_{k'}.
+    \end{align*}
+    \item Two-particle operators $\hat{B}$ that act on two-particle states $\ket{k_1, k_2, \ldots, k_N}$ as:
+    \begin{align*}
+        \hat{B} = \frac{1}{2} \sum_{k_1, k_2, k_1', k_2'} \bra{k_1, k_2} \hat{B} \ket{k_1', k_2'} \hat{a}_{k_1}^{\dagger} \hat{a}_{k_2}^{\dagger} \hat{a}_{k_2'} \hat{a}_{k_1'}.
+    \end{align*}
+    \item Basis transformation $\ket{q}= \sum_k \braket{k|q}\ket{k}$
+\end{itemize}

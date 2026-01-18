@@ -1,0 +1,50 @@
+\textbf{Discuss the propagator and Feynman path integrals formalism.}
+
+\underline{Propagator}
+
+\begin{itemize}
+    \item The propagator \(K(x'',t;x',t_0)\) gives the transition amplitude 
+    \item Derivation:
+    \begin{itemize}
+        \item Time evolution of state: \(|\psi(t)\rangle = U(t,t_0)|\psi(t_0)\rangle\)
+        \item In position basis: \(\psi(x'',t)= \langle x''|U(t,t_0)|\psi(t_0)\rangle = \int dx' \langle x'' | U(t,t_0) | x' \rangle \langle x' | \psi(t_0) \rangle \)
+        \item Define propagator as Kernel: \(K(x'',t;x',t_0) = \langle x'' | U(t,t_0) | x' \rangle\)
+        \item Propagator is the Green's function of the Schrödinger equation
+    \end{itemize}
+    \item Probagator can in Heisenberg picture be written as: $K(x'',t;x',t_0) = \langle x'',t | x',t_0 \rangle $   
+\end{itemize}
+
+\underline{Example: free particle}
+\begin{itemize}
+    \item Hamiltonian: \(H = \frac{P^2}{2m}\) and time evolution operator: \(U(t,t_0) = e^{-\frac{ip^2}{2m\hbar} H(t-t_0)}\)
+    \item Insert identity in momentum basis and get Gaussian integral:
+    \begin{align*}
+        K(x'',t;x',t_0) = \frac{1}{2\pi \hbar} \int dp e^{-\frac{i}{\hbar}\left(\frac{p^2}{2m}(t-t_0) - p(x''-x')\right)}\\
+        \Rightarrow K(x'',t;x',t_0) = \sqrt{\frac{m}{2\pi i \hbar (t-t_0)}} e^{\frac{i m (x''-x')^2}{2\hbar (t-t_0)}}
+    \end{align*}
+\end{itemize}
+
+\underline{Feynman path integral formalism}
+\begin{itemize}
+    \item Multiple paths for particle 
+    \item Sum over all paths, each weighted by \(e^{\frac{i}{\hbar} S[path]}\) where \(S[path]\) is the action along that path
+    \item Use path integral to express propagator:
+    \[\langle x'',t | x',t_0 \rangle= \int_{x'}^{x''} \mathcal{D}[x(t)] e^{\frac{i}{\hbar} \int_{t_0}^{t} dt \mathcal{L}(x, \dot{x})}\]
+    \item $\mathcal{D}[x(t)] $ integration over all possible paths \(x(t)\) connecting initial and final points
+    \item Example: free particle:
+    \begin{itemize}
+        \item Describe the paths as a series of small straight segments
+        \item Discretize time interval \([t_0, t]\) into \(N\) segments of duration \(\epsilon = \frac{t - t_0}{N}\)
+        \item Transition amplitude for discrete time steps:
+        \begin{align*}
+            \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle = \frac{1}{w(\Delta t)}e^{\frac{i}{\hbar} S(n,n-1)}.
+        \end{align*}
+        \item Paths close to the classical path dominate
+        \item Path integral becomes integral over discrete positions leading us to \newline$ S(n,n-1)= \Delta t \left( \frac{m}{2} \left( \frac{(x_n-x_{n-1})}{\Delta t}  \right)^2 - V \left( \frac{(x_n+x_{n-1})}{2}  \right)^2\right)$
+        \item For free particle ($V=0$) we get and using orthonormality for Heisenbert states to define weight factor:
+        \begin{align*}
+            \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle &= \sqrt{\frac{m}{2\pi i \hbar \Delta t}} e^{\frac{im(x_n-x_{n-1})^2}{2\hbar \Delta t}}.
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+

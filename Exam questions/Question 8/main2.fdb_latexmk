@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1768307804.85377 "c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 8/main2.tex" "main2.pdf" "main2" 1768307806.23692 0
-  "C:/Users/laura/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767718501 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1768732925.17976 "c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 8/main2.tex" "main2.pdf" "main2" 1768732926.55406 0
+  "C:/Users/laura/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1768314108 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/laura/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1767619495 11548 5012edab76bf438f63ae1a4490debef5 ""
   "C:/Users/laura/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1767546587 13334963 63576968d9dc7c7865ec4bc4664c7fe2 ""
   "C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/tfm/adobe/symbol/psyr.tfm" 1136768654 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -220,13 +220,13 @@
   "Figures/graph_prob.png" 1768303029 55523 b88eec2c1b95faff1c79f174e35c1924 ""
   "Figures/harmonic_perturbation.png" 1768306172 37291 7f62bb048e0e7e45fb5daf50a2eb9065 ""
   "Figures/pictures.png" 1768303153 46408 9026519939ef9e96aa9407562fbfeb3f ""
-  "Outline.tex" 1768307804 2824 0979a68e744d9a6c57e4a87ffe55c193 ""
+  "Outline.tex" 1768724499 2930 edb3db925210a74087a0d470323419fe ""
   "Preamble.sty" 1767718497 3254 1d5f3386cc7998a3ceb96a0f65c40dd1 ""
   "c:/Users/laura/OneDrive - Aarhus universitet/Kvant 2/Exam questions/Question 8/main2.tex" 1768290187 581 104ea987ccc65b14b9a0c8eafc240068 ""
-  "main2.aux" 1768307806 579 9527d7816c73b63aa4c53ca0a2874d37 "pdflatex"
-  "main2.out" 1768307805 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main2.aux" 1768732926 579 9527d7816c73b63aa4c53ca0a2874d37 "pdflatex"
+  "main2.out" 1768732926 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main2.tex" 1768290187 581 104ea987ccc65b14b9a0c8eafc240068 ""
-  "notes.tex" 1768306610 15764 b62a3f8c712ca841441c4b1786242de6 ""
+  "notes.tex" 1768724035 15767 5f3c0b9e0174e0881a3a73882b97d4a1 ""
   (generated)
   "main2.aux"
   "main2.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  12 JAN 2026 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.4)  18 JAN 2026 11:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1197,22 +1197,21 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
  (C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<Figures/disc_cont.png, id=6, 538.26094pt x 389.95688pt>
-File: Figures/disc_cont.png Graphic file (type png)
-<use Figures/disc_cont.png>
-Package pdftex.def Info: Figures/disc_cont.png  used on input line 39.
-(pdftex.def)             Requested size: 227.5pt x 164.8161pt.
- [1
+) [1
 
 {C:/Users/laura/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<Figures/time_rev.png, id=26, 843.90282pt x 296.60812pt>
+<Figures/disc_cont.png, id=24, 538.26094pt x 389.95688pt>
+File: Figures/disc_cont.png Graphic file (type png)
+<use Figures/disc_cont.png>
+Package pdftex.def Info: Figures/disc_cont.png  used on input line 68.
+(pdftex.def)             Requested size: 227.5pt x 164.8161pt.
+<Figures/time_rev.png, id=26, 890.5772pt x 328.22626pt>
 File: Figures/time_rev.png Graphic file (type png)
 <use Figures/time_rev.png>
-Package pdftex.def Info: Figures/time_rev.png  used on input line 66.
-(pdftex.def)             Requested size: 227.5pt x 79.95853pt.
- [2 <./Figures/disc_cont.png> <./Figures/time_rev.png>]) [3] (Outline.tex)
-runsystem(latexminted cleantemp  --timestamp 20260112160143 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
+Package pdftex.def Info: Figures/time_rev.png  used on input line 86.
+(pdftex.def)             Requested size: 227.5pt x 83.84433pt.
+ [2 <./Figures/disc_cont.png>] [3 <./Figures/time_rev.png>]) [4] (Outline.tex) [5]
+runsystem(latexminted cleantemp  --timestamp 20260118114055 07EB239072934103CA64A9692FB20F83)...disabled (restricted).
 
  
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -1228,17 +1227,17 @@ Package rerunfilecheck Info: File `main2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39408 strings out of 467871
- 817452 string characters out of 5416900
- 1348720 words of memory out of 5000000
- 67705 multiletter control sequences out of 15000+600000
+ 39416 strings out of 467871
+ 817644 string characters out of 5416900
+ 1361720 words of memory out of 5000000
+ 67711 multiletter control sequences out of 15000+600000
  633027 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,18n,122p,612b,1194s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main2.pdf (3 pages, 508140 bytes).
+ 110i,18n,122p,612b,1098s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/laura/OneDrive/Skrivebord/Ny mappe (2)/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main2.pdf (5 pages, 585161 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
+ 114 PDF objects out of 1000 (max. 8388607)
+ 8 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

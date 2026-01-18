@@ -1,0 +1,46 @@
+\textbf{Describe how the coupling of angular momenta works in quan-
+tum mechanics, and discuss the Clebsch–Gordan coefficients.}
+
+\underline{Coupling of angylar momentum}
+
+
+\begin{itemize}
+    \item Adding two angular momentum operators: $\vec{J} = \vec{J_1} + \vec{J_2} = \vec{J}_2\otimes \hat{I} + \hat{I} \otimes \vec{J}_2$
+    \item $\vec{J_1} $ and $\vec{J_2} $ come from different sources $\Rightarrow$ different dimentions
+    \item All three operators satisfy the usual angular momentum commutation relations
+    \item Uncoupled basis: $|j_1, m_1; j_2, m_2 \rangle$ 
+    \item Coupled basis: $|j_1, j_2; j, m \rangle$
+    \item Connection between the two basis given by the CG coefficients \(\langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle\): 
+    \[  |j_1, j_2; j, m \rangle = \sum_{m_1, m_2} |j_1, m_1; j_2, m_2 \rangle \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle\]
+\end{itemize}
+
+
+\underline{Clebsch-Gordan coefficients}
+
+\begin{itemize}
+    \item Both basis form a complete orthonormal set of basis kets and normalized $\Rightarrow$ unitary transformation
+    \item Properties: CGC$\in \mathbb{R}$, selection rules, orthogonality relations
+    \item Selection rules:
+    \begin{itemize} 
+        \item $m = m_1 + m_2$
+        \item $|j_1 - j_2| \leq j \leq j_1 + j_2$
+    \end{itemize}
+    \item calculating CGC: ladder operator method
+    \[    J_{\pm} |j_1, j_2; j, m \rangle = (J_{1\pm} + J_{2\pm})\sum_{m_1, m_2} |j_1, m_1; j_2, m_2 \rangle \langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \rangle
+\]
+    \begin{itemize}
+        \item Apply $\bra{j_1, j_2, m_1, m_2}$
+        \item Use orthogonality to get non-vanishing terms only when $m_1 = m_1' \pm 1$ with $m_2' = m_2$ or $m_1' = m_1$ with $m_2' = m_2 \pm 1$
+        \item Recursion relation: \begin{align*}
+    \sqrt{(j\mp m) (j\pm m+1)} &\langle j_1, m_1; j_2, m_2 | j_1, j_2; j, m \pm 1 \rangle = \\
+    &\sqrt{(j\mp m_1 \pm 1) (j\pm m_1)} \langle j_1, m_1 \mp 1; j_2, m_2 | j_1, j_2; j, m \rangle +   \\
+    &\sqrt{(j\mp m_2 \pm 1) (j\pm m_2)} \langle j_1, m_1; j_2, m_2 \mp 1 | j_1, j_2; j, m \rangle
+\end{align*}
+    \end{itemize}
+    \item Explain recursion triangle, boundaries and total number of coefficients \textcolor{blue}{(figures)}
+    \item We get all possible CGC for given $m_1, m_2$
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{image.png}
+\end{figure}

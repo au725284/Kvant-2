@@ -1,0 +1,54 @@
+\textbf{Describe the concept and formalism of discrete symmetries in
+quantum mechanics, in particular, time reversal symmetry.}
+
+
+\underline{Symmetries in QM}
+
+\begin{itemize}
+    \item Transformation which leaves the physical properties of a system invariant.
+    \item Examples: spatial translations, rotations, time reversal.
+    \item The symmetry operator must satisfy Wigner's theorem: it is either unitary or antiunitary.
+    \item Antiunitary operators: 
+    \begin{itemize}
+        \item Antilinear: \( \hat{A} (c_1 \ket{\psi_1} + c_2 \ket{\psi_2}) = c_1^* \hat{A} \ket{\psi_1} + c_2^* \hat{A} \ket{\psi_2} \)
+        \item Preserves inner products up to complex conjugation: \(\braket{\alpha|\beta} = \braket{\beta|\alpha}^*\)
+        \item Can be written as the product of a unitary operator and the complex conjugation operator \( \hat{K} \): \( \hat{A}= \hat{U}\hat{K} \)
+    \end{itemize}
+    \item continuous symmetries can be made infinitesimal, discrete symmetries cannot.
+    \item Noether's theorem only applies to continuous symmetries.
+    \item Discrete symmetries lead to selection rules and degeneracies in the energy spectrum.
+    \item Examples of discrete symmetries: parity (spatial inversion), time reversal, lattice translation.
+\end{itemize}
+
+\underline{Time-reversal symmetry}
+\begin{itemize}
+    \item Represents the reversal of the direction of time: \( t \rightarrow -t \).
+    \item Time-reversal operator \( \Theta \) is antiunitary $\Rightarrow$ $\hat{H} \hat{\Theta}= \hat{\Theta} \hat{H}$
+    \item Reverse momenta and angular momenta, but leave positions unchanged $\Rightarrow$ reversal of motion \textcolor{blue}{(figure)}
+    \item Properties of the time-reversal operator:
+    \begin{itemize}
+        \item $\Theta \psi(\mathbf{r}, t) = \psi^*(\mathbf{r}, -t)$
+        \item Involution: \( \Theta^2 = \pm 1 \) (the sign depends on the system)
+        \item Expectation values of observables transform as:  $ \braket{\beta|\hat{X}|\alpha }= \braket{\tilde{\alpha} |\Theta \hat{X}^{\dagger} \Theta^{-1}| \tilde{\beta} }  $\newline where \( \ket{\tilde{\alpha}} = \Theta \ket{\alpha} \) and \( \ket{\tilde{\beta}} = \Theta \ket{\beta} \).
+    \end{itemize}
+    \item Even if \( \Theta \hat{X} \Theta^{-1} = \hat{X} \) and odd if \( \Theta \hat{X} \Theta^{-1} = -\hat{X} \)
+    \item Behavior of observables under time reversal:
+    \begin{itemize}
+        \item Even: position and Hamiltonian (if the system is time-reversal invariant)
+        \item Odd: Momentum and and angular momentum
+    \end{itemize}
+\end{itemize}
+
+\underline{Example: spin-1/2 system}
+\begin{itemize}
+    \item Compare solution for $\hat{A}\ket{\mathbf{n}, +}$ and  $\hat{A}\ket{\mathbf{n}, -}$ $\Rightarrow$ $\hat{A}=\eta e^{-i\pi \hat{S}_y/\hbar} \hat{K}$
+    \item So $\hat{K}$ does not change spin, but $\hat{U}=e^{-i\pi \hat{S}_y/\hbar}$ rotates spin by $\pi$ around y-axis.
+    \item Only the operator applied twice change spin 
+    \begin{align*}
+        \Theta^2 = \begin{cases}
+        +1, & \text{for integer spin} \\
+        -1, & \text{for half-integer spin}
+        \end{cases}. 
+    \end{align*}
+\end{itemize}
+

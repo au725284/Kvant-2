@@ -395,6 +395,7 @@ INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\amsfonts\
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT C:\Users\laura\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\cm\cmti10.tfm
 INPUT .\Figures\disc_cont.png
 INPUT .\Figures\disc_cont.png
@@ -403,16 +404,15 @@ INPUT .\Figures\disc_cont.png
 INPUT .\Figures\disc_cont.png
 INPUT .\Figures\disc_cont.png
 INPUT .\Figures\disc_cont.png
-INPUT C:\Users\laura\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
+INPUT .\Figures\time_rev.png
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\cm\cmbx7.tfm
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\tfm\public\cm\cmbx5.tfm
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
-INPUT .\Figures\time_rev.png
 INPUT .\Outline.tex
 INPUT .\Outline.tex
 INPUT Outline.tex
@@ -429,6 +429,8 @@ INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfont
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi5.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmr10.pfb
@@ -437,7 +439,11 @@ INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfont
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy5.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy5.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\symbols\msbm7.pfb
+INPUT C:\Users\laura\OneDrive\Skrivebord\Ny mappe (2)\fonts\type1\public\amsfonts\symbols\msbm7.pfb
